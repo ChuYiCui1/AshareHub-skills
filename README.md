@@ -15,13 +15,13 @@ Get your free API key at [asharehub.com/console/register](https://asharehub.com/
 
 | Template | Description | Data Range |
 |----------|-------------|------------|
-| [Market Daily](skills/market-daily.md) | Daily OHLC price data | 2020+, 7.3M records |
-| [Market Fundamentals](skills/market-fundamentals.md) | PE, PB, turnover, market cap | 2010+, 13.6M records |
-| [Northbound Flows](skills/northbound-flows.md) | Stock Connect capital flows | 2014+ |
-| [Chip Distribution](skills/chip-distribution.md) | Cost basis & winner rate | 2020+, 7.3M records |
-| [FX Daily](skills/fx-daily.md) | Foreign exchange rates (USD/CNH) | 2012+ |
-| [Index Daily](skills/index-daily.md) | Major index OHLC (SSE, CSI 300, ChiNext) | 2010+ |
-| [Financial Indicators](skills/financial-indicators.md) | 50+ quarterly metrics (ROE, EPS, margins) | Quarterly |
+| [Market Daily](skills/market-daily/SKILL.md) | Daily OHLC price data | 2020+, 7.3M records |
+| [Market Fundamentals](skills/market-fundamentals/SKILL.md) | PE, PB, turnover, market cap | 2010+, 13.6M records |
+| [Northbound Flows](skills/northbound-flows/SKILL.md) | Stock Connect capital flows | 2014+ |
+| [Chip Distribution](skills/chip-distribution/SKILL.md) | Cost basis & winner rate | 2020+, 7.3M records |
+| [FX Daily](skills/fx-daily/SKILL.md) | Foreign exchange rates (USD/CNH) | 2012+ |
+| [Index Daily](skills/index-daily/SKILL.md) | Major index OHLC (SSE, CSI 300, ChiNext) | 2010+ |
+| [Financial Indicators](skills/financial-indicators/SKILL.md) | 50+ quarterly metrics (ROE, EPS, margins) | Quarterly |
 
 ## How to Use
 
@@ -32,8 +32,8 @@ Each template contains ready-to-use Python code. Simply paste the code into your
 ### As Claude Code skills
 
 ```bash
-# Copy to your project's skills directory
-cp skills/*.md /path/to/your/project/.claude/skills/
+# Copy skill directories to your project
+cp -r skills/* /path/to/your/project/.claude/skills/
 ```
 
 ### As Cursor/Windsurf rules
