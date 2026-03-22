@@ -2,6 +2,8 @@
 
 Query Chinese A-share market data via [AShareHub](https://asharehub.com). Works with Claude Code, Cursor, Windsurf, Cline, and any AI coding assistant.
 
+**Languages:** [English](#english) | [中文](#中文)
+
 ## Prerequisites
 
 ```bash
@@ -15,26 +17,32 @@ Get your free API key at [asharehub.com/console/register](https://asharehub.com/
 
 ```
 skills/
-├── SKILL.md                    # Main entry — routes to the right data doc
-├── market-daily.md             # Daily OHLC prices (2020+, 7.3M records)
-├── market-fundamentals.md      # PE, PB, turnover, market cap (2010+, 13.6M records)
-├── northbound-flows.md         # Stock Connect capital flows (2014+)
-├── chip-distribution.md        # Cost basis & winner rate (2020+, 7.3M records)
-├── fx-daily.md                 # FX rates, default USD/CNH (2012+)
-├── index-daily.md              # Major index OHLC (2010+)
-└── financial-indicators.md     # 50+ quarterly metrics (ROE, EPS, margins)
+├── en/                         # English
+│   ├── SKILL.md                # Main entry — routes to the right data doc
+│   ├── market-daily.md         # Daily OHLC prices (2020+, 7.3M records)
+│   ├── market-fundamentals.md  # PE, PB, turnover, market cap (2010+, 13.6M records)
+│   ├── northbound-flows.md     # Stock Connect capital flows (2014+)
+│   ├── chip-distribution.md    # Cost basis & winner rate (2020+, 7.3M records)
+│   ├── fx-daily.md             # FX rates, default USD/CNH (2012+)
+│   ├── index-daily.md          # Major index OHLC (2010+)
+│   └── financial-indicators.md # 50+ quarterly metrics (ROE, EPS, margins)
+└── zh/                         # 中文
+    ├── SKILL.md
+    └── ... (same files in Chinese)
 ```
-
-`SKILL.md` is the main skill that Claude invokes via `/asharehub`. It reads the appropriate data doc based on your query.
 
 ## How to Use
 
 ### Claude Code
 
-Copy the `skills/` directory into your project:
+Copy your preferred language into your project:
 
 ```bash
-cp -r skills/ /path/to/your/project/.claude/skills/asharehub/
+# English
+cp -r skills/en/ /path/to/your/project/.claude/skills/asharehub/
+
+# 中文
+cp -r skills/zh/ /path/to/your/project/.claude/skills/asharehub/
 ```
 
 Then invoke with `/asharehub` in Claude Code.
