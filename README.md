@@ -1,6 +1,6 @@
-# AShareHub Prompt Templates
+# AShareHub Skills & Prompt Templates
 
-Universal prompt templates for querying Chinese A-share market data via [AShareHub](https://asharehub.com). Works with any AI coding assistant — Claude Code, Cursor, Windsurf, Cline, and more.
+Query Chinese A-share market data via [AShareHub](https://asharehub.com). Works with Claude Code, Cursor, Windsurf, Cline, and any AI coding assistant.
 
 ## Prerequisites
 
@@ -11,34 +11,37 @@ export ASHAREHUB_API_KEY="ash_your_key_here"
 
 Get your free API key at [asharehub.com/console/register](https://asharehub.com/console/register).
 
-## Available Templates
+## Structure
 
-| Template | Description | Data Range |
-|----------|-------------|------------|
-| [Market Daily](skills/market-daily/SKILL.md) | Daily OHLC price data | 2020+, 7.3M records |
-| [Market Fundamentals](skills/market-fundamentals/SKILL.md) | PE, PB, turnover, market cap | 2010+, 13.6M records |
-| [Northbound Flows](skills/northbound-flows/SKILL.md) | Stock Connect capital flows | 2014+ |
-| [Chip Distribution](skills/chip-distribution/SKILL.md) | Cost basis & winner rate | 2020+, 7.3M records |
-| [FX Daily](skills/fx-daily/SKILL.md) | Foreign exchange rates (USD/CNH) | 2012+ |
-| [Index Daily](skills/index-daily/SKILL.md) | Major index OHLC (SSE, CSI 300, ChiNext) | 2010+ |
-| [Financial Indicators](skills/financial-indicators/SKILL.md) | 50+ quarterly metrics (ROE, EPS, margins) | Quarterly |
+```
+skills/
+├── SKILL.md                    # Main entry — routes to the right data doc
+├── market-daily.md             # Daily OHLC prices (2020+, 7.3M records)
+├── market-fundamentals.md      # PE, PB, turnover, market cap (2010+, 13.6M records)
+├── northbound-flows.md         # Stock Connect capital flows (2014+)
+├── chip-distribution.md        # Cost basis & winner rate (2020+, 7.3M records)
+├── fx-daily.md                 # FX rates, default USD/CNH (2012+)
+├── index-daily.md              # Major index OHLC (2010+)
+└── financial-indicators.md     # 50+ quarterly metrics (ROE, EPS, margins)
+```
+
+`SKILL.md` is the main skill that Claude invokes via `/asharehub`. It reads the appropriate data doc based on your query.
 
 ## How to Use
 
-### With any AI assistant
+### Claude Code
 
-Each template contains ready-to-use Python code. Simply paste the code into your AI assistant's context or ask it to reference the template.
-
-### As Claude Code skills
+Copy the `skills/` directory into your project:
 
 ```bash
-# Copy skill directories to your project
-cp -r skills/* /path/to/your/project/.claude/skills/
+cp -r skills/ /path/to/your/project/.claude/skills/asharehub/
 ```
 
-### As Cursor/Windsurf rules
+Then invoke with `/asharehub` in Claude Code.
 
-Reference the templates in your `.cursorrules` or `.windsurfrules` file, or paste the content directly.
+### Other AI assistants
+
+Each `.md` file is a self-contained reference doc with SDK method, parameters, and response fields. Paste into your assistant's context or reference directly.
 
 ## All Access Methods
 
@@ -47,7 +50,7 @@ Reference the templates in your `.cursorrules` or `.windsurfrules` file, or past
 | **Python SDK** | `pip install asharehub` — [Docs](https://asharehub.com/docs) |
 | **MCP Server** | `https://asharehub.com/mcp/sse` — works with Claude Desktop, Cursor, etc. |
 | **REST API** | 7 endpoints at `https://asharehub.com/v1/` |
-| **Prompt Templates** | This repo |
+| **Skills** | This repo |
 
 ## License
 
