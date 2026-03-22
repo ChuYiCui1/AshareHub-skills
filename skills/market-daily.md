@@ -1,42 +1,51 @@
----
-name: market-daily
-description: Query daily OHLC price data for A-share stocks
-user-invocable: true
----
-
 # Market Daily — A股日线行情
 
-使用 AShareHub SDK 查询 A 股日线 OHLC 数据。
+Query daily OHLC price data for A-share stocks.
 
-## 参数
-
-- `ts_code`: 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台）
-- `start_date`: 起始日期，YYYY-MM-DD
-- `end_date`: 结束日期，YYYY-MM-DD
-- `limit`: 返回行数（默认 100，最大 5000）
-
-## 使用方式
-
-通过 Bash 运行 Python 脚本查询数据：
+## Setup
 
 ```bash
-ASHAREHUB_API_KEY="${ASHAREHUB_API_KEY}" python3 -c "
+pip install asharehub
+export ASHAREHUB_API_KEY="your_key_here"  # Get free key at asharehub.com/console/register
+```
+
+## Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|----------|-------------|---------|
+| `ts_code` | No | Stock code | `000001.SZ` (Ping An Bank), `600519.SH` (Moutai) |
+| `start_date` | No | Start date (YYYY-MM-DD) | `2024-01-01` |
+| `end_date` | No | End date (YYYY-MM-DD) | `2024-12-31` |
+| `limit` | No | Max rows (default 100, max 5000) | `500` |
+
+## Code
+
+```python
 from asharehub import AShareHub
 import os, json
 
-client = AShareHub(api_key=os.environ['ASHAREHUB_API_KEY'])
-data = client.market_daily(ts_code='${TS_CODE}', start_date='${START_DATE}', end_date='${END_DATE}', limit=${LIMIT:-100})
+client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"])
+data = client.market_daily(ts_code="000001.SZ", start_date="2024-01-01", end_date="2024-12-31", limit=100)
 for row in data:
-    print(json.dumps(row.model_dump(mode='json'), ensure_ascii=False))
+    print(json.dumps(row.model_dump(mode="json"), ensure_ascii=False))
 client.close()
-"
 ```
 
-## 返回字段
+## Response Fields
 
-ts_code, trade_date, open, high, low, close, pre_close, change, pct_chg, vol, amount
+| Field | Description |
+|-------|-------------|
+| `ts_code` | Stock code |
+| `trade_date` | Trading date |
+| `open`, `high`, `low`, `close` | OHLC prices (CNY) |
+| `pre_close` | Previous close (ex-dividend adjusted) |
+| `change` | Price change (CNY) |
+| `pct_chg` | Daily return % |
+| `vol` | Volume in lots (1 lot = 100 shares) |
+| `amount` | Turnover in thousands of CNY |
 
-## 注意
+## Notes
 
-- 数据从 2020-01-02 起可用
-- vol 单位为手（1手=100股），amount 单位为千元
+- Data available from 2020-01-02, 7.3M+ records
+- Also available via MCP: `https://asharehub.com/mcp/sse` (tool: `get_market_daily`)
+- Also available via REST API: `GET https://asharehub.com/v1/market/daily`

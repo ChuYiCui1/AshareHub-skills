@@ -1,40 +1,52 @@
----
-name: financial-indicators
-description: Query quarterly financial indicators (ROE, EPS, margins, ratios)
-user-invocable: true
----
-
 # Financial Indicators — 财务指标
 
-使用 AShareHub SDK 查询季度财务指标（ROE、EPS、利润率等 50+ 指标）。
+Query quarterly financial indicators: ROE, EPS, margins, ratios (50+ metrics).
 
-## 参数
-
-- `ts_code`: 股票代码，如 `000001.SZ`
-- `start_date`: 报告期起始，YYYY-MM-DD
-- `end_date`: 报告期结束，YYYY-MM-DD
-- `limit`: 返回行数（默认 20，最大 200）
-
-## 使用方式
+## Setup
 
 ```bash
-ASHAREHUB_API_KEY="${ASHAREHUB_API_KEY}" python3 -c "
+pip install asharehub
+export ASHAREHUB_API_KEY="your_key_here"
+```
+
+## Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|----------|-------------|---------|
+| `ts_code` | No | Stock code | `000001.SZ` |
+| `start_date` | No | Report period start (YYYY-MM-DD) | `2023-01-01` |
+| `end_date` | No | Report period end (YYYY-MM-DD) | `2024-12-31` |
+| `limit` | No | Max rows (default 20, max 200) | `50` |
+
+## Code
+
+```python
 from asharehub import AShareHub
 import os, json
 
-client = AShareHub(api_key=os.environ['ASHAREHUB_API_KEY'])
-data = client.financial_indicators(ts_code='${TS_CODE}', start_date='${START_DATE}', end_date='${END_DATE}', limit=${LIMIT:-20})
+client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"])
+data = client.financial_indicators(ts_code="000001.SZ", start_date="2023-01-01", end_date="2024-12-31", limit=20)
 for row in data:
-    print(json.dumps(row.model_dump(mode='json'), ensure_ascii=False))
+    print(json.dumps(row.model_dump(mode="json"), ensure_ascii=False))
 client.close()
-"
 ```
 
-## 返回字段
+## Response Fields
 
-ts_code, ann_date, end_date, eps, dt_eps, roe, roe_waa, roe_dt, roa, gross_margin, netprofit_margin, debt_to_assets, current_ratio, quick_ratio, cash_ratio, assets_turn, inv_turn, ar_turn, roic, basic_eps_yoy, netprofit_yoy, rd_exp ...
+| Category | Fields |
+|----------|--------|
+| **Per-share** | `eps`, `dt_eps`, `total_revenue_ps`, `revenue_ps`, `bps`, `ocfps` |
+| **Profitability** | `roe`, `roe_waa`, `roe_dt`, `roa`, `gross_margin`, `netprofit_margin` |
+| **Leverage** | `debt_to_assets` |
+| **Liquidity** | `current_ratio`, `quick_ratio`, `cash_ratio` |
+| **Efficiency** | `assets_turn`, `inv_turn`, `ar_turn` |
+| **Returns** | `roic` |
+| **Growth** | `basic_eps_yoy`, `dt_eps_yoy`, `netprofit_yoy`, `dt_netprofit_yoy` |
+| **R&D** | `rd_exp` (CNY) |
+| **Dates** | `ann_date` (announcement), `end_date` (fiscal period) |
 
-## 注意
+## Notes
 
-- 数据目前较少（116 条），后续会批量补充
-- end_date 指财务报告期（如 2024-12-31 为年报）
+- `end_date` refers to fiscal period end (e.g. `2024-12-31` = annual report, `2024-06-30` = semi-annual)
+- Also available via MCP: `https://asharehub.com/mcp/sse` (tool: `get_financial_indicators`)
+- Also available via REST API: `GET https://asharehub.com/v1/financials/indicators`

@@ -1,40 +1,49 @@
----
-name: fx-daily
-description: Query daily FX rates (default USD/CNH)
-user-invocable: true
----
-
 # FX Daily — 外汇日线
 
-使用 AShareHub SDK 查询外汇日线行情（默认美元/离岸人民币）。
+Query daily FX rates with bid/ask prices. Default pair: USD/CNH (offshore RMB).
 
-## 参数
-
-- `ts_code`: 外汇对代码，默认 `USDCNH.FXCM`
-- `start_date`: 起始日期，YYYY-MM-DD
-- `end_date`: 结束日期，YYYY-MM-DD
-- `limit`: 返回行数（默认 100，最大 2000）
-
-## 使用方式
+## Setup
 
 ```bash
-ASHAREHUB_API_KEY="${ASHAREHUB_API_KEY}" python3 -c "
+pip install asharehub
+export ASHAREHUB_API_KEY="your_key_here"
+```
+
+## Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|----------|-------------|---------|
+| `ts_code` | No | FX pair code (default `USDCNH.FXCM`) | `USDCNH.FXCM` |
+| `start_date` | No | Start date (YYYY-MM-DD) | `2024-01-01` |
+| `end_date` | No | End date (YYYY-MM-DD) | `2024-12-31` |
+| `limit` | No | Max rows (default 100, max 2000) | `200` |
+
+## Code
+
+```python
 from asharehub import AShareHub
 import os, json
 
-client = AShareHub(api_key=os.environ['ASHAREHUB_API_KEY'])
-data = client.fx_daily(ts_code='${TS_CODE:-USDCNH.FXCM}', start_date='${START_DATE}', end_date='${END_DATE}', limit=${LIMIT:-100})
+client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"])
+data = client.fx_daily(ts_code="USDCNH.FXCM", start_date="2024-01-01", end_date="2024-12-31", limit=100)
 for row in data:
-    print(json.dumps(row.model_dump(mode='json'), ensure_ascii=False))
+    print(json.dumps(row.model_dump(mode="json"), ensure_ascii=False))
 client.close()
-"
 ```
 
-## 返回字段
+## Response Fields
 
-ts_code, trade_date, bid_open, bid_close, bid_high, bid_low, ask_open, ask_close, ask_high, ask_low, tick_qty
+| Field | Description |
+|-------|-------------|
+| `ts_code` | FX pair code |
+| `trade_date` | Trading date |
+| `bid_open`, `bid_close`, `bid_high`, `bid_low` | Bid prices |
+| `ask_open`, `ask_close`, `ask_high`, `ask_low` | Ask prices |
+| `tick_qty` | Number of quote ticks |
 
-## 注意
+## Notes
 
-- 数据从 2012-01-01 起可用
-- USDCNH 上涨 = 人民币贬值，通常对 A 股外资流入形成压力
+- Data available from 2012-01-01
+- Rising USDCNH = CNY weakening, typically pressures A-share foreign inflows
+- Also available via MCP: `https://asharehub.com/mcp/sse` (tool: `get_fx_daily`)
+- Also available via REST API: `GET https://asharehub.com/v1/fx/daily`

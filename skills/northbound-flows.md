@@ -1,40 +1,49 @@
----
-name: northbound-flows
-description: Query northbound capital flows via Stock Connect
-user-invocable: true
----
-
 # Northbound Flows — 北向资金
 
-使用 AShareHub SDK 查询沪深港通北向资金数据。
+Query northbound capital flows via Stock Connect (Shanghai-HK, Shenzhen-HK).
 
-## 参数
-
-- `start_date`: 起始日期，YYYY-MM-DD
-- `end_date`: 结束日期，YYYY-MM-DD
-- `limit`: 返回行数（默认 100，最大 2000）
-
-## 使用方式
+## Setup
 
 ```bash
-ASHAREHUB_API_KEY="${ASHAREHUB_API_KEY}" python3 -c "
+pip install asharehub
+export ASHAREHUB_API_KEY="your_key_here"
+```
+
+## Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|----------|-------------|---------|
+| `start_date` | No | Start date (YYYY-MM-DD) | `2024-01-01` |
+| `end_date` | No | End date (YYYY-MM-DD) | `2024-03-31` |
+| `limit` | No | Max rows (default 100, max 2000) | `200` |
+
+## Code
+
+```python
 from asharehub import AShareHub
 import os, json
 
-client = AShareHub(api_key=os.environ['ASHAREHUB_API_KEY'])
-data = client.northbound_flows(start_date='${START_DATE}', end_date='${END_DATE}', limit=${LIMIT:-100})
+client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"])
+data = client.northbound_flows(start_date="2024-01-01", end_date="2024-03-31", limit=100)
 for row in data:
-    print(json.dumps(row.model_dump(mode='json'), ensure_ascii=False))
+    print(json.dumps(row.model_dump(mode="json"), ensure_ascii=False))
 client.close()
-"
 ```
 
-## 返回字段
+## Response Fields
 
-trade_date, ggt_ss, ggt_sz, hgt_ss, hgt_sz, north_money, south_money
+| Field | Description |
+|-------|-------------|
+| `trade_date` | Trading date |
+| `hgt_ss`, `hgt_sz` | Shanghai/Shenzhen → HK northbound (millions CNY) |
+| `ggt_ss`, `ggt_sz` | HK → Shanghai/Shenzhen southbound (millions CNY) |
+| `north_money` | Total northbound net inflow (millions CNY) — positive = net buying |
+| `south_money` | Total southbound net inflow (millions CNY) |
 
-## 注意
+## Notes
 
-- 数据从 2014-11-17 起可用
-- north_money 为正表示外资净买入（单位：百万元）
-- 每日仅一条记录
+- Data available from 2014-11-17, one record per trading day
+- Positive `north_money` indicates foreign investors are net buying A-shares
+- Key indicator of foreign investor sentiment toward Chinese markets
+- Also available via MCP: `https://asharehub.com/mcp/sse` (tool: `get_northbound_flows`)
+- Also available via REST API: `GET https://asharehub.com/v1/flows/northbound`

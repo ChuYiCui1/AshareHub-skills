@@ -1,40 +1,53 @@
----
-name: market-fundamentals
-description: Query daily valuation metrics (PE, PB, turnover, market cap) for A-share stocks
-user-invocable: true
----
-
 # Market Fundamentals — A股每日估值指标
 
-使用 AShareHub SDK 查询 PE、PB、换手率、市值等每日估值数据。
+Query daily valuation metrics: PE, PB, turnover rate, market cap.
 
-## 参数
-
-- `ts_code`: 股票代码，如 `000001.SZ`
-- `start_date`: 起始日期，YYYY-MM-DD
-- `end_date`: 结束日期，YYYY-MM-DD
-- `limit`: 返回行数（默认 100，最大 5000）
-
-## 使用方式
+## Setup
 
 ```bash
-ASHAREHUB_API_KEY="${ASHAREHUB_API_KEY}" python3 -c "
+pip install asharehub
+export ASHAREHUB_API_KEY="your_key_here"
+```
+
+## Parameters
+
+| Parameter | Required | Description | Example |
+|-----------|----------|-------------|---------|
+| `ts_code` | No | Stock code | `000001.SZ` |
+| `start_date` | No | Start date (YYYY-MM-DD) | `2024-01-01` |
+| `end_date` | No | End date (YYYY-MM-DD) | `2024-12-31` |
+| `limit` | No | Max rows (default 100, max 5000) | `500` |
+
+## Code
+
+```python
 from asharehub import AShareHub
 import os, json
 
-client = AShareHub(api_key=os.environ['ASHAREHUB_API_KEY'])
-data = client.fundamentals(ts_code='${TS_CODE}', start_date='${START_DATE}', end_date='${END_DATE}', limit=${LIMIT:-100})
+client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"])
+data = client.fundamentals(ts_code="000001.SZ", start_date="2024-01-01", end_date="2024-12-31", limit=100)
 for row in data:
-    print(json.dumps(row.model_dump(mode='json'), ensure_ascii=False))
+    print(json.dumps(row.model_dump(mode="json"), ensure_ascii=False))
 client.close()
-"
 ```
 
-## 返回字段
+## Response Fields
 
-ts_code, trade_date, close, turnover_rate, turnover_rate_f, volume_ratio, pe, pe_ttm, pb, ps, ps_ttm, dv_ratio, dv_ttm, total_share, float_share, free_share, total_mv, circ_mv
+| Field | Description |
+|-------|-------------|
+| `ts_code`, `trade_date` | Stock code and date |
+| `close` | Closing price |
+| `turnover_rate`, `turnover_rate_f` | Turnover rates % |
+| `volume_ratio` | Volume ratio (today avg / 5-day avg) |
+| `pe`, `pe_ttm` | P/E ratios |
+| `pb` | Price-to-Book ratio |
+| `ps`, `ps_ttm` | Price-to-Sales ratios |
+| `dv_ratio`, `dv_ttm` | Dividend yields % |
+| `total_share`, `float_share`, `free_share` | Share counts (10k shares) |
+| `total_mv`, `circ_mv` | Market caps (10k CNY) |
 
-## 注意
+## Notes
 
-- 数据从 2010-01-04 起可用，最完整的数据集
-- total_mv/circ_mv 单位为万元
+- Data available from 2010-01-04, 13.6M+ records (most complete dataset)
+- Also available via MCP: `https://asharehub.com/mcp/sse` (tool: `get_market_fundamentals`)
+- Also available via REST API: `GET https://asharehub.com/v1/market/fundamentals`
