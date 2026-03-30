@@ -1,7 +1,7 @@
 ---
 name: AShareHub
 slug: asharehub
-description: Fetch Chinese A-share market data — daily prices, PE/PB valuations, northbound flows, money flow, margin trading, block trades, shareholder data, concept sectors, industry classification, and 50+ quarterly financial indicators. 18 endpoints covering 5000+ stocks with 10+ years of history. Requires ASHAREHUB_API_KEY environment variable.
+description: Fetch Chinese A-share market data — daily prices, PE/PB valuations, northbound flows, money flow, margin trading, block trades, shareholder data, concept sectors, industry classification, financial statements, dividends, technical indicators, and 50+ quarterly financial indicators. 29 endpoints covering 5000+ stocks with 10+ years of history. Requires ASHAREHUB_API_KEY environment variable.
 user-invocable: true
 metadata:
  {
@@ -81,6 +81,9 @@ client.close()
 | Holder Trade | `client.holder_trade()` | holder-trade.md | Major shareholder/exec trades (2019–) |
 | Concepts | `client.concepts()` | concepts.md | Concept/theme sector indices (2025–) |
 | Concept Members | `client.concept_members()` | concept-members.md | Concept index constituents (2025–) |
+| Adj Factor | `client.adj_factor()` | adj-factor.md | Forward/backward price adjustment factor |
+| Technical Factors | `client.technical_factors()` | technical-factors.md | MACD, KDJ, RSI, BOLL, CCI + adjusted prices |
+| Limit List | `client.limit_list()` | limit-list.md | Daily limit-up/limit-down stocks (2020–) |
 
 ### Capital Flows
 | Data Type | SDK Method | Reference File | Description |
@@ -94,14 +97,25 @@ client.close()
 |-----------|-----------|---------------|-------------|
 | Chip Distribution | `client.chip_distribution()` | chip-distribution.md | Cost percentiles, winner rate (2020–) |
 | FX Rates | `client.fx_daily()` | fx-daily.md | USD/CNH and currency pairs (2012–) |
+| Income Statement | `client.income()` | income.md | Revenue, costs, net income (quarterly) |
+| Balance Sheet | `client.balance_sheet()` | balance-sheet.md | Assets, liabilities, equity (quarterly) |
+| Cash Flow | `client.cash_flow()` | cash-flow.md | Operating/investing/financing cash flows |
+| Earnings Forecast | `client.forecast()` | forecast.md | Profit warnings / guidance (业绩预告) |
+| Earnings Express | `client.express()` | express.md | Flash reports before formal filings (业绩快报) |
+| Dividend | `client.dividend()` | dividend.md | Cash & stock dividend distribution |
+
+### Indices
+| Data Type | SDK Method | Reference File | Description |
+|-----------|-----------|---------------|-------------|
 | Index Daily | `client.index_daily()` | index-daily.md | SSE Composite, CSI 300, ChiNext, etc. |
-| Financial Indicators | `client.financial_indicators()` | financial-indicators.md | ROE, EPS, margins, 50+ quarterly metrics |
+| Index Weight | `client.index_weight()` | index-weight.md | Constituent stock weights (CSI 300, etc.) |
 
 ### Reference Data
 | Data Type | SDK Method | Reference File | Description |
 |-----------|-----------|---------------|-------------|
 | Stock List | `client.stock_list()` | stocks.md | 5,491 A-share stocks with basic info |
 | Industry Classification | `client.industry_list()` | industries.md | Shenwan 3-level industry mapping |
+| Trade Calendar | `client.trade_calendar()` | trade-calendar.md | SSE/SZSE trading days & holidays |
 
 ## Workflow
 
@@ -197,6 +211,17 @@ for f in fin:
 | `financial_indicators()` | Quarterly financials | `ts_code`, `start_date`, `end_date`, `limit` (max 200) |
 | `stock_list()` | Stock reference data | `ts_code`, `limit` (max 5000) |
 | `industry_list()` | Industry classification | `ts_code`, `limit` (max 5000) |
+| `adj_factor()` | Price adjustment factor | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
+| `technical_factors()` | MACD/KDJ/RSI/BOLL/CCI | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
+| `limit_list()` | Limit-up/down stocks | `ts_code`, `limit_type` (U/D/Z), `limit` (max 5000) |
+| `income()` | Income statement | `ts_code`, `start_date`, `end_date`, `limit` (max 200) |
+| `balance_sheet()` | Balance sheet | `ts_code`, `start_date`, `end_date`, `limit` (max 200) |
+| `cash_flow()` | Cash flow statement | `ts_code`, `start_date`, `end_date`, `limit` (max 200) |
+| `forecast()` | Earnings forecast | `ts_code`, `start_date`, `end_date`, `limit` (max 1000) |
+| `express()` | Earnings express | `ts_code`, `start_date`, `end_date`, `limit` (max 1000) |
+| `dividend()` | Dividend distribution | `ts_code`, `start_date`, `end_date`, `limit` (max 1000) |
+| `index_weight()` | Index constituents | `index_code`, `start_date`, `end_date`, `limit` (max 5000) |
+| `trade_calendar()` | Trading calendar | `exchange` (SSE/SZSE), `is_open`, `limit` (max 5000) |
 
 ## FAQ
 

@@ -1,6 +1,6 @@
 ---
 name: asharehub
-description: 查询中国A股市场数据（日线行情、估值指标、北向资金、资金流向、融资融券、大宗交易、龙虎榜、股东数据、概念板块、筹码分布、外汇、指数、财务指标、行业分类），共18个数据接口
+description: 查询中国A股市场数据（日线行情、估值指标、北向资金、资金流向、融资融券、大宗交易、龙虎榜、股东数据、概念板块、筹码分布、外汇、指数、财务报表、业绩预告/快报、分红送股、技术因子、涨跌停、交易日历），共29个数据接口
 user-invocable: true
 ---
 
@@ -22,6 +22,9 @@ user-invocable: true
 | 股东增减持 | holder-trade.md | 重要股东及高管交易 |
 | 概念板块 | concepts.md | AI、新能源等主题板块指数 |
 | 概念成分 | concept-members.md | 概念板块成分股 |
+| 复权因子 | adj-factor.md | 前/后复权价格计算因子 |
+| 技术因子 | technical-factors.md | MACD、KDJ、RSI、布林带、CCI + 复权价 |
+| 涨跌停统计 | limit-list.md | 每日涨停/跌停/炸板统计（2020 年起） |
 
 ### 资金流向
 | 数据类型 | 参考文档 | 说明 |
@@ -30,19 +33,35 @@ user-invocable: true
 | 个股资金流 | moneyflow.md | 大中小单资金流向 |
 | 北向持股 | northbound-holdings.md | 外资个股持仓明细 |
 
+### 财务数据
+| 数据类型 | 参考文档 | 说明 |
+|----------|----------|------|
+| 财务指标 | financial-indicators.md | ROE、EPS、利润率等 50+ 指标 |
+| 利润表 | income.md | 营收、成本、净利润（按季度） |
+| 资产负债表 | balance-sheet.md | 资产、负债、所有者权益 |
+| 现金流量表 | cash-flow.md | 经营/投资/筹资现金流 |
+| 业绩预告 | forecast.md | 预增/预减/扭亏等预告 |
+| 业绩快报 | express.md | 正式财报前的快报 |
+| 分红送股 | dividend.md | 现金分红与送转股 |
+
+### 指数
+| 数据类型 | 参考文档 | 说明 |
+|----------|----------|------|
+| 指数日线 | index-daily.md | 上证综指、沪深300、创业板等 |
+| 指数权重 | index-weight.md | 指数成分股权重 |
+
 ### 其他
 | 数据类型 | 参考文档 | 说明 |
 |----------|----------|------|
 | 筹码分布 | chip-distribution.md | 成本分位、获利比例 |
 | 外汇行情 | fx-daily.md | 汇率（默认 USD/CNH） |
-| 指数日线 | index-daily.md | 上证综指、沪深300、创业板等 |
-| 财务指标 | financial-indicators.md | ROE、EPS、利润率等 50+ 指标 |
 
 ### 参考数据
 | 数据类型 | 参考文档 | 说明 |
 |----------|----------|------|
 | 股票列表 | stocks.md | 5,491 只 A 股基本信息 |
 | 行业分类 | industries.md | 申万三级行业分类 |
+| 交易日历 | trade-calendar.md | 沪深交易所交易日与休市日 |
 
 ## 工作流程
 
