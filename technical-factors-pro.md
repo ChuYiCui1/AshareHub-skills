@@ -14,7 +14,7 @@ client.technical_factors_pro(ts_code=None, start_date=None, end_date=None, limit
 
 ```python
 df = client.technical_factors_pro(ts_code="000001.SZ", limit=1)
-print(df[["trade_date", "close_qfq", "macd_qfq", "rsi_6_qfq", "ma20_qfq"]])
+print(df[["trade_date", "close_qfq", "macd_qfq", "rsi_qfq_6", "ma_qfq_20"]])
 ```
 
 ## Parameters
