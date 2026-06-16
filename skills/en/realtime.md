@@ -8,7 +8,7 @@ client.realtime(ts_code=None, limit=100, offset=0)
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, name, price, open, high, low, pre_close, pct_chg, volume, amount, trade_time, updated_at. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: ts_code, name, price, open, high, low, pre_close, pct_chg, volume, amount, trade_time. Returns empty DataFrame if no data.
 
 ## Example
 
@@ -39,7 +39,6 @@ print(df[["ts_code", "name", "price", "pct_chg"]])
 | volume | Cumulative volume (shares) |
 | amount | Cumulative turnover (CNY) |
 | trade_time | Quote timestamp from the source |
-| updated_at | Last refresh time into AShareHub |
 
 ## Notes
 

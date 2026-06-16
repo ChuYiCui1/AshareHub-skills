@@ -8,7 +8,7 @@ client.realtime(ts_code=None, limit=100, offset=0)
 
 ## 返回
 
-`pd.DataFrame` — 列：ts_code, name, price, open, high, low, pre_close, pct_chg, volume, amount, trade_time, updated_at。无数据时返回空 DataFrame。
+`pd.DataFrame` — 列：ts_code, name, price, open, high, low, pre_close, pct_chg, volume, amount, trade_time。无数据时返回空 DataFrame。
 
 ## 示例
 
@@ -39,7 +39,6 @@ print(df[["ts_code", "name", "price", "pct_chg"]])
 | volume | 累计成交量(股) |
 | amount | 累计成交额(元) |
 | trade_time | 数据源的行情时间戳 |
-| updated_at | 写入 AShareHub 的最近刷新时间 |
 
 ## 说明
 
