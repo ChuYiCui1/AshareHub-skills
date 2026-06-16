@@ -61,6 +61,7 @@ user-invocable: true
 ### 其他
 | 数据类型 | 参考文档 | 说明 |
 |----------|----------|------|
+| 财经快讯 | news-flash.md | 实时新闻快讯（财联社/金十/新浪，中文） |
 | 筹码分布 | chip-distribution.md | 成本分位、获利比例 |
 | 外汇行情 | fx-daily.md | 汇率（默认 USD/CNH） |
 

@@ -98,6 +98,7 @@ client.close()
 ### Other
 | Data Type | SDK Method | Reference File | Description |
 |-----------|-----------|---------------|-------------|
+| News Flash | `client.news_flash()` | news-flash.md | Real-time financial news (cls/jin10/sina, Chinese) |
 | Chip Distribution | `client.chip_distribution()` | chip-distribution.md | Cost percentiles, winner rate (2020–) |
 | FX Rates | `client.fx_daily()` | fx-daily.md | USD/CNH and currency pairs (2012–) |
 | Income Statement | `client.income()` | income.md | Revenue, costs, net income (quarterly) |
