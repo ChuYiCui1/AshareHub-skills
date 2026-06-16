@@ -71,6 +71,7 @@ client.close()
 ### Market Data
 | Data Type | SDK Method | Reference File | Description |
 |-----------|-----------|---------------|-------------|
+| Real-time Quote | `client.realtime()` | realtime.md | Latest intraday price snapshot per security (basket query) |
 | Daily Prices | `client.market_daily()` | market-daily.md | OHLCV prices, returns, volume (2020–) |
 | Fundamentals | `client.fundamentals()` | market-fundamentals.md | PE, PB, turnover rate, market cap (2010–) |
 | Margin Trading | `client.margin()` | margin.md | Margin buy/short sell balances (2020–) |

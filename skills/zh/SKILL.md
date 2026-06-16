@@ -13,6 +13,7 @@ user-invocable: true
 ### 行情数据
 | 数据类型 | 参考文档 | 说明 |
 |----------|----------|------|
+| 实时行情 | realtime.md | 每股最新盘中快照价(支持一篮子查询) |
 | 日线行情 | market-daily.md | OHLC 价格、涨跌幅、成交量 |
 | 每日估值 | market-fundamentals.md | PE、PB、换手率、市值 |
 | 融资融券 | margin.md | 融资余额、融券余额 |
