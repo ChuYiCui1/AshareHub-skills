@@ -66,6 +66,30 @@ print(df[["trade_date", "open", "high", "low", "close", "vol"]])
 client.close()
 ```
 
+## Updating the skill & SDK
+
+When the user asks to "update the skill / update the SDK / get the latest version", run the following directly — no extra confirmation needed:
+
+- **Update both at once (recommended, one line):**
+
+  ```bash
+  curl -fsSL "https://asharehub.com/skill/install?lang=en" | bash && pip install -U asharehub
+  ```
+
+- Update this skill only (overwrites the endpoint docs in `.claude/skills/asharehub/` with the latest):
+
+  ```bash
+  curl -fsSL "https://asharehub.com/skill/install?lang=en" | bash
+  ```
+
+- Update the Python SDK only:
+
+  ```bash
+  pip install -U asharehub
+  ```
+
+After updating, tell the user to re-run `/asharehub` to load the latest docs.
+
 ## Available Data Endpoints
 
 ### Market Data

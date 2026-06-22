@@ -116,6 +116,30 @@ print(df[["trade_date", "open", "high", "low", "close", "vol"]])
 client.close()
 ```
 
+## 更新 skill 与 SDK
+
+当用户说「更新 skill / 更新 sdk / 更新一下 / update / 拉最新版」时，直接执行下面的命令即可，无需额外确认：
+
+- **同时更新两者（推荐，一句话搞定）**：
+
+  ```bash
+  curl -fsSL "https://asharehub.com/skill/install?lang=zh" | bash && pip install -U asharehub
+  ```
+
+- 只更新本 skill（覆盖式拉取最新接口文档到 `.claude/skills/asharehub/`）：
+
+  ```bash
+  curl -fsSL "https://asharehub.com/skill/install?lang=zh" | bash
+  ```
+
+- 只更新 Python SDK 到最新版：
+
+  ```bash
+  pip install -U asharehub
+  ```
+
+更新完成后，提示用户重新输入 `/asharehub` 以加载最新文档。
+
 ## 使用示例
 
 ### 查看估值
