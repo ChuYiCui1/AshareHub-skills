@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.dividend(ts_code=None, start_date=None, end_date=None, limit=50, offset=0)
+client.dividend(symbol=None, start_date=None, end_date=None, limit=50, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, end_date, ann_date, cash_div, stk_div, ex_date, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, end_date, ann_date, cash_div, stk_div, ex_date, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.dividend(ts_code="000001.SZ", limit=3)
+df = client.dividend(symbol="000001.SZ", limit=3)
 print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Announcement start date, YYYY-MM-DD |
 | `end_date` | str | None | Announcement end date, YYYY-MM-DD |
 | `limit` | int | 50 | Max rows, up to 1000 |
@@ -31,7 +31,7 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code` | Stock code |
+| `symbol` | Stock code |
 | `end_date` | Dividend fiscal year end |
 | `ann_date` | Plan announcement date |
 | `div_proc` | Progress: 预案/董事会预案/股东大会/实施 |
@@ -47,4 +47,4 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 ## Notes
 
 - Buy before `ex_date` to qualify for dividend
-- API path: `GET /v1/shareholders/dividend`
+- API path: `GET /v2/shareholders/dividend`

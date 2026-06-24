@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.disclosure_date(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.disclosure_date(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.disclosure_date(ts_code=None, start_date=None, end_date=None, limit=100, 
 ## Example
 
 ```python
-df = client.disclosure_date(ts_code="000001.SZ", limit=5)
+df = client.disclosure_date(symbol="000001.SZ", limit=5)
 print(df[["end_date", "pre_date", "actual_date"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["end_date", "pre_date", "actual_date"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code |
+| `symbol` | str | None | Stock code |
 | `start_date` | str | None | Period start YYYY-MM-DD |
 | `end_date` | str | None | Period end YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 2000 |
@@ -29,10 +29,10 @@ print(df[["end_date", "pre_date", "actual_date"]])
 
 ## Response Fields
 
-ts_code, ann_date (latest announcement), end_date (fiscal period), pre_date (planned date), actual_date (actual disclosure), modify_date.
+symbol, ann_date (latest announcement), end_date (fiscal period), pre_date (planned date), actual_date (actual disclosure), modify_date.
 
 ## Data Coverage
 
 - From: 2001-02-06
 - Use to track when companies will release earnings
-- API path: `GET /v1/financials/disclosure-date`
+- API path: `GET /v2/financials/disclosure-date`

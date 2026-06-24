@@ -40,4 +40,4 @@ print(df[["cal_date", "is_open"]])
 ## 备注
 
 - 覆盖上交所和深交所
-- API 路径：`GET /v1/reference/trade-calendar`
+- API 路径：`GET /v2/reference/trade-calendar`

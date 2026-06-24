@@ -28,17 +28,17 @@ This endpoint shows **foreign investor holdings of A-share stocks** at the indiv
 ## SDK Method
 
 ```python
-client.northbound_holdings(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.northbound_holdings(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: trade_date, ts_code, name, vol, ratio, exchange. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: trade_date, symbol, name, vol, ratio, exchange. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.northbound_holdings(ts_code="000001.SZ", limit=3)
+df = client.northbound_holdings(symbol="000001.SZ", limit=3)
 print(df[["trade_date", "name", "vol", "ratio"]])
 ```
 
@@ -46,7 +46,7 @@ print(df[["trade_date", "name", "vol", "ratio"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 5000 |
@@ -57,7 +57,7 @@ print(df[["trade_date", "name", "vol", "ratio"]])
 | Field | Description |
 |-------|-------------|
 | `trade_date` | Trading date |
-| `ts_code` | Stock code |
+| `symbol` | Stock code |
 | `name` | Stock name (Chinese) |
 | `vol` | Shares held by northbound investors |
 | `ratio` | Holding ratio (% of total shares) |
@@ -67,4 +67,4 @@ print(df[["trade_date", "name", "vol", "ratio"]])
 
 - From: 2020-01-02
 - Key signal for foreign investor positioning
-- API path: `GET /v1/flows/moneyflow-hsgt-holdings`
+- API path: `GET /v2/flows/moneyflow-hsgt-holdings`

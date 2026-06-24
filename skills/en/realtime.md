@@ -3,26 +3,26 @@
 ## SDK Method
 
 ```python
-client.realtime(ts_code=None, limit=100, offset=0)
+client.realtime(symbol=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, name, price, open, high, low, pre_close, pct_chg, volume, amount, trade_time. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, name, price, open, high, low, pre_close, pct_chg, volume, amount, trade_time. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-# A basket of securities in one call (comma-separated ts_code, up to 200)
-df = client.realtime(ts_code="600519.SH,000001.SZ,000001.SH")
-print(df[["ts_code", "name", "price", "pct_chg"]])
+# A basket of securities in one call (comma-separated symbol, up to 200)
+df = client.realtime(symbol="600519.SH,000001.SZ,000001.SH")
+print(df[["symbol", "name", "price", "pct_chg"]])
 ```
 
 ## Parameters
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| ts_code | str | No | Ticker, or comma-separated basket (up to 200), e.g. `600519.SH,000001.SZ`. Omit to page through the whole market. |
+| symbol | str | No | Ticker, or comma-separated basket (up to 200), e.g. `600519.SH,000001.SZ`. Omit to page through the whole market. |
 | limit | int | No | Max rows (default 100, max 5000) |
 | offset | int | No | Pagination offset (default 0) |
 
@@ -30,7 +30,7 @@ print(df[["ts_code", "name", "price", "pct_chg"]])
 
 | Field | Description |
 |-------|-------------|
-| ts_code | Stock / index ticker |
+| symbol | Stock / index ticker |
 | name | Security name |
 | price | Latest traded price |
 | open / high / low | Intraday open / high / low |

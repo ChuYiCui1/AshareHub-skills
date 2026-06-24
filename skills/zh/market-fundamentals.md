@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.fundamentals(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.fundamentals(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.fundamentals(ts_code=None, start_date=None, end_date=None, limit=100, off
 ## 示例
 
 ```python
-df = client.fundamentals(ts_code="600519.SH", limit=3)
+df = client.fundamentals(symbol="600519.SH", limit=3)
 print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 股票代码，如 `000001.SZ` |
+| `symbol` | str | None | 股票代码，如 `000001.SZ` |
 | `start_date` | str | None | 起始日期，YYYY-MM-DD |
 | `end_date` | str | None | 结束日期，YYYY-MM-DD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
@@ -31,7 +31,7 @@ print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 
 | 字段 | 说明 |
 |------|------|
-| `ts_code`, `trade_date` | 股票代码、日期 |
+| `symbol`, `trade_date` | 股票代码、日期 |
 | `close` | 收盘价 |
 | `turnover_rate`, `turnover_rate_f` | 换手率 % |
 | `volume_ratio` | 量比（当日均量/5日均量） |
@@ -45,4 +45,4 @@ print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 ## 数据范围
 
 - 起始日期：2010-01-04
-- API 路径：`GET /v1/market/fundamentals`
+- API 路径：`GET /v2/market/fundamentals`

@@ -86,7 +86,7 @@ API 只包含交易日数据。查询非交易日（周末/节假日）会返回
 
 ```python
 # 不指定日期 + limit=1，返回最近一个交易日的记录
-df = client.market_daily(ts_code="000001.SZ", limit=1)
+df = client.market_daily(symbol="000001.SZ", limit=1)
 ```
 
 ## 工作流程
@@ -107,10 +107,10 @@ df = client.market_daily(ts_code="000001.SZ", limit=1)
 from asharehub import AShareHub
 import os
 
-client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"])
+client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"], version="v2")
 
 # 返回 pd.DataFrame
-df = client.market_daily(ts_code="000001.SZ", start_date="2024-01-01", end_date="2024-01-31")
+df = client.market_daily(symbol="000001.SZ", start_date="2024-01-01", end_date="2024-01-31")
 print(df[["trade_date", "open", "high", "low", "close", "vol"]])
 
 client.close()
@@ -145,7 +145,7 @@ client.close()
 ### 查看估值
 
 ```python
-df = client.fundamentals(ts_code="600519.SH", start_date="2024-01-01")
+df = client.fundamentals(symbol="600519.SH", start_date="2024-01-01")
 print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 ```
 
@@ -159,6 +159,6 @@ print(df[["trade_date", "north_money", "south_money"]])
 ### 财务指标
 
 ```python
-df = client.financial_indicators(ts_code="000001.SZ")
+df = client.financial_indicators(symbol="000001.SZ")
 print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 ```

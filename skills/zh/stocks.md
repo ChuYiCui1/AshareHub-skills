@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.stock_list(ts_code=None, limit=100, offset=0)
+client.stock_list(symbol=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -13,15 +13,15 @@ client.stock_list(ts_code=None, limit=100, offset=0)
 ## 示例
 
 ```python
-df = client.stock_list(ts_code="000001.SZ")
-print(df[["ts_code", "name", "industry", "list_date"]])
+df = client.stock_list(symbol="000001.SZ")
+print(df[["symbol", "name", "industry", "list_date"]])
 ```
 
 ## 参数
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
+| `symbol` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
 | `limit` | int | 100 | 返回行数，最大 5000 |
 | `offset` | int | 0 | 分页偏移量 |
 
@@ -29,7 +29,7 @@ print(df[["ts_code", "name", "industry", "list_date"]])
 
 | 字段 | 说明 |
 |------|------|
-| `ts_code` | 股票代码 |
+| `symbol` | 股票代码 |
 | `symbol` | 证券代码 |
 | `name` | 股票名称 |
 | `area` | 地域 |
@@ -48,4 +48,4 @@ print(df[["ts_code", "name", "industry", "list_date"]])
 ## 数据范围
 
 - 数据类型：静态数据
-- API 路径：`GET /v1/reference/stocks`
+- API 路径：`GET /v2/reference/stocks`

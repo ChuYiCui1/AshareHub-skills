@@ -70,4 +70,4 @@ print(df[["trade_date", "north_money", "south_money"]])
 - From: 2014-11-17
 - One record per trading day
 - Key indicator of foreign investor sentiment toward A-shares
-- API path: `GET /v1/flows/moneyflow-hsgt`
+- API path: `GET /v2/flows/moneyflow-hsgt`

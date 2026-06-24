@@ -39,17 +39,17 @@
 ## SDK Method
 
 ```python
-client.margin(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.margin(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: trade_date, ts_code, name, rzye, rqye, rzrqye, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: trade_date, symbol, name, rzye, rqye, rzrqye, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.margin(ts_code="000001.SZ", limit=3)
+df = client.margin(symbol="000001.SZ", limit=3)
 print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
 ```
 
@@ -57,7 +57,7 @@ print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 5000 |
@@ -68,7 +68,7 @@ print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
 | Field | Description |
 |-------|-------------|
 | `trade_date` | Trading date |
-| `ts_code` | Stock code |
+| `symbol` | Stock code |
 | `name` | Stock name |
 | `rzye` | Margin buy balance (CNY) — total outstanding margin loans |
 | `rqye` | Short sell balance (CNY) — total outstanding short positions |
@@ -83,4 +83,4 @@ print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
 
 - From: 2020-01-02
 - Rising rzye = bullish leverage; rising rqye = bearish sentiment
-- API path: `GET /v1/market/margin`
+- API path: `GET /v2/market/margin`

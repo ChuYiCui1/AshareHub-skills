@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.income(ts_code=None, start_date=None, end_date=None, limit=20, offset=0)
+client.income(symbol=None, start_date=None, end_date=None, limit=20, offset=0)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.income(ts_code=None, start_date=None, end_date=None, limit=20, offset=0)
 ## 示例
 
 ```python
-df = client.income(ts_code="000001.SZ", limit=3)
+df = client.income(symbol="000001.SZ", limit=3)
 print(df[["end_date", "revenue", "n_income"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["end_date", "revenue", "n_income"]])
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 股票代码 |
+| `symbol` | str | None | 股票代码 |
 | `start_date` | str | None | 报告期起始，YYYY-MM-DD |
 | `end_date` | str | None | 报告期截止，YYYY-MM-DD |
 | `limit` | int | 20 | 返回行数，最大 200 |
@@ -41,4 +41,4 @@ print(df[["end_date", "revenue", "n_income"]])
 
 - 金额单位：元（CNY）
 - `end_date` 为报告期（如 2024-12-31 为年报，2024-06-30 为半年报）
-- API 路径：`GET /v1/financials/income`
+- API 路径：`GET /v2/financials/income`

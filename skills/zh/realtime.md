@@ -3,26 +3,26 @@
 ## SDK 方法
 
 ```python
-client.realtime(ts_code=None, limit=100, offset=0)
+client.realtime(symbol=None, limit=100, offset=0)
 ```
 
 ## 返回
 
-`pd.DataFrame` — 列：ts_code, name, price, open, high, low, pre_close, pct_chg, volume, amount, trade_time。无数据时返回空 DataFrame。
+`pd.DataFrame` — 列：symbol, name, price, open, high, low, pre_close, pct_chg, volume, amount, trade_time。无数据时返回空 DataFrame。
 
 ## 示例
 
 ```python
-# 一次查一篮子(ts_code 逗号分隔，最多 200 只)
-df = client.realtime(ts_code="600519.SH,000001.SZ,000001.SH")
-print(df[["ts_code", "name", "price", "pct_chg"]])
+# 一次查一篮子(symbol 逗号分隔，最多 200 只)
+df = client.realtime(symbol="600519.SH,000001.SZ,000001.SH")
+print(df[["symbol", "name", "price", "pct_chg"]])
 ```
 
 ## 参数
 
 | 名称 | 类型 | 必填 | 说明 |
 |------|------|------|------|
-| ts_code | str | 否 | 单只代码，或逗号分隔的一篮子(最多 200)，如 `600519.SH,000001.SZ`。不填则翻页查全市场。 |
+| symbol | str | 否 | 单只代码，或逗号分隔的一篮子(最多 200)，如 `600519.SH,000001.SZ`。不填则翻页查全市场。 |
 | limit | int | 否 | 最大行数(默认 100，最大 5000) |
 | offset | int | 否 | 分页偏移(默认 0) |
 
@@ -30,7 +30,7 @@ print(df[["ts_code", "name", "price", "pct_chg"]])
 
 | 字段 | 说明 |
 |------|------|
-| ts_code | 股票/指数代码 |
+| symbol | 股票/指数代码 |
 | name | 证券名称 |
 | price | 最新成交价 |
 | open / high / low | 当日开/高/低 |

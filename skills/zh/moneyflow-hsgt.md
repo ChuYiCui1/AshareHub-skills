@@ -69,4 +69,4 @@ print(df[["trade_date", "north_money", "south_money"]])
 - 起始日期：2014-11-17
 - 每个交易日一条记录
 - 外资对 A 股情绪的关键指标
-- API 路径：`GET /v1/flows/moneyflow-hsgt`
+- API 路径：`GET /v2/flows/moneyflow-hsgt`

@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.income(ts_code=None, start_date=None, end_date=None, limit=20, offset=0)
+client.income(symbol=None, start_date=None, end_date=None, limit=20, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, ann_date, end_date, revenue, n_income, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, ann_date, end_date, revenue, n_income, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.income(ts_code="000001.SZ", limit=3)
+df = client.income(symbol="000001.SZ", limit=3)
 print(df[["end_date", "revenue", "n_income"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["end_date", "revenue", "n_income"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Report period start, YYYY-MM-DD |
 | `end_date` | str | None | Report period end, YYYY-MM-DD |
 | `limit` | int | 20 | Max rows, up to 200 |
@@ -44,4 +44,4 @@ print(df[["end_date", "revenue", "n_income"]])
 
 - All monetary values in CNY
 - `end_date` = fiscal period (e.g. 2024-12-31 for annual, 2024-06-30 for H1)
-- API path: `GET /v1/financials/income`
+- API path: `GET /v2/financials/income`

@@ -30,17 +30,17 @@ For each stock on each day, it estimates:
 ## SDK Method
 
 ```python
-client.chip_distribution(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.chip_distribution(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, trade_date, weight_avg, winner_rate, cost_5pct, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, trade_date, weight_avg, winner_rate, cost_5pct, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.chip_distribution(ts_code="000001.SZ", limit=3)
+df = client.chip_distribution(symbol="000001.SZ", limit=3)
 print(df[["trade_date", "weight_avg", "winner_rate"]])
 ```
 
@@ -48,7 +48,7 @@ print(df[["trade_date", "weight_avg", "winner_rate"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 5000 |
@@ -58,7 +58,7 @@ print(df[["trade_date", "weight_avg", "winner_rate"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code`, `trade_date` | Stock code and date |
+| `symbol`, `trade_date` | Stock code and date |
 | `his_low`, `his_high` | Historical price extremes (CNY) |
 | `cost_5pct` | 5th percentile cost basis (CNY) |
 | `cost_15pct` | 15th percentile cost basis (CNY) |
@@ -72,4 +72,4 @@ print(df[["trade_date", "weight_avg", "winner_rate"]])
 
 - From: 2020-01-02
 - China-specific metric for analyzing shareholder cost structure
-- API path: `GET /v1/chips/distribution`
+- API path: `GET /v2/chips/distribution`

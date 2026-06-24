@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.audit(ts_code=None, start_date=None, end_date=None, limit=50, offset=0)
+client.audit(symbol=None, start_date=None, end_date=None, limit=50, offset=0)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.audit(ts_code=None, start_date=None, end_date=None, limit=50, offset=0)
 ## Example
 
 ```python
-df = client.audit(ts_code="000001.SZ", limit=3)
+df = client.audit(symbol="000001.SZ", limit=3)
 print(df[["end_date", "audit_result", "audit_agency", "audit_fees"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["end_date", "audit_result", "audit_agency", "audit_fees"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code |
+| `symbol` | str | None | Stock code |
 | `start_date` | str | None | Period start YYYY-MM-DD |
 | `end_date` | str | None | Period end YYYY-MM-DD |
 | `limit` | int | 50 | Max rows, up to 1000 |
@@ -29,10 +29,10 @@ print(df[["end_date", "audit_result", "audit_agency", "audit_fees"]])
 
 ## Response Fields
 
-ts_code, ann_date, end_date, audit_result (opinion type), audit_fees, audit_agency (firm name), audit_sign (signing auditors).
+symbol, ann_date, end_date, audit_result (opinion type), audit_fees, audit_agency (firm name), audit_sign (signing auditors).
 
 ## Data Coverage
 
 - From: 2006-04-20
 - Annual data only (released with annual reports)
-- API path: `GET /v1/financials/audit`
+- API path: `GET /v2/financials/audit`

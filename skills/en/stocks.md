@@ -3,25 +3,25 @@
 ## SDK Method
 
 ```python
-client.stock_list(ts_code=None, limit=100, offset=0)
+client.stock_list(symbol=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, symbol, name, industry, list_date, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, symbol, name, industry, list_date, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.stock_list(ts_code="000001.SZ")
-print(df[["ts_code", "name", "industry", "list_date"]])
+df = client.stock_list(symbol="000001.SZ")
+print(df[["symbol", "name", "industry", "list_date"]])
 ```
 
 ## Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -29,7 +29,7 @@ print(df[["ts_code", "name", "industry", "list_date"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code` | Stock ticker (e.g. 000001.SZ) |
+| `symbol` | Stock ticker (e.g. 000001.SZ) |
 | `symbol` | Ticker symbol (e.g. 000001) |
 | `name` | Stock name (Chinese) |
 | `area` | Province/city |
@@ -48,4 +48,4 @@ print(df[["ts_code", "name", "industry", "list_date"]])
 ## Data Coverage
 
 - Static reference data
-- API path: `GET /v1/reference/stocks`
+- API path: `GET /v2/reference/stocks`

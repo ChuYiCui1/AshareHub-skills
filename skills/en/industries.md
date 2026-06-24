@@ -3,25 +3,25 @@
 ## SDK Method
 
 ```python
-client.industry_list(ts_code=None, limit=100, offset=0)
+client.industry_list(symbol=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, name, l1_code, l1_name, l2_code, l2_name, l3_code, l3_name. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, name, l1_code, l1_name, l2_code, l2_name, l3_code, l3_name. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.industry_list(ts_code="000001.SZ")
-print(df[["ts_code", "l1_name", "l2_name", "l3_name"]])
+df = client.industry_list(symbol="000001.SZ")
+print(df[["symbol", "l1_name", "l2_name", "l3_name"]])
 ```
 
 ## Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -29,7 +29,7 @@ print(df[["ts_code", "l1_name", "l2_name", "l3_name"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code` | Stock ticker |
+| `symbol` | Stock ticker |
 | `name` | Stock name |
 | `l1_code` | L1 industry code |
 | `l1_name` | L1 industry name (31 industries) |
@@ -41,4 +41,4 @@ print(df[["ts_code", "l1_name", "l2_name", "l3_name"]])
 ## Data Coverage
 
 - Static reference data (SW2021 standard)
-- API path: `GET /v1/reference/industries`
+- API path: `GET /v2/reference/industries`

@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.forecast(ts_code=None, start_date=None, end_date=None, limit=50, offset=0)
+client.forecast(symbol=None, start_date=None, end_date=None, limit=50, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, ann_date, end_date, type, net_profit_min, net_profit_max, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, ann_date, end_date, type, net_profit_min, net_profit_max, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.forecast(ts_code="000001.SZ", limit=3)
+df = client.forecast(symbol="000001.SZ", limit=3)
 print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Announcement start date, YYYY-MM-DD |
 | `end_date` | str | None | Announcement end date, YYYY-MM-DD |
 | `limit` | int | 50 | Max rows, up to 1000 |
@@ -31,7 +31,7 @@ print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code` | Stock code |
+| `symbol` | Stock code |
 | `ann_date` | Announcement date |
 | `end_date` | Fiscal period end |
 | `type` | Forecast type (see below) |
@@ -56,4 +56,4 @@ print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 
 ## Notes
 
-- API path: `GET /v1/financials/forecast`
+- API path: `GET /v2/financials/forecast`

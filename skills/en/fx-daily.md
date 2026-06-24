@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.fx_daily(ts_code="USDCNH.FXCM", start_date=None, end_date=None, limit=100, offset=0)
+client.fx_daily(symbol="USDCNH.FXCM", start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, trade_date, bid_open/close/high/low, ask_open/close/high/low. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, trade_date, bid_open/close/high/low, ask_open/close/high/low. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.fx_daily(ts_code="USDCNH.FXCM", limit=3)
+df = client.fx_daily(symbol="USDCNH.FXCM", limit=3)
 print(df[["trade_date", "bid_close", "ask_close"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["trade_date", "bid_close", "ask_close"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | `USDCNH.FXCM` | FX pair code |
+| `symbol` | str | `USDCNH.FXCM` | FX pair code |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 2000 |
@@ -31,7 +31,7 @@ print(df[["trade_date", "bid_close", "ask_close"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code` | FX pair code |
+| `symbol` | FX pair code |
 | `trade_date` | Trading date |
 | `bid_open`, `bid_close`, `bid_high`, `bid_low` | Bid OHLC prices |
 | `ask_open`, `ask_close`, `ask_high`, `ask_low` | Ask OHLC prices |
@@ -42,4 +42,4 @@ print(df[["trade_date", "bid_close", "ask_close"]])
 - From: 2012-01-01
 - Default pair: USDCNH (USD vs offshore CNY)
 - Rising USDCNH = CNY weakening, typically pressures foreign inflows into A-shares
-- API path: `GET /v1/fx/daily`
+- API path: `GET /v2/fx/daily`

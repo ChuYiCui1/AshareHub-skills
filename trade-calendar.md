@@ -41,4 +41,4 @@ print(df[["cal_date", "is_open"]])
 
 - Covers SSE and SZSE exchanges
 - Useful for scheduling data pulls and handling holidays
-- API path: `GET /v1/reference/trade-calendar`
+- API path: `GET /v2/reference/trade-calendar`

@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.financial_indicators(ts_code=None, start_date=None, end_date=None, limit=20, offset=0)
+client.financial_indicators(symbol=None, start_date=None, end_date=None, limit=20, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, ann_date, end_date, roe, eps, netprofit_margin, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, ann_date, end_date, roe, eps, netprofit_margin, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.financial_indicators(ts_code="000001.SZ", limit=3)
+df = client.financial_indicators(symbol="000001.SZ", limit=3)
 print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Report period start, YYYY-MM-DD |
 | `end_date` | str | None | Report period end, YYYY-MM-DD |
 | `limit` | int | 20 | Max rows, up to 200 |
@@ -44,4 +44,4 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 ## Data Coverage
 
 - `end_date` refers to fiscal period end (e.g. `2024-12-31` = annual, `2024-06-30` = semi-annual)
-- API path: `GET /v1/financials/indicators`
+- API path: `GET /v2/financials/indicators`

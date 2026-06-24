@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.dividend(ts_code=None, start_date=None, end_date=None, limit=50, offset=0)
+client.dividend(symbol=None, start_date=None, end_date=None, limit=50, offset=0)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.dividend(ts_code=None, start_date=None, end_date=None, limit=50, offset=0
 ## 示例
 
 ```python
-df = client.dividend(ts_code="000001.SZ", limit=3)
+df = client.dividend(symbol="000001.SZ", limit=3)
 print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 股票代码 |
+| `symbol` | str | None | 股票代码 |
 | `start_date` | str | None | 公告起始日期，YYYY-MM-DD |
 | `end_date` | str | None | 公告截止日期，YYYY-MM-DD |
 | `limit` | int | 50 | 返回行数，最大 1000 |
@@ -31,7 +31,7 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 
 | 字段 | 说明 |
 |------|------|
-| `ts_code` | 股票代码 |
+| `symbol` | 股票代码 |
 | `end_date` | 分红年度 |
 | `ann_date` | 预案公告日 |
 | `div_proc` | 实施进度（预案/董事会预案/股东大会/实施） |
@@ -45,4 +45,4 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 ## 备注
 
 - 在 `ex_date` 之前买入可获得分红
-- API 路径：`GET /v1/shareholders/dividend`
+- API 路径：`GET /v2/shareholders/dividend`

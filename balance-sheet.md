@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.balance_sheet(ts_code=None, start_date=None, end_date=None, limit=20, offset=0)
+client.balance_sheet(symbol=None, start_date=None, end_date=None, limit=20, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, ann_date, end_date, total_assets, total_liab, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, ann_date, end_date, total_assets, total_liab, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.balance_sheet(ts_code="000001.SZ", limit=3)
+df = client.balance_sheet(symbol="000001.SZ", limit=3)
 print(df[["end_date", "total_assets", "total_liab"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["end_date", "total_assets", "total_liab"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Report period start, YYYY-MM-DD |
 | `end_date` | str | None | Report period end, YYYY-MM-DD |
 | `limit` | int | 20 | Max rows, up to 200 |
@@ -42,4 +42,4 @@ print(df[["end_date", "total_assets", "total_liab"]])
 ## Notes
 
 - All monetary values in CNY
-- API path: `GET /v1/financials/balance-sheet`
+- API path: `GET /v2/financials/balance-sheet`

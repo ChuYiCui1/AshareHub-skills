@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.express(ts_code=None, start_date=None, end_date=None, limit=50, offset=0)
+client.express(symbol=None, start_date=None, end_date=None, limit=50, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, ann_date, end_date, revenue, n_income, diluted_roe, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, ann_date, end_date, revenue, n_income, diluted_roe, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.express(ts_code="000001.SZ", limit=3)
+df = client.express(symbol="000001.SZ", limit=3)
 print(df[["ann_date", "end_date", "revenue", "n_income", "diluted_roe"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["ann_date", "end_date", "revenue", "n_income", "diluted_roe"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Announcement start date, YYYY-MM-DD |
 | `end_date` | str | None | Announcement end date, YYYY-MM-DD |
 | `limit` | int | 50 | Max rows, up to 1000 |
@@ -31,7 +31,7 @@ print(df[["ann_date", "end_date", "revenue", "n_income", "diluted_roe"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code` | Stock code |
+| `symbol` | Stock code |
 | `ann_date` | Announcement date |
 | `end_date` | Fiscal period end |
 | `revenue` | Revenue (CNY) |
@@ -48,4 +48,4 @@ print(df[["ann_date", "end_date", "revenue", "n_income", "diluted_roe"]])
 ## Notes
 
 - Flash reports are released before formal financial statements
-- API path: `GET /v1/financials/express`
+- API path: `GET /v2/financials/express`

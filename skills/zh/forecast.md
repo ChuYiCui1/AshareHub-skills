@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.forecast(ts_code=None, start_date=None, end_date=None, limit=50, offset=0)
+client.forecast(symbol=None, start_date=None, end_date=None, limit=50, offset=0)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.forecast(ts_code=None, start_date=None, end_date=None, limit=50, offset=0
 ## 示例
 
 ```python
-df = client.forecast(ts_code="000001.SZ", limit=3)
+df = client.forecast(symbol="000001.SZ", limit=3)
 print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 股票代码 |
+| `symbol` | str | None | 股票代码 |
 | `start_date` | str | None | 公告起始日期，YYYY-MM-DD |
 | `end_date` | str | None | 公告截止日期，YYYY-MM-DD |
 | `limit` | int | 50 | 返回行数，最大 1000 |
@@ -31,7 +31,7 @@ print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 
 | 字段 | 说明 |
 |------|------|
-| `ts_code` | 股票代码 |
+| `symbol` | 股票代码 |
 | `ann_date` | 公告日期 |
 | `end_date` | 报告期 |
 | `type` | 预告类型（预增/预减/扭亏/首亏/续亏/续盈/略增/略减） |
@@ -42,4 +42,4 @@ print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 
 ## 备注
 
-- API 路径：`GET /v1/financials/forecast`
+- API 路径：`GET /v2/financials/forecast`

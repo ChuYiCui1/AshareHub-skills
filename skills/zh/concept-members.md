@@ -10,8 +10,8 @@
 - **成分变更追踪**：随着相关性变化，概念会增删成分。追踪变更可识别新晋"概念成分"。
 
 ### 关键字段解读
-- **`ts_code`**：概念指数代码（父级）。
-- **`con_code`**：成分股代码（成员）。
+- **`symbol`**：概念指数代码（父级）。
+- **`con_symbol`**：成分股代码（成员）。
 - **`name`**：成分股名称（中文）。
 - **`trade_date`**：归属记录日期——成分会变化，时间很重要。
 
@@ -22,7 +22,7 @@
 ## SDK 方法
 
 ```python
-client.concept_members(ts_code=None, con_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.concept_members(symbol=None, con_symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -32,16 +32,16 @@ client.concept_members(ts_code=None, con_code=None, start_date=None, end_date=No
 ## 示例
 
 ```python
-df = client.concept_members(ts_code="TS2", limit=5)
-print(df[["con_code", "name"]])
+df = client.concept_members(symbol="TS2", limit=5)
+print(df[["con_symbol", "name"]])
 ```
 
 ## 参数
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 板块代码，如 `BK0425.DC` |
-| `con_code` | str | None | 成分股代码，如 `000001.SZ` |
+| `symbol` | str | None | 板块代码，如 `BK0425.DC` |
+| `con_symbol` | str | None | 成分股代码，如 `000001.SZ` |
 | `start_date` | str | None | 起始日期，YYYY-MM-DD |
 | `end_date` | str | None | 结束日期，YYYY-MM-DD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
@@ -52,11 +52,11 @@ print(df[["con_code", "name"]])
 | 字段 | 说明 |
 |------|------|
 | `trade_date` | 交易日期 |
-| `ts_code` | 板块代码 |
-| `con_code` | 成分股代码 |
+| `symbol` | 板块代码 |
+| `con_symbol` | 成分股代码 |
 | `name` | 股票名称 |
 
 ## 数据范围
 
 - 起始日期：2025-01-02
-- API 路径：`GET /v1/market/concept-members`
+- API 路径：`GET /v2/market/concept-members`

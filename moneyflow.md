@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.moneyflow(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.moneyflow(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, trade_date, buy/sell amounts by order size, net_mf_amount. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, trade_date, buy/sell amounts by order size, net_mf_amount. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.moneyflow(ts_code="000001.SZ", limit=3)
+df = client.moneyflow(symbol="000001.SZ", limit=3)
 print(df[["trade_date", "net_mf_amount", "buy_elg_amount"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["trade_date", "net_mf_amount", "buy_elg_amount"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 5000 |
@@ -31,7 +31,7 @@ print(df[["trade_date", "net_mf_amount", "buy_elg_amount"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code` | Stock code |
+| `symbol` | Stock code |
 | `trade_date` | Trading date |
 | `buy_sm_vol`, `buy_sm_amount` | Small order (<50K) buy volume/amount |
 | `sell_sm_vol`, `sell_sm_amount` | Small order sell volume/amount |
@@ -48,4 +48,4 @@ print(df[["trade_date", "net_mf_amount", "buy_elg_amount"]])
 
 - From: 2020-01-02
 - Amounts in 10k CNY, volumes in lots
-- API path: `GET /v1/flows/moneyflow`
+- API path: `GET /v2/flows/moneyflow`

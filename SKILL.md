@@ -57,10 +57,10 @@ pip install asharehub
 from asharehub import AShareHub
 import os
 
-client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"])
+client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"], version="v2")
 
 # Daily prices for Ping An Bank
-df = client.market_daily(ts_code="000001.SZ", start_date="2024-01-01", end_date="2024-01-31")
+df = client.market_daily(symbol="000001.SZ", start_date="2024-01-01", end_date="2024-01-31")
 print(df[["trade_date", "open", "high", "low", "close", "vol"]])
 
 client.close()
@@ -137,7 +137,7 @@ Recommended pattern to get the most recent trading day's data:
 
 ```python
 # Just use limit=1 without specifying dates — returns the latest available record
-df = client.market_daily(ts_code="000001.SZ", limit=1)
+df = client.market_daily(symbol="000001.SZ", limit=1)
 ```
 
 ## Workflow
@@ -152,7 +152,7 @@ df = client.market_daily(ts_code="000001.SZ", limit=1)
 ### Get stock valuations
 
 ```python
-df = client.fundamentals(ts_code="600519.SH", start_date="2024-01-01")
+df = client.fundamentals(symbol="600519.SH", start_date="2024-01-01")
 print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 ```
 
@@ -166,28 +166,28 @@ print(df[["trade_date", "north_money", "south_money"]])
 ### Chip distribution analysis
 
 ```python
-df = client.chip_distribution(ts_code="000001.SZ", start_date="2024-03-01")
+df = client.chip_distribution(symbol="000001.SZ", start_date="2024-03-01")
 print(df[["trade_date", "winner_rate", "weight_avg"]])
 ```
 
 ### Index performance
 
 ```python
-df = client.index_daily(ts_code="000300.SH", start_date="2024-01-01")  # CSI 300
+df = client.index_daily(symbol="000300.SH", start_date="2024-01-01")  # CSI 300
 print(df[["trade_date", "close", "pct_chg"]])
 ```
 
 ### FX rates
 
 ```python
-df = client.fx_daily(ts_code="USDCNH.FXCM", start_date="2024-01-01")
+df = client.fx_daily(symbol="USDCNH.FXCM", start_date="2024-01-01")
 print(df[["trade_date", "bid_close", "ask_close"]])
 ```
 
 ### Quarterly financials
 
 ```python
-df = client.financial_indicators(ts_code="000001.SZ")
+df = client.financial_indicators(symbol="000001.SZ")
 print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 ```
 
@@ -210,34 +210,34 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 
 | Method | Use Case | Key Parameters |
 |--------|----------|---------------|
-| `market_daily()` | Daily OHLCV prices | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `fundamentals()` | PE/PB/market cap | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
+| `market_daily()` | Daily OHLCV prices | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `fundamentals()` | PE/PB/market cap | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
 | `moneyflow_hsgt()` | Foreign investor sentiment | `start_date`, `end_date`, `limit` (max 2000) |
-| `moneyflow()` | Per-stock money flow | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `northbound_holdings()` | Foreign holdings per stock | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `margin()` | Margin trading detail | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `block_trade()` | Block trades | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `top_list()` | Dragon & Tiger list | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `shareholders()` | Shareholder count | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `holder_trade()` | Insider trades | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `concepts()` | Concept sector indices | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `concept_members()` | Concept constituents | `ts_code`, `con_code`, `start_date`, `end_date` |
-| `chip_distribution()` | Holder cost analysis | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `fx_daily()` | Currency rates | `ts_code` (default USDCNH.FXCM), `limit` (max 2000) |
-| `index_daily()` | Benchmark indices | `ts_code` (default 000001.SH), `limit` (max 2000) |
-| `financial_indicators()` | Quarterly financials | `ts_code`, `start_date`, `end_date`, `limit` (max 200) |
-| `stock_list()` | Stock reference data | `ts_code`, `limit` (max 5000) |
-| `industry_list()` | Industry classification | `ts_code`, `limit` (max 5000) |
-| `adj_factor()` | Price adjustment factor | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `technical_factors()` | MACD/KDJ/RSI/BOLL/CCI | `ts_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `limit_list()` | Limit-up/down stocks | `ts_code`, `limit_type` (U/D/Z), `limit` (max 5000) |
-| `income()` | Income statement | `ts_code`, `start_date`, `end_date`, `limit` (max 200) |
-| `balance_sheet()` | Balance sheet | `ts_code`, `start_date`, `end_date`, `limit` (max 200) |
-| `cash_flow()` | Cash flow statement | `ts_code`, `start_date`, `end_date`, `limit` (max 200) |
-| `forecast()` | Earnings forecast | `ts_code`, `start_date`, `end_date`, `limit` (max 1000) |
-| `express()` | Earnings express | `ts_code`, `start_date`, `end_date`, `limit` (max 1000) |
-| `dividend()` | Dividend distribution | `ts_code`, `start_date`, `end_date`, `limit` (max 1000) |
-| `index_weight()` | Index constituents | `index_code`, `start_date`, `end_date`, `limit` (max 5000) |
+| `moneyflow()` | Per-stock money flow | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `northbound_holdings()` | Foreign holdings per stock | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `margin()` | Margin trading detail | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `block_trade()` | Block trades | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `top_list()` | Dragon & Tiger list | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `shareholders()` | Shareholder count | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `holder_trade()` | Insider trades | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `concepts()` | Concept sector indices | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `concept_members()` | Concept constituents | `symbol`, `con_symbol`, `start_date`, `end_date` |
+| `chip_distribution()` | Holder cost analysis | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `fx_daily()` | Currency rates | `symbol` (default USDCNH.FXCM), `limit` (max 2000) |
+| `index_daily()` | Benchmark indices | `symbol` (default 000001.SH), `limit` (max 2000) |
+| `financial_indicators()` | Quarterly financials | `symbol`, `start_date`, `end_date`, `limit` (max 200) |
+| `stock_list()` | Stock reference data | `symbol`, `limit` (max 5000) |
+| `industry_list()` | Industry classification | `symbol`, `limit` (max 5000) |
+| `adj_factor()` | Price adjustment factor | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `technical_factors()` | MACD/KDJ/RSI/BOLL/CCI | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `limit_list()` | Limit-up/down stocks | `symbol`, `limit_type` (U/D/Z), `limit` (max 5000) |
+| `income()` | Income statement | `symbol`, `start_date`, `end_date`, `limit` (max 200) |
+| `balance_sheet()` | Balance sheet | `symbol`, `start_date`, `end_date`, `limit` (max 200) |
+| `cash_flow()` | Cash flow statement | `symbol`, `start_date`, `end_date`, `limit` (max 200) |
+| `forecast()` | Earnings forecast | `symbol`, `start_date`, `end_date`, `limit` (max 1000) |
+| `express()` | Earnings express | `symbol`, `start_date`, `end_date`, `limit` (max 1000) |
+| `dividend()` | Dividend distribution | `symbol`, `start_date`, `end_date`, `limit` (max 1000) |
+| `index_weight()` | Index constituents | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
 | `trade_calendar()` | Trading calendar | `exchange` (SSE/SZSE), `is_open`, `limit` (max 5000) |
 
 ## FAQ

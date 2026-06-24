@@ -10,7 +10,7 @@
 - **A/H 溢价信号**：`ratio` 大幅上升时，H 股相对 A 股的折价常常收窄（内地投资者套利）。
 
 ### 关键字段解读
-- **`ts_code`**：港股代码（如腾讯为 "00700"）。
+- **`symbol`**：港股代码（如腾讯为 "00700"）。
 - **`vol`**：内地投资者持有股数。
 - **`ratio`**：占总股本比例。
 - **`exchange`**：SH 或 SZ，标识通过哪个通道持有。
@@ -24,7 +24,7 @@
 ## SDK 方法
 
 ```python
-client.southbound_holdings(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.southbound_holdings(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -35,14 +35,14 @@ client.southbound_holdings(ts_code=None, start_date=None, end_date=None, limit=1
 
 ```python
 df = client.southbound_holdings(limit=5)
-print(df[["trade_date", "ts_code", "name", "vol", "ratio"]])
+print(df[["trade_date", "symbol", "name", "vol", "ratio"]])
 ```
 
 ## 参数
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 港股代码 |
+| `symbol` | str | None | 港股代码 |
 | `start_date` | str | None | 起始日期 YYYY-MM-DD |
 | `end_date` | str | None | 结束日期 YYYY-MM-DD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
@@ -50,10 +50,10 @@ print(df[["trade_date", "ts_code", "name", "vol", "ratio"]])
 
 ## 返回字段
 
-trade_date、ts_code(港股代码)、name、vol(内地持有股数)、ratio(占总股本比例)、exchange(SH/SZ 通道)。
+trade_date、symbol(港股代码)、name、vol(内地持有股数)、ratio(占总股本比例)、exchange(SH/SZ 通道)。
 
 ## 数据范围
 
 - 起始日期：2020-01-02
 - 北向持股的镜像数据：内地投资者持有港股的明细
-- API 路径：`GET /v1/flows/southbound-holdings`
+- API 路径：`GET /v2/flows/southbound-holdings`

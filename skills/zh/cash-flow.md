@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.cash_flow(ts_code=None, start_date=None, end_date=None, limit=20, offset=0)
+client.cash_flow(symbol=None, start_date=None, end_date=None, limit=20, offset=0)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.cash_flow(ts_code=None, start_date=None, end_date=None, limit=20, offset=
 ## 示例
 
 ```python
-df = client.cash_flow(ts_code="000001.SZ", limit=3)
+df = client.cash_flow(symbol="000001.SZ", limit=3)
 print(df[["end_date", "n_cashflow_act", "free_cashflow"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["end_date", "n_cashflow_act", "free_cashflow"]])
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 股票代码 |
+| `symbol` | str | None | 股票代码 |
 | `start_date` | str | None | 报告期起始，YYYY-MM-DD |
 | `end_date` | str | None | 报告期截止，YYYY-MM-DD |
 | `limit` | int | 20 | 返回行数，最大 200 |
@@ -40,4 +40,4 @@ print(df[["end_date", "n_cashflow_act", "free_cashflow"]])
 ## 备注
 
 - 金额单位：元（CNY）
-- API 路径：`GET /v1/financials/cash-flow`
+- API 路径：`GET /v2/financials/cash-flow`

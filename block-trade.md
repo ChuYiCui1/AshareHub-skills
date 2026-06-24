@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.block_trade(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.block_trade(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, trade_date, price, vol, amount, buyer, seller. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, trade_date, price, vol, amount, buyer, seller. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.block_trade(ts_code="000001.SZ", limit=3)
+df = client.block_trade(symbol="000001.SZ", limit=3)
 print(df[["trade_date", "price", "vol", "buyer", "seller"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["trade_date", "price", "vol", "buyer", "seller"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 5000 |
@@ -31,7 +31,7 @@ print(df[["trade_date", "price", "vol", "buyer", "seller"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code` | Stock code |
+| `symbol` | Stock code |
 | `trade_date` | Trading date |
 | `price` | Trade price (CNY) |
 | `vol` | Volume (10k shares) |
@@ -43,4 +43,4 @@ print(df[["trade_date", "price", "vol", "buyer", "seller"]])
 
 - From: 2010-01-04
 - Large institutional transactions above regular trading limits
-- API path: `GET /v1/market/block-trade`
+- API path: `GET /v2/market/block-trade`

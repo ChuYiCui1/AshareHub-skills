@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.index_daily(ts_code="000001.SH", start_date=None, end_date=None, limit=100, offset=0)
+client.index_daily(symbol="000001.SH", start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, trade_date, open, high, low, close, pct_chg, vol, amount. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, trade_date, open, high, low, close, pct_chg, vol, amount. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.index_daily(ts_code="000001.SH", limit=3)
+df = client.index_daily(symbol="000001.SH", limit=3)
 print(df[["trade_date", "close", "pct_chg"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["trade_date", "close", "pct_chg"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | `000001.SH` | Index code |
+| `symbol` | str | `000001.SH` | Index code |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 2000 |
@@ -41,7 +41,7 @@ print(df[["trade_date", "close", "pct_chg"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code` | Index code |
+| `symbol` | Index code |
 | `trade_date` | Trading date |
 | `open`, `high`, `low`, `close` | Index level |
 | `pre_close` | Previous close |
@@ -53,4 +53,4 @@ print(df[["trade_date", "close", "pct_chg"]])
 ## Data Coverage
 
 - From: 2010-01-04
-- API path: `GET /v1/indices/daily`
+- API path: `GET /v2/indices/daily`

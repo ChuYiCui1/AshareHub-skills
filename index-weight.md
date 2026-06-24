@@ -3,25 +3,25 @@
 ## SDK Method
 
 ```python
-client.index_weight(index_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.index_weight(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: index_code, trade_date, con_code, con_name, weight. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, trade_date, con_symbol, con_name, weight. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.index_weight(index_code="399300.SZ", limit=5)
-print(df[["con_code", "con_name", "weight"]])
+df = client.index_weight(symbol="399300.SZ", limit=5)
+print(df[["con_symbol", "con_name", "weight"]])
 ```
 
 ## Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `index_code` | str | None | Index code, e.g. `399300.SZ` (CSI 300) |
+| `symbol` | str | None | Index code, e.g. `399300.SZ` (CSI 300) |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 5000 |
@@ -31,9 +31,9 @@ print(df[["con_code", "con_name", "weight"]])
 
 | Field | Description |
 |-------|-------------|
-| `index_code` | Index code |
+| `symbol` | Index code |
 | `trade_date` | Effective date |
-| `con_code` | Constituent stock code |
+| `con_symbol` | Constituent stock code |
 | `con_name` | Constituent stock name |
 | `weight` | Weight in index % |
 
@@ -48,4 +48,4 @@ print(df[["con_code", "con_name", "weight"]])
 ## Notes
 
 - Rebalanced periodically (semi-annual for major indices)
-- API path: `GET /v1/indices/index-weight`
+- API path: `GET /v2/indices/index-weight`

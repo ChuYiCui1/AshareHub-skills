@@ -31,7 +31,7 @@ A 股市场实行**每日价格涨跌停板制度**：股票当日价格涨跌�
 ## SDK 方法
 
 ```python
-client.limit_list(ts_code=None, start_date=None, end_date=None, limit_type=None, limit=100, offset=0)
+client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -42,14 +42,14 @@ client.limit_list(ts_code=None, start_date=None, end_date=None, limit_type=None,
 
 ```python
 df = client.limit_list(limit=3, limit_type="U")
-print(df[["trade_date", "ts_code", "name", "pct_chg"]])
+print(df[["trade_date", "symbol", "name", "pct_chg"]])
 ```
 
 ## 参数
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 股票代码 |
+| `symbol` | str | None | 股票代码 |
 | `start_date` | str | None | 起始日期，YYYY-MM-DD |
 | `end_date` | str | None | 结束日期，YYYY-MM-DD |
 | `limit_type` | str | None | `U`=涨停，`D`=跌停，`Z`=炸板 |
@@ -61,7 +61,7 @@ print(df[["trade_date", "ts_code", "name", "pct_chg"]])
 | 字段 | 说明 |
 |------|------|
 | `trade_date` | 交易日期 |
-| `ts_code` / `name` | 股票代码 / 名称 |
+| `symbol` / `name` | 股票代码 / 名称 |
 | `close` / `pct_chg` | 收盘价 / 涨跌幅 |
 | `first_time` / `last_time` | 首次/最后封板时间 |
 | `open_times` | 开板次数 |
@@ -72,4 +72,4 @@ print(df[["trade_date", "ts_code", "name", "pct_chg"]])
 
 - 起始日期：2020 年起
 - 不含 ST 股
-- API 路径：`GET /v1/market/limit-list`
+- API 路径：`GET /v2/market/limit-list`

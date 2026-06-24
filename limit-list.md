@@ -31,25 +31,25 @@ Unlike US/EU markets, **Chinese A-shares enforce daily price limits**: a stock c
 ## SDK Method
 
 ```python
-client.limit_list(ts_code=None, start_date=None, end_date=None, limit_type=None, limit=100, offset=0)
+client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: trade_date, ts_code, name, close, pct_chg, limit, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: trade_date, symbol, name, close, pct_chg, limit, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
 df = client.limit_list(limit=3, limit_type="U")
-print(df[["trade_date", "ts_code", "name", "pct_chg"]])
+print(df[["trade_date", "symbol", "name", "pct_chg"]])
 ```
 
 ## Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit_type` | str | None | `U`=limit-up, `D`=limit-down, `Z`=broken limit |
@@ -61,7 +61,7 @@ print(df[["trade_date", "ts_code", "name", "pct_chg"]])
 | Field | Description |
 |-------|-------------|
 | `trade_date` | Trading date |
-| `ts_code` | Stock code |
+| `symbol` | Stock code |
 | `name` | Stock name |
 | `close` | Closing price (CNY) |
 | `pct_chg` | Price change % |
@@ -78,4 +78,4 @@ print(df[["trade_date", "ts_code", "name", "pct_chg"]])
 
 - From: 2020
 - Excludes ST stocks
-- API path: `GET /v1/market/limit-list`
+- API path: `GET /v2/market/limit-list`

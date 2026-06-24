@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.holder_trade(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.holder_trade(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, ann_date, holder_name, in_de, change_vol, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, ann_date, holder_name, in_de, change_vol, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.holder_trade(ts_code="000001.SZ", limit=3)
+df = client.holder_trade(symbol="000001.SZ", limit=3)
 print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 5000 |
@@ -31,7 +31,7 @@ print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code` | Stock code |
+| `symbol` | Stock code |
 | `ann_date` | Announcement date |
 | `holder_name` | Shareholder/executive name |
 | `holder_type` | G=executive, P=individual, C=company |
@@ -49,4 +49,4 @@ print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
 
 - From: 2019-11-20
 - Key signal for insider sentiment
-- API path: `GET /v1/market/holder-trade`
+- API path: `GET /v2/market/holder-trade`

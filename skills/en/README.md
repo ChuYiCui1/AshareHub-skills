@@ -79,7 +79,7 @@ skills/
 |--------|-------------|
 | **Python SDK** | `pip install asharehub` — [Documentation](https://asharehub.com/docs) |
 | **MCP Server** | `https://asharehub.com/mcp/sse` — Claude Desktop, Cursor, etc. |
-| **REST API** | 7 endpoints at `https://asharehub.com/v1/` |
+| **REST API** | 7 endpoints at `https://asharehub.com/v2/` |
 | **Skills** | This repository |
 
 ## License

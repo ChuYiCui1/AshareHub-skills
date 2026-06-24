@@ -3,17 +3,17 @@
 ## SDK Method
 
 ```python
-client.technical_factors(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.technical_factors(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, trade_date, close_qfq, macd, kdj_k, rsi_6, boll_upper/mid/lower, cci, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, trade_date, close_qfq, macd, kdj_k, rsi_6, boll_upper/mid/lower, cci, etc. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.technical_factors(ts_code="000001.SZ", limit=3)
+df = client.technical_factors(symbol="000001.SZ", limit=3)
 print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Stock code, e.g. `000001.SZ` |
+| `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 5000 |
@@ -42,4 +42,4 @@ print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 ## Notes
 
 - qfq = forward adjusted (前复权), hfq = backward adjusted (后复权)
-- API path: `GET /v1/market/technical-factors`
+- API path: `GET /v2/market/technical-factors`

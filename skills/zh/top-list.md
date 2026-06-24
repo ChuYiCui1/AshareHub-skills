@@ -28,7 +28,7 @@
 ## SDK 方法
 
 ```python
-client.top_list(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.top_list(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -39,14 +39,14 @@ client.top_list(ts_code=None, start_date=None, end_date=None, limit=100, offset=
 
 ```python
 df = client.top_list(limit=3)
-print(df[["trade_date", "ts_code", "name", "pct_change"]])
+print(df[["trade_date", "symbol", "name", "pct_change"]])
 ```
 
 ## 参数
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
+| `symbol` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
 | `start_date` | str | None | 起始日期，YYYY-MM-DD |
 | `end_date` | str | None | 结束日期，YYYY-MM-DD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
@@ -57,7 +57,7 @@ print(df[["trade_date", "ts_code", "name", "pct_change"]])
 | 字段 | 说明 |
 |------|------|
 | `trade_date` | 交易日期 |
-| `ts_code` | 股票代码 |
+| `symbol` | 股票代码 |
 | `name` | 股票名称 |
 | `close` | 收盘价 |
 | `pct_change` | 涨跌幅 % |
@@ -70,4 +70,4 @@ print(df[["trade_date", "ts_code", "name", "pct_change"]])
 ## 数据范围
 
 - 起始日期：2024-01-02
-- API 路径：`GET /v1/market/top-list`
+- API 路径：`GET /v2/market/top-list`

@@ -24,7 +24,7 @@
 - **Macro events**: Hurricane, pandemic, Russian-Ukraine war, etc.
 
 ### Key fields explained
-- **`ts_code`**: Concept index code (e.g. `BK0425.DC` from Eastmoney).
+- **`symbol`**: Concept index code (e.g. `BK0425.DC` from Eastmoney).
 - **`name`**: Concept name in Chinese (e.g. "ChatGPT概念").
 - **`leading`**: Today's leading constituent stock.
 - **`pct_change`**: Concept index daily return.
@@ -40,12 +40,12 @@
 ## SDK Method
 
 ```python
-client.concepts(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.concepts(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: ts_code, trade_date, name, pct_change, leading, etc. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: symbol, trade_date, name, pct_change, leading, etc. Returns empty DataFrame if no data.
 
 ## Example
 
@@ -58,7 +58,7 @@ print(df[["trade_date", "name", "pct_change", "leading"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | Concept code, e.g. `BK0425.DC` |
+| `symbol` | str | None | Concept code, e.g. `BK0425.DC` |
 | `start_date` | str | None | Start date, YYYY-MM-DD |
 | `end_date` | str | None | End date, YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 5000 |
@@ -68,7 +68,7 @@ print(df[["trade_date", "name", "pct_change", "leading"]])
 
 | Field | Description |
 |-------|-------------|
-| `ts_code` | Concept index code (e.g. BK0425.DC) |
+| `symbol` | Concept index code (e.g. BK0425.DC) |
 | `trade_date` | Trading date |
 | `name` | Concept name (e.g. AI, New Energy, Semiconductors) |
 | `leading` | Leading stock name |
@@ -85,4 +85,4 @@ print(df[["trade_date", "name", "pct_change", "leading"]])
 ## Data Coverage
 
 - From: 2025-04-01
-- API path: `GET /v1/market/concepts`
+- API path: `GET /v2/market/concepts`

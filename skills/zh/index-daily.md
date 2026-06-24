@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.index_daily(ts_code="000001.SH", start_date=None, end_date=None, limit=100, offset=0)
+client.index_daily(symbol="000001.SH", start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.index_daily(ts_code="000001.SH", start_date=None, end_date=None, limit=10
 ## 示例
 
 ```python
-df = client.index_daily(ts_code="000001.SH", limit=3)
+df = client.index_daily(symbol="000001.SH", limit=3)
 print(df[["trade_date", "close", "pct_chg"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["trade_date", "close", "pct_chg"]])
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | `000001.SH` | 指数代码 |
+| `symbol` | str | `000001.SH` | 指数代码 |
 | `start_date` | str | None | 起始日期，YYYY-MM-DD |
 | `end_date` | str | None | 结束日期，YYYY-MM-DD |
 | `limit` | int | 100 | 返回行数，最大 2000 |
@@ -41,7 +41,7 @@ print(df[["trade_date", "close", "pct_chg"]])
 
 | 字段 | 说明 |
 |------|------|
-| `ts_code` | 指数代码 |
+| `symbol` | 指数代码 |
 | `trade_date` | 交易日期 |
 | `open`, `high`, `low`, `close` | 指数点位 |
 | `pre_close` | 昨收 |
@@ -53,4 +53,4 @@ print(df[["trade_date", "close", "pct_chg"]])
 ## 数据范围
 
 - 起始日期：2010-01-04
-- API 路径：`GET /v1/indices/daily`
+- API 路径：`GET /v2/indices/daily`

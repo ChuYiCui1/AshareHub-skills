@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.moneyflow(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.moneyflow(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.moneyflow(ts_code=None, start_date=None, end_date=None, limit=100, offset
 ## 示例
 
 ```python
-df = client.moneyflow(ts_code="000001.SZ", limit=3)
+df = client.moneyflow(symbol="000001.SZ", limit=3)
 print(df[["trade_date", "net_mf_amount", "buy_elg_amount"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["trade_date", "net_mf_amount", "buy_elg_amount"]])
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
+| `symbol` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
 | `start_date` | str | None | 起始日期，YYYY-MM-DD |
 | `end_date` | str | None | 结束日期，YYYY-MM-DD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
@@ -31,7 +31,7 @@ print(df[["trade_date", "net_mf_amount", "buy_elg_amount"]])
 
 | 字段 | 说明 |
 |------|------|
-| `ts_code` | 股票代码 |
+| `symbol` | 股票代码 |
 | `trade_date` | 交易日期 |
 | `buy_sm_vol` | 小单买入量 |
 | `buy_sm_amount` | 小单买入额 |
@@ -55,4 +55,4 @@ print(df[["trade_date", "net_mf_amount", "buy_elg_amount"]])
 ## 数据范围
 
 - 起始日期：2020-01-02
-- API 路径：`GET /v1/flows/moneyflow`
+- API 路径：`GET /v2/flows/moneyflow`

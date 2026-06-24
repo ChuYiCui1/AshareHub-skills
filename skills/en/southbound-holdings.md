@@ -10,7 +10,7 @@ This endpoint is the **mirror image of northbound holdings**. It tracks how much
 - **A/H premium signals**: When `ratio` rises sharply, the HK-A premium often narrows (mainland investors arbitraging the discount).
 
 ### Key fields explained
-- **`ts_code`**: HK stock code (e.g. "00700" for Tencent).
+- **`symbol`**: HK stock code (e.g. "00700" for Tencent).
 - **`vol`**: Shares held by mainland investors (in shares).
 - **`ratio`**: As % of total shares outstanding.
 - **`exchange`**: SH or SZ — which connect channel was used.
@@ -23,7 +23,7 @@ This endpoint is the **mirror image of northbound holdings**. It tracks how much
 ## SDK Method
 
 ```python
-client.southbound_holdings(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.southbound_holdings(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## Returns
@@ -34,14 +34,14 @@ client.southbound_holdings(ts_code=None, start_date=None, end_date=None, limit=1
 
 ```python
 df = client.southbound_holdings(limit=5)
-print(df[["trade_date", "ts_code", "name", "vol", "ratio"]])
+print(df[["trade_date", "symbol", "name", "vol", "ratio"]])
 ```
 
 ## Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `ts_code` | str | None | HK stock code |
+| `symbol` | str | None | HK stock code |
 | `start_date` | str | None | Start date YYYY-MM-DD |
 | `end_date` | str | None | End date YYYY-MM-DD |
 | `limit` | int | 100 | Max rows, up to 5000 |
@@ -49,10 +49,10 @@ print(df[["trade_date", "ts_code", "name", "vol", "ratio"]])
 
 ## Response Fields
 
-trade_date, ts_code (HK), name, vol (shares held by mainland), ratio (% of total shares), exchange (SH or SZ channel).
+trade_date, symbol (HK), name, vol (shares held by mainland), ratio (% of total shares), exchange (SH or SZ channel).
 
 ## Data Coverage
 
 - From: 2020-01-02
 - Mirror of northbound-holdings: tracks mainland investor positions in HK stocks
-- API path: `GET /v1/flows/southbound-holdings`
+- API path: `GET /v2/flows/southbound-holdings`

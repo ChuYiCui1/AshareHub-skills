@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.technical_factors(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.technical_factors(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.technical_factors(ts_code=None, start_date=None, end_date=None, limit=100
 ## 示例
 
 ```python
-df = client.technical_factors(ts_code="000001.SZ", limit=3)
+df = client.technical_factors(symbol="000001.SZ", limit=3)
 print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 ```
 
@@ -21,7 +21,7 @@ print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 股票代码，如 `000001.SZ` |
+| `symbol` | str | None | 股票代码，如 `000001.SZ` |
 | `start_date` | str | None | 起始日期，YYYY-MM-DD |
 | `end_date` | str | None | 结束日期，YYYY-MM-DD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
@@ -42,4 +42,4 @@ print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 ## 备注
 
 - qfq = 前复权，hfq = 后复权
-- API 路径：`GET /v1/market/technical-factors`
+- API 路径：`GET /v2/market/technical-factors`

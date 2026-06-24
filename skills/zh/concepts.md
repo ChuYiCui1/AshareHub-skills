@@ -24,7 +24,7 @@
 - **宏观事件**：飓风、疫情、俄乌战争等
 
 ### 关键字段解读
-- **`ts_code`**：概念指数代码（东方财富格式如 `BK0425.DC`）。
+- **`symbol`**：概念指数代码（东方财富格式如 `BK0425.DC`）。
 - **`name`**：概念中文名（如"ChatGPT概念"）。
 - **`leading`**：当日领涨成分股。
 - **`pct_change`**：概念指数日涨跌幅。
@@ -39,7 +39,7 @@
 ## SDK 方法
 
 ```python
-client.concepts(ts_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.concepts(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -57,7 +57,7 @@ print(df[["trade_date", "name", "pct_change", "leading"]])
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `ts_code` | str | None | 板块代码，如 `BK0425.DC` |
+| `symbol` | str | None | 板块代码，如 `BK0425.DC` |
 | `start_date` | str | None | 起始日期，YYYY-MM-DD |
 | `end_date` | str | None | 结束日期，YYYY-MM-DD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
@@ -67,7 +67,7 @@ print(df[["trade_date", "name", "pct_change", "leading"]])
 
 | 字段 | 说明 |
 |------|------|
-| `ts_code` | 板块代码（如 BK0425.DC） |
+| `symbol` | 板块代码（如 BK0425.DC） |
 | `trade_date` | 交易日期 |
 | `name` | 板块名称 |
 | `leading` | 领涨股 |
@@ -85,4 +85,4 @@ print(df[["trade_date", "name", "pct_change", "leading"]])
 
 - 起始日期：2025-01-02
 - 概念数量：508 个
-- API 路径：`GET /v1/market/concepts`
+- API 路径：`GET /v2/market/concepts`

@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.index_weight(index_code=None, start_date=None, end_date=None, limit=100, offset=0)
+client.index_weight(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -13,15 +13,15 @@ client.index_weight(index_code=None, start_date=None, end_date=None, limit=100, 
 ## 示例
 
 ```python
-df = client.index_weight(index_code="399300.SZ", limit=5)
-print(df[["con_code", "con_name", "weight"]])
+df = client.index_weight(symbol="399300.SZ", limit=5)
+print(df[["con_symbol", "con_name", "weight"]])
 ```
 
 ## 参数
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `index_code` | str | None | 指数代码，如 `399300.SZ`（沪深300） |
+| `symbol` | str | None | 指数代码，如 `399300.SZ`（沪深300） |
 | `start_date` | str | None | 起始日期，YYYY-MM-DD |
 | `end_date` | str | None | 结束日期，YYYY-MM-DD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
@@ -31,9 +31,9 @@ print(df[["con_code", "con_name", "weight"]])
 
 | 字段 | 说明 |
 |------|------|
-| `index_code` | 指数代码 |
+| `symbol` | 指数代码 |
 | `trade_date` | 生效日期 |
-| `con_code` | 成分股代码 |
+| `con_symbol` | 成分股代码 |
 | `con_name` | 成分股名称 |
 | `weight` | 权重 % |
 
@@ -47,4 +47,4 @@ print(df[["con_code", "con_name", "weight"]])
 
 ## 备注
 
-- API 路径：`GET /v1/indices/index-weight`
+- API 路径：`GET /v2/indices/index-weight`
