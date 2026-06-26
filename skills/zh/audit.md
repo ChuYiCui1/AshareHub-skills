@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.audit(symbol=None, start_date=None, end_date=None, limit=50, offset=0)
+client.audit(symbol=None, start_date=None, end_date=None, period=None, ann_date=None, limit=50, offset=0)
 ```
 
 ## 返回类型
@@ -24,6 +24,8 @@ print(df[["end_date", "audit_result", "audit_agency", "audit_fees"]])
 | `symbol` | str | None | 股票代码 |
 | `start_date` | str | None | 起始日期 YYYYMMDD |
 | `end_date` | str | None | 结束日期 YYYYMMDD |
+| `period` | str | None | 报告期，YYYYMMDD，如20231231 |
+| `ann_date` | str | None | 公告日期，YYYYMMDD |
 | `limit` | int | 50 | 返回行数，最大 1000 |
 | `offset` | int | 0 | 分页偏移量 |
 

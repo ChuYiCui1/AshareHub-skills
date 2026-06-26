@@ -31,7 +31,7 @@ A 股市场实行**每日价格涨跌停板制度**：股票当日价格涨跌�
 ## SDK 方法
 
 ```python
-client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, limit=100, offset=0)
+client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, trade_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -53,6 +53,7 @@ print(df[["trade_date", "symbol", "name", "pct_chg"]])
 | `start_date` | str | None | 起始日期，YYYYMMDD |
 | `end_date` | str | None | 结束日期，YYYYMMDD |
 | `limit_type` | str | None | `U`=涨停，`D`=跌停，`Z`=炸板 |
+| `trade_date` | str | None | 交易日期，YYYYMMDD（查单日） |
 | `limit` | int | 100 | 返回行数，最大 5000 |
 | `offset` | int | 0 | 分页偏移量 |
 

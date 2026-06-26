@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.income(symbol=None, start_date=None, end_date=None, limit=20, offset=0)
+client.income(symbol=None, start_date=None, end_date=None, period=None, ann_date=None, f_ann_date=None, report_type=None, comp_type=None, limit=20, offset=0)
 ```
 
 ## Returns
@@ -24,6 +24,11 @@ print(df[["end_date", "revenue", "n_income"]])
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Report period start, YYYYMMDD |
 | `end_date` | str | None | Report period end, YYYYMMDD |
+| `period` | str | None | Report period YYYYMMDD, e.g. 20231231 |
+| `ann_date` | str | None | Announcement date YYYYMMDD |
+| `f_ann_date` | str | None | Actual announcement date YYYYMMDD |
+| `report_type` | str | None | Report type |
+| `comp_type` | str | None | Company type: 1 general / 2 bank / 3 insurance / 4 securities |
 | `limit` | int | 20 | Max rows, up to 200 |
 | `offset` | int | 0 | Pagination offset |
 

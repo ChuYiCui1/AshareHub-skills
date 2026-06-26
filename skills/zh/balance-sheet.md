@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.balance_sheet(symbol=None, start_date=None, end_date=None, limit=20, offset=0)
+client.balance_sheet(symbol=None, start_date=None, end_date=None, period=None, ann_date=None, report_type=None, comp_type=None, limit=20, offset=0)
 ```
 
 ## 返回类型
@@ -24,6 +24,10 @@ print(df[["end_date", "total_assets", "total_liab"]])
 | `symbol` | str | None | 股票代码 |
 | `start_date` | str | None | 报告期起始，YYYYMMDD |
 | `end_date` | str | None | 报告期截止，YYYYMMDD |
+| `period` | str | None | 报告期，YYYYMMDD，如20231231 |
+| `ann_date` | str | None | 公告日期，YYYYMMDD |
+| `report_type` | str | None | 报告类型 |
+| `comp_type` | str | None | 公司类型：1工商业/2银行/3保险/4证券 |
 | `limit` | int | 20 | 返回行数，最大 200 |
 | `offset` | int | 0 | 分页偏移量 |
 

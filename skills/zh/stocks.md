@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.stock_list(symbol=None, limit=100, offset=0)
+client.stock_list(symbol=None, name=None, market=None, list_status=None, exchange=None, is_hs=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -22,6 +22,11 @@ print(df[["symbol", "name", "industry", "list_date"]])
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `symbol` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
+| `name` | str | None | 股票名称 |
+| `market` | str | None | 市场类别：主板/创业板/科创板/北交所/CDR |
+| `list_status` | str | None | 上市状态：L上市/D退市/P暂停 |
+| `exchange` | str | None | 交易所：SSE/SZSE/BSE |
+| `is_hs` | str | None | 沪深港通：N否/H沪股通/S深股通 |
 | `limit` | int | 100 | 返回行数，最大 5000 |
 | `offset` | int | 0 | 分页偏移量 |
 

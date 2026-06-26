@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.market_daily(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.market_daily(symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
 ```
 
 ## Returns
@@ -24,6 +24,7 @@ print(df[["trade_date", "close", "pct_chg"]])
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` (Ping An Bank), `600519.SH` (Moutai) |
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
+| `trade_date` | str | None | Trading date YYYYMMDD (single day) |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 

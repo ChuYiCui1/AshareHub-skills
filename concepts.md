@@ -40,7 +40,7 @@
 ## SDK Method
 
 ```python
-client.concepts(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.concepts(symbol=None, start_date=None, end_date=None, trade_date=None, name=None, idx_type=None, limit=100, offset=0)
 ```
 
 ## Returns
@@ -61,6 +61,9 @@ print(df[["trade_date", "name", "pct_change", "leading"]])
 | `symbol` | str | None | Concept code, e.g. `BK0425.DC` |
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
+| `trade_date` | str | None | Trading date YYYYMMDD (single day) |
+| `name` | str | None | Board name, e.g. 人形机器人 |
+| `idx_type` | str | None | Board type: 行业/概念/地域 |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 

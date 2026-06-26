@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.disclosure_date(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.disclosure_date(symbol=None, start_date=None, end_date=None, pre_date=None, actual_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -24,6 +24,8 @@ print(df[["end_date", "pre_date", "actual_date"]])
 | `symbol` | str | None | 股票代码 |
 | `start_date` | str | None | 起始日期 YYYYMMDD |
 | `end_date` | str | None | 结束日期 YYYYMMDD |
+| `pre_date` | str | None | 计划披露日期，YYYYMMDD |
+| `actual_date` | str | None | 实际披露日期，YYYYMMDD |
 | `limit` | int | 100 | 返回行数，最大 2000 |
 | `offset` | int | 0 | 分页偏移量 |
 

@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.holder_trade(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.holder_trade(symbol=None, start_date=None, end_date=None, trade_type=None, holder_type=None, limit=100, offset=0)
 ```
 
 ## Returns
@@ -24,6 +24,8 @@ print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
+| `trade_type` | str | None | IN=increase / DE=decrease |
+| `holder_type` | str | None | C=company / P=person / G=executive |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 

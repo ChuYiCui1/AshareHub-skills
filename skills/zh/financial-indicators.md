@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.financial_indicators(symbol=None, start_date=None, end_date=None, limit=20, offset=0)
+client.financial_indicators(symbol=None, start_date=None, end_date=None, period=None, ann_date=None, limit=20, offset=0)
 ```
 
 ## 返回类型
@@ -24,6 +24,8 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 | `symbol` | str | None | 股票代码，如 `000001.SZ` |
 | `start_date` | str | None | 报告期起始，YYYYMMDD |
 | `end_date` | str | None | 报告期结束，YYYYMMDD |
+| `period` | str | None | 报告期，YYYYMMDD，如20231231 |
+| `ann_date` | str | None | 公告日期，YYYYMMDD |
 | `limit` | int | 20 | 返回行数，最大 200 |
 | `offset` | int | 0 | 分页偏移量 |
 

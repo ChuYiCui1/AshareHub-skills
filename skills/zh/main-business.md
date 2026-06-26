@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.main_business(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.main_business(symbol=None, start_date=None, end_date=None, period=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -24,6 +24,7 @@ print(df[["end_date", "bz_item", "bz_sales", "bz_profit"]])
 | `symbol` | str | None | 股票代码 |
 | `start_date` | str | None | 起始日期 YYYYMMDD |
 | `end_date` | str | None | 结束日期 YYYYMMDD |
+| `period` | str | None | 报告期，YYYYMMDD，如20231231 |
 | `limit` | int | 100 | 返回行数，最大 2000 |
 | `offset` | int | 0 | 分页偏移量 |
 

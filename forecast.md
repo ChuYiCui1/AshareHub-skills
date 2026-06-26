@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.forecast(symbol=None, start_date=None, end_date=None, limit=50, offset=0)
+client.forecast(symbol=None, start_date=None, end_date=None, period=None, type=None, limit=50, offset=0)
 ```
 
 ## Returns
@@ -24,6 +24,8 @@ print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Announcement start date, YYYYMMDD |
 | `end_date` | str | None | Announcement end date, YYYYMMDD |
+| `period` | str | None | Report period YYYYMMDD, e.g. 20231231 |
+| `type` | str | None | Forecast type: 预增/预减/扭亏/... |
 | `limit` | int | 50 | Max rows, up to 1000 |
 | `offset` | int | 0 | Pagination offset |
 

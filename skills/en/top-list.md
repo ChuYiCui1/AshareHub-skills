@@ -28,7 +28,7 @@ A stock gets disclosed if it triggers any of:
 ## SDK Method
 
 ```python
-client.top_list(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.top_list(symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
 ```
 
 ## Returns
@@ -49,6 +49,7 @@ print(df[["trade_date", "symbol", "name", "pct_change"]])
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
+| `trade_date` | str | None | Trading date YYYYMMDD (single day) |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 

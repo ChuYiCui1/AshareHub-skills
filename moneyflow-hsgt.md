@@ -32,7 +32,7 @@ All values in **millions of CNY (百万元)**:
 ## SDK Method
 
 ```python
-client.moneyflow_hsgt(start_date=None, end_date=None, limit=100, offset=0)
+client.moneyflow_hsgt(start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
 ```
 
 ## Returns
@@ -52,6 +52,7 @@ print(df[["trade_date", "north_money", "south_money"]])
 |-----------|------|---------|-------------|
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
+| `trade_date` | str | None | Trading date YYYYMMDD (single day) |
 | `limit` | int | 100 | Max rows, up to 2000 |
 | `offset` | int | 0 | Pagination offset |
 

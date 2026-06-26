@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.shareholders(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.shareholders(symbol=None, start_date=None, end_date=None, enddate=None, ann_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -24,6 +24,8 @@ print(df[["end_date", "holder_num"]])
 | `symbol` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
 | `start_date` | str | None | 起始日期，YYYYMMDD |
 | `end_date` | str | None | 结束日期，YYYYMMDD |
+| `enddate` | str | None | 统计截止日，YYYYMMDD |
+| `ann_date` | str | None | 公告日期，YYYYMMDD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
 | `offset` | int | 0 | 分页偏移量 |
 

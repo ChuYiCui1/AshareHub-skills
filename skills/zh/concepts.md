@@ -39,7 +39,7 @@
 ## SDK 方法
 
 ```python
-client.concepts(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.concepts(symbol=None, start_date=None, end_date=None, trade_date=None, name=None, idx_type=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -60,6 +60,9 @@ print(df[["trade_date", "name", "pct_change", "leading"]])
 | `symbol` | str | None | 板块代码，如 `BK0425.DC` |
 | `start_date` | str | None | 起始日期，YYYYMMDD |
 | `end_date` | str | None | 结束日期，YYYYMMDD |
+| `trade_date` | str | None | 交易日期，YYYYMMDD（查单日） |
+| `name` | str | None | 板块名称，如 人形机器人 |
+| `idx_type` | str | None | 板块类型：行业板块/概念板块/地域板块 |
 | `limit` | int | 100 | 返回行数，最大 5000 |
 | `offset` | int | 0 | 分页偏移量 |
 

@@ -31,7 +31,7 @@ Unlike US/EU markets, **Chinese A-shares enforce daily price limits**: a stock c
 ## SDK Method
 
 ```python
-client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, limit=100, offset=0)
+client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, trade_date=None, limit=100, offset=0)
 ```
 
 ## Returns
@@ -53,6 +53,7 @@ print(df[["trade_date", "symbol", "name", "pct_chg"]])
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
 | `limit_type` | str | None | `U`=limit-up, `D`=limit-down, `Z`=broken limit |
+| `trade_date` | str | None | Trading date YYYYMMDD (single day) |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 

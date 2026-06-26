@@ -23,7 +23,7 @@ This endpoint is the **mirror image of northbound holdings**. It tracks how much
 ## SDK Method
 
 ```python
-client.southbound_holdings(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.southbound_holdings(symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
 ```
 
 ## Returns
@@ -44,6 +44,7 @@ print(df[["trade_date", "symbol", "name", "vol", "ratio"]])
 | `symbol` | str | None | HK stock code |
 | `start_date` | str | None | Start date YYYYMMDD |
 | `end_date` | str | None | End date YYYYMMDD |
+| `trade_date` | str | None | Trading date YYYYMMDD (single day) |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 

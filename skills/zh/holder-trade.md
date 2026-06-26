@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.holder_trade(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.holder_trade(symbol=None, start_date=None, end_date=None, trade_type=None, holder_type=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -24,6 +24,8 @@ print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
 | `symbol` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
 | `start_date` | str | None | 起始日期，YYYYMMDD |
 | `end_date` | str | None | 结束日期，YYYYMMDD |
+| `trade_type` | str | None | 增减持类型：IN增持/DE减持 |
+| `holder_type` | str | None | 股东类型：C公司/P个人/G高管 |
 | `limit` | int | 100 | 返回行数，最大 5000 |
 | `offset` | int | 0 | 分页偏移量 |
 

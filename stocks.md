@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.stock_list(symbol=None, limit=100, offset=0)
+client.stock_list(symbol=None, name=None, market=None, list_status=None, exchange=None, is_hs=None, limit=100, offset=0)
 ```
 
 ## Returns
@@ -22,6 +22,11 @@ print(df[["symbol", "name", "industry", "list_date"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
+| `name` | str | None | Stock name |
+| `market` | str | None | Market: 主板/创业板/科创板/北交所/CDR |
+| `list_status` | str | None | List status: L/D/P |
+| `exchange` | str | None | Exchange: SSE/SZSE/BSE |
+| `is_hs` | str | None | HSGT: N/H/S |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 

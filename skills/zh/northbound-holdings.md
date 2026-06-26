@@ -27,7 +27,7 @@
 ## SDK 方法
 
 ```python
-client.northbound_holdings(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.northbound_holdings(symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
 ```
 
 ## 返回类型
@@ -48,6 +48,7 @@ print(df[["trade_date", "name", "vol", "ratio"]])
 | `symbol` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
 | `start_date` | str | None | 起始日期，YYYYMMDD |
 | `end_date` | str | None | 结束日期，YYYYMMDD |
+| `trade_date` | str | None | 交易日期，YYYYMMDD（查单日） |
 | `limit` | int | 100 | 返回行数，最大 5000 |
 | `offset` | int | 0 | 分页偏移量 |
 
