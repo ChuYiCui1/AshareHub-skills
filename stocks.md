@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.stock_list(symbol=None, name=None, market=None, list_status=None, exchange=None, is_hs=None, limit=100, offset=0)
+client.stock_list(symbol=None, name=None, market=None, list_status=None, exchange=None, is_hs=None)
 ```
 
 ## Returns
@@ -27,8 +27,6 @@ print(df[["symbol", "name", "industry", "list_date"]])
 | `list_status` | str | None | List status: L/D/P |
 | `exchange` | str | None | Exchange: SSE/SZSE/BSE |
 | `is_hs` | str | None | HSGT: N/H/S |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.industry_list(symbol=None, limit=100, offset=0)
+client.industry_list(symbol=None)
 ```
 
 ## 返回类型
@@ -22,8 +22,6 @@ print(df[["symbol", "l1_name", "l2_name", "l3_name"]])
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `symbol` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
-| `limit` | int | 100 | 返回行数，最大 5000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

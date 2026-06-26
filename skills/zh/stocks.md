@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.stock_list(symbol=None, name=None, market=None, list_status=None, exchange=None, is_hs=None, limit=100, offset=0)
+client.stock_list(symbol=None, name=None, market=None, list_status=None, exchange=None, is_hs=None)
 ```
 
 ## 返回类型
@@ -27,8 +27,6 @@ print(df[["symbol", "name", "industry", "list_date"]])
 | `list_status` | str | None | 上市状态：L上市/D退市/P暂停 |
 | `exchange` | str | None | 交易所：SSE/SZSE/BSE |
 | `is_hs` | str | None | 沪深港通：N否/H沪股通/S深股通 |
-| `limit` | int | 100 | 返回行数，最大 5000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

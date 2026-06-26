@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.industry_list(symbol=None, limit=100, offset=0)
+client.industry_list(symbol=None)
 ```
 
 ## Returns
@@ -22,8 +22,6 @@ print(df[["symbol", "l1_name", "l2_name", "l3_name"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 
