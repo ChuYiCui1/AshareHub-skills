@@ -42,8 +42,8 @@ print(df[["con_symbol", "name"]])
 |------|------|--------|------|
 | `symbol` | str | None | 板块代码，如 `BK0425.DC` |
 | `con_symbol` | str | None | 成分股代码，如 `000001.SZ` |
-| `start_date` | str | None | 起始日期，YYYY-MM-DD |
-| `end_date` | str | None | 结束日期，YYYY-MM-DD |
+| `start_date` | str | None | 起始日期，YYYYMMDD |
+| `end_date` | str | None | 结束日期，YYYYMMDD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
 | `offset` | int | 0 | 分页偏移量 |
 
@@ -58,5 +58,5 @@ print(df[["con_symbol", "name"]])
 
 ## 数据范围
 
-- 起始日期：2025-01-02
+- 起始日期：20250102
 - API 路径：`GET /v2/market/concept-members`

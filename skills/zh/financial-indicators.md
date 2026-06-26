@@ -22,8 +22,8 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `symbol` | str | None | 股票代码，如 `000001.SZ` |
-| `start_date` | str | None | 报告期起始，YYYY-MM-DD |
-| `end_date` | str | None | 报告期结束，YYYY-MM-DD |
+| `start_date` | str | None | 报告期起始，YYYYMMDD |
+| `end_date` | str | None | 报告期结束，YYYYMMDD |
 | `limit` | int | 20 | 返回行数，最大 200 |
 | `offset` | int | 0 | 分页偏移量 |
 
@@ -42,5 +42,5 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 
 ## 数据范围
 
-- `end_date` 为财务报告期（如 2024-12-31 为年报，2024-06-30 为半年报）
+- `end_date` 为财务报告期（如 20241231 为年报，20240630 为半年报）
 - API 路径：`GET /v2/financials/indicators`

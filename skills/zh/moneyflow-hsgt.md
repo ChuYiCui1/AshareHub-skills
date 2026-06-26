@@ -49,8 +49,8 @@ print(df[["trade_date", "north_money", "south_money"]])
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `start_date` | str | None | 起始日期，YYYY-MM-DD |
-| `end_date` | str | None | 结束日期，YYYY-MM-DD |
+| `start_date` | str | None | 起始日期，YYYYMMDD |
+| `end_date` | str | None | 结束日期，YYYYMMDD |
 | `limit` | int | 100 | 返回行数，最大 2000 |
 | `offset` | int | 0 | 分页偏移量 |
 
@@ -66,7 +66,7 @@ print(df[["trade_date", "north_money", "south_money"]])
 
 ## 数据范围
 
-- 起始日期：2014-11-17
+- 起始日期：20141117
 - 每个交易日一条记录
 - 外资对 A 股情绪的关键指标
 - API 路径：`GET /v2/flows/moneyflow-hsgt`

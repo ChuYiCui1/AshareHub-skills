@@ -22,8 +22,8 @@ print(df[["end_date", "pre_date", "actual_date"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code |
-| `start_date` | str | None | Period start YYYY-MM-DD |
-| `end_date` | str | None | Period end YYYY-MM-DD |
+| `start_date` | str | None | Period start YYYYMMDD |
+| `end_date` | str | None | Period end YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 2000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -33,6 +33,6 @@ symbol, ann_date (latest announcement), end_date (fiscal period), pre_date (plan
 
 ## Data Coverage
 
-- From: 2001-02-06
+- From: 20010206
 - Use to track when companies will release earnings
 - API path: `GET /v2/financials/disclosure-date`

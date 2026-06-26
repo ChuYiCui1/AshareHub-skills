@@ -22,8 +22,8 @@ print(df[["trade_date", "close_qfq", "macd_qfq", "rsi_qfq_6", "ma_qfq_20"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
-| `start_date` | str | None | Start date, YYYY-MM-DD |
-| `end_date` | str | None | End date, YYYY-MM-DD |
+| `start_date` | str | None | Start date, YYYYMMDD |
+| `end_date` | str | None | End date, YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -33,5 +33,5 @@ print(df[["trade_date", "close_qfq", "macd_qfq", "rsi_qfq_6", "ma_qfq_20"]])
 
 ## Data Coverage
 
-- From: 2020-01-02
+- From: 20200102
 - API path: `GET /v2/market/technical-factors-pro`

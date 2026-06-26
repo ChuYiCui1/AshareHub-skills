@@ -22,8 +22,8 @@ print(df[["trade_date", "bid_close", "ask_close"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | `USDCNH.FXCM` | FX pair code |
-| `start_date` | str | None | Start date, YYYY-MM-DD |
-| `end_date` | str | None | End date, YYYY-MM-DD |
+| `start_date` | str | None | Start date, YYYYMMDD |
+| `end_date` | str | None | End date, YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 2000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -39,7 +39,7 @@ print(df[["trade_date", "bid_close", "ask_close"]])
 
 ## Data Coverage
 
-- From: 2012-01-01
+- From: 20120101
 - Default pair: USDCNH (USD vs offshore CNY)
 - Rising USDCNH = CNY weakening, typically pressures foreign inflows into A-shares
 - API path: `GET /v2/fx/daily`

@@ -23,8 +23,8 @@ print(df[["publish_time", "content_cn"]])
 | 名称 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | source | str | **是** | 来源：`cls`(财联社，偏 A 股)、`jin10`(金十，偏全球宏观)、`sina`(新浪，综合)。每次查一个源。 |
-| start_date | str | 否 | YYYY-MM-DD，按 publish_time 过滤 |
-| end_date | str | 否 | YYYY-MM-DD |
+| start_date | str | 否 | YYYYMMDD，按 publish_time 过滤 |
+| end_date | str | 否 | YYYYMMDD |
 | importance | int | 否 | 只看重要度 ≥ 该值(如 `1` = 只看重要) |
 | limit | int | 否 | 最大行数(默认 100，最大 5000) |
 | offset | int | 否 | 分页偏移 |

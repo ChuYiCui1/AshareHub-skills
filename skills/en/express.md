@@ -22,8 +22,8 @@ print(df[["ann_date", "end_date", "revenue", "n_income", "diluted_roe"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
-| `start_date` | str | None | Announcement start date, YYYY-MM-DD |
-| `end_date` | str | None | Announcement end date, YYYY-MM-DD |
+| `start_date` | str | None | Announcement start date, YYYYMMDD |
+| `end_date` | str | None | Announcement end date, YYYYMMDD |
 | `limit` | int | 50 | Max rows, up to 1000 |
 | `offset` | int | 0 | Pagination offset |
 

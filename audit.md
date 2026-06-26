@@ -22,8 +22,8 @@ print(df[["end_date", "audit_result", "audit_agency", "audit_fees"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code |
-| `start_date` | str | None | Period start YYYY-MM-DD |
-| `end_date` | str | None | Period end YYYY-MM-DD |
+| `start_date` | str | None | Period start YYYYMMDD |
+| `end_date` | str | None | Period end YYYYMMDD |
 | `limit` | int | 50 | Max rows, up to 1000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -33,6 +33,6 @@ symbol, ann_date, end_date, audit_result (opinion type), audit_fees, audit_agenc
 
 ## Data Coverage
 
-- From: 2006-04-20
+- From: 20060420
 - Annual data only (released with annual reports)
 - API path: `GET /v2/financials/audit`

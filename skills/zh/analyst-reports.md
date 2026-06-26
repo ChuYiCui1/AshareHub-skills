@@ -22,8 +22,8 @@ print(df[["report_date", "org_name", "rating", "max_price", "eps"]])
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `symbol` | str | None | 股票代码 |
-| `start_date` | str | None | 起始日期 YYYY-MM-DD |
-| `end_date` | str | None | 结束日期 YYYY-MM-DD |
+| `start_date` | str | None | 起始日期 YYYYMMDD |
+| `end_date` | str | None | 结束日期 YYYYMMDD |
 | `limit` | int | 100 | 返回行数，最大 3000 |
 | `offset` | int | 0 | 分页偏移量 |
 

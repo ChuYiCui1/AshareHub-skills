@@ -22,8 +22,8 @@ print(df[["trade_date", "close", "pct_chg"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` (Ping An Bank), `600519.SH` (Moutai) |
-| `start_date` | str | None | Start date, YYYY-MM-DD |
-| `end_date` | str | None | End date, YYYY-MM-DD |
+| `start_date` | str | None | Start date, YYYYMMDD |
+| `end_date` | str | None | End date, YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -42,5 +42,5 @@ print(df[["trade_date", "close", "pct_chg"]])
 
 ## Data Coverage
 
-- From: 2020-01-02
+- From: 20200102
 - API path: `GET /v2/market/daily`

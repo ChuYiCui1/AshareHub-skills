@@ -58,8 +58,8 @@ print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
-| `start_date` | str | None | Start date, YYYY-MM-DD |
-| `end_date` | str | None | End date, YYYY-MM-DD |
+| `start_date` | str | None | Start date, YYYYMMDD |
+| `end_date` | str | None | End date, YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -81,6 +81,6 @@ print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
 
 ## Data Coverage
 
-- From: 2020-01-02
+- From: 20200102
 - Rising rzye = bullish leverage; rising rqye = bearish sentiment
 - API path: `GET /v2/market/margin`

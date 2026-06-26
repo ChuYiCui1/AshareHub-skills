@@ -47,8 +47,8 @@ print(df[["trade_date", "symbol", "name", "pct_change"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
-| `start_date` | str | None | Start date, YYYY-MM-DD |
-| `end_date` | str | None | End date, YYYY-MM-DD |
+| `start_date` | str | None | Start date, YYYYMMDD |
+| `end_date` | str | None | End date, YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -69,6 +69,6 @@ print(df[["trade_date", "symbol", "name", "pct_change"]])
 
 ## Data Coverage
 
-- From: 2024-01-02
+- From: 20240102
 - Stocks triggering exchange disclosure due to unusual price/volume
 - API path: `GET /v2/market/top-list`

@@ -43,8 +43,8 @@ print(df[["con_symbol", "name"]])
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Concept index code, e.g. `BK0425.DC` |
 | `con_symbol` | str | None | Stock code filter, e.g. `000001.SZ` |
-| `start_date` | str | None | Start date, YYYY-MM-DD |
-| `end_date` | str | None | End date, YYYY-MM-DD |
+| `start_date` | str | None | Start date, YYYYMMDD |
+| `end_date` | str | None | End date, YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -59,6 +59,6 @@ print(df[["con_symbol", "name"]])
 
 ## Data Coverage
 
-- From: 2025-04-28
+- From: 20250428
 - Use concepts endpoint first to find concept codes, then query members here
 - API path: `GET /v2/market/concept-members`

@@ -22,8 +22,8 @@ print(df[["end_date", "bz_item", "bz_sales", "bz_profit"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code |
-| `start_date` | str | None | Period start YYYY-MM-DD |
-| `end_date` | str | None | Period end YYYY-MM-DD |
+| `start_date` | str | None | Period start YYYYMMDD |
+| `end_date` | str | None | Period end YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 2000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -33,6 +33,6 @@ symbol, end_date, bz_item (segment name), bz_sales (segment revenue), bz_profit,
 
 ## Data Coverage
 
-- From: 2014-12-31
+- From: 20141231
 - Use to understand which products/regions drive a company's business
 - API path: `GET /v2/financials/main-business`

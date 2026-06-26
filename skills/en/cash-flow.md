@@ -22,8 +22,8 @@ print(df[["end_date", "n_cashflow_act", "free_cashflow"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
-| `start_date` | str | None | Report period start, YYYY-MM-DD |
-| `end_date` | str | None | Report period end, YYYY-MM-DD |
+| `start_date` | str | None | Report period start, YYYYMMDD |
+| `end_date` | str | None | Report period end, YYYYMMDD |
 | `limit` | int | 20 | Max rows, up to 200 |
 | `offset` | int | 0 | Pagination offset |
 

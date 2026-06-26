@@ -22,8 +22,8 @@ print(df[["end_date", "revenue", "n_income"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
-| `start_date` | str | None | Report period start, YYYY-MM-DD |
-| `end_date` | str | None | Report period end, YYYY-MM-DD |
+| `start_date` | str | None | Report period start, YYYYMMDD |
+| `end_date` | str | None | Report period end, YYYYMMDD |
 | `limit` | int | 20 | Max rows, up to 200 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -43,5 +43,5 @@ print(df[["end_date", "revenue", "n_income"]])
 ## Notes
 
 - All monetary values in CNY
-- `end_date` = fiscal period (e.g. 2024-12-31 for annual, 2024-06-30 for H1)
+- `end_date` = fiscal period (e.g. 20241231 for annual, 20240630 for H1)
 - API path: `GET /v2/financials/income`

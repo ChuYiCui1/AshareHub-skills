@@ -49,8 +49,8 @@ print(df[["trade_date", "symbol", "exalter", "net_buy", "reason"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code |
-| `start_date` | str | None | Start date YYYY-MM-DD |
-| `end_date` | str | None | End date YYYY-MM-DD |
+| `start_date` | str | None | Start date YYYYMMDD |
+| `end_date` | str | None | End date YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -60,6 +60,6 @@ trade_date, symbol, exalter (institutional seat name), buy/buy_rate, sell/sell_r
 
 ## Data Coverage
 
-- From: 2020-01-02
+- From: 20200102
 - Granular institutional seat detail per stock per day
 - API path: `GET /v2/market/top-inst`

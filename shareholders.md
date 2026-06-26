@@ -22,8 +22,8 @@ print(df[["end_date", "holder_num"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
-| `start_date` | str | None | Report period start, YYYY-MM-DD |
-| `end_date` | str | None | Report period end, YYYY-MM-DD |
+| `start_date` | str | None | Report period start, YYYYMMDD |
+| `end_date` | str | None | Report period end, YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -38,6 +38,6 @@ print(df[["end_date", "holder_num"]])
 
 ## Data Coverage
 
-- From: 2024-04-01
+- From: 20240401
 - Quarterly reports. Declining count = chip concentration (accumulation by large holders)
 - API path: `GET /v2/market/shareholders`

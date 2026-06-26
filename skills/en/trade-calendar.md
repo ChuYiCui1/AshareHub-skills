@@ -13,7 +13,7 @@ client.trade_calendar(exchange=None, start_date=None, end_date=None, is_open=Non
 ## Example
 
 ```python
-df = client.trade_calendar(exchange="SSE", start_date="2024-03-25", end_date="2024-03-31")
+df = client.trade_calendar(exchange="SSE", start_date="20240325", end_date="20240331")
 print(df[["cal_date", "is_open"]])
 ```
 
@@ -22,8 +22,8 @@ print(df[["cal_date", "is_open"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `exchange` | str | None | `SSE` (Shanghai) or `SZSE` (Shenzhen) |
-| `start_date` | str | None | Start date, YYYY-MM-DD |
-| `end_date` | str | None | End date, YYYY-MM-DD |
+| `start_date` | str | None | Start date, YYYYMMDD |
+| `end_date` | str | None | End date, YYYYMMDD |
 | `is_open` | int | None | `1`=trading days only, `0`=closed days only |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |

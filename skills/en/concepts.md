@@ -59,8 +59,8 @@ print(df[["trade_date", "name", "pct_change", "leading"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Concept code, e.g. `BK0425.DC` |
-| `start_date` | str | None | Start date, YYYY-MM-DD |
-| `end_date` | str | None | End date, YYYY-MM-DD |
+| `start_date` | str | None | Start date, YYYYMMDD |
+| `end_date` | str | None | End date, YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -84,5 +84,5 @@ print(df[["trade_date", "name", "pct_change", "leading"]])
 
 ## Data Coverage
 
-- From: 2025-04-01
+- From: 20250401
 - API path: `GET /v2/market/concepts`

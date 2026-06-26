@@ -22,8 +22,8 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
-| `start_date` | str | None | Report period start, YYYY-MM-DD |
-| `end_date` | str | None | Report period end, YYYY-MM-DD |
+| `start_date` | str | None | Report period start, YYYYMMDD |
+| `end_date` | str | None | Report period end, YYYYMMDD |
 | `limit` | int | 20 | Max rows, up to 200 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -43,5 +43,5 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 
 ## Data Coverage
 
-- `end_date` refers to fiscal period end (e.g. `2024-12-31` = annual, `2024-06-30` = semi-annual)
+- `end_date` refers to fiscal period end (e.g. `20241231` = annual, `20240630` = semi-annual)
 - API path: `GET /v2/financials/indicators`

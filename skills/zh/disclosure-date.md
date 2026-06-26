@@ -22,8 +22,8 @@ print(df[["end_date", "pre_date", "actual_date"]])
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `symbol` | str | None | 股票代码 |
-| `start_date` | str | None | 起始日期 YYYY-MM-DD |
-| `end_date` | str | None | 结束日期 YYYY-MM-DD |
+| `start_date` | str | None | 起始日期 YYYYMMDD |
+| `end_date` | str | None | 结束日期 YYYYMMDD |
 | `limit` | int | 100 | 返回行数，最大 2000 |
 | `offset` | int | 0 | 分页偏移量 |
 
@@ -33,6 +33,6 @@ symbol、ann_date(最新公告日)、end_date(报告期)、pre_date(预约披露
 
 ## 数据范围
 
-- 起始日期：2001-02-06
+- 起始日期：20010206
 - 用于追踪上市公司财报披露时间
 - API 路径：`GET /v2/financials/disclosure-date`

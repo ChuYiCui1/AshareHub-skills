@@ -110,7 +110,7 @@ import os
 client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"], version="v2")
 
 # 返回 pd.DataFrame
-df = client.market_daily(symbol="000001.SZ", start_date="2024-01-01", end_date="2024-01-31")
+df = client.market_daily(symbol="000001.SZ", start_date="20240101", end_date="20240131")
 print(df[["trade_date", "open", "high", "low", "close", "vol"]])
 
 client.close()
@@ -145,14 +145,14 @@ client.close()
 ### 查看估值
 
 ```python
-df = client.fundamentals(symbol="600519.SH", start_date="2024-01-01")
+df = client.fundamentals(symbol="600519.SH", start_date="20240101")
 print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 ```
 
 ### 沪深港通资金
 
 ```python
-df = client.moneyflow_hsgt(start_date="2024-03-01", end_date="2024-03-15")
+df = client.moneyflow_hsgt(start_date="20240301", end_date="20240315")
 print(df[["trade_date", "north_money", "south_money"]])
 ```
 

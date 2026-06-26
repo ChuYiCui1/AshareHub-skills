@@ -22,8 +22,8 @@ print(df[["trade_date", "bid_close", "ask_close"]])
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `symbol` | str | `USDCNH.FXCM` | 外汇对代码 |
-| `start_date` | str | None | 起始日期，YYYY-MM-DD |
-| `end_date` | str | None | 结束日期，YYYY-MM-DD |
+| `start_date` | str | None | 起始日期，YYYYMMDD |
+| `end_date` | str | None | 结束日期，YYYYMMDD |
 | `limit` | int | 100 | 返回行数，最大 2000 |
 | `offset` | int | 0 | 分页偏移量 |
 
@@ -39,7 +39,7 @@ print(df[["trade_date", "bid_close", "ask_close"]])
 
 ## 数据范围
 
-- 起始日期：2012-01-01
+- 起始日期：20120101
 - 默认货币对：USDCNH（美元/离岸人民币）
 - USDCNH 上涨 = 人民币贬值，通常对 A 股外资流入形成压力
 - API 路径：`GET /v2/fx/daily`

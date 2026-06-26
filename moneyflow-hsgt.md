@@ -50,8 +50,8 @@ print(df[["trade_date", "north_money", "south_money"]])
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `start_date` | str | None | Start date, YYYY-MM-DD |
-| `end_date` | str | None | End date, YYYY-MM-DD |
+| `start_date` | str | None | Start date, YYYYMMDD |
+| `end_date` | str | None | End date, YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 2000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -67,7 +67,7 @@ print(df[["trade_date", "north_money", "south_money"]])
 
 ## Data Coverage
 
-- From: 2014-11-17
+- From: 20141117
 - One record per trading day
 - Key indicator of foreign investor sentiment toward A-shares
 - API path: `GET /v2/flows/moneyflow-hsgt`

@@ -22,8 +22,8 @@ print(df[["end_date", "total_assets", "total_liab"]])
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `symbol` | str | None | 股票代码 |
-| `start_date` | str | None | 报告期起始，YYYY-MM-DD |
-| `end_date` | str | None | 报告期截止，YYYY-MM-DD |
+| `start_date` | str | None | 报告期起始，YYYYMMDD |
+| `end_date` | str | None | 报告期截止，YYYYMMDD |
 | `limit` | int | 20 | 返回行数，最大 200 |
 | `offset` | int | 0 | 分页偏移量 |
 

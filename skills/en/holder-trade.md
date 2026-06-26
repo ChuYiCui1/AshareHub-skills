@@ -22,8 +22,8 @@ print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
-| `start_date` | str | None | Start date, YYYY-MM-DD |
-| `end_date` | str | None | End date, YYYY-MM-DD |
+| `start_date` | str | None | Start date, YYYYMMDD |
+| `end_date` | str | None | End date, YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -47,6 +47,6 @@ print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
 
 ## Data Coverage
 
-- From: 2019-11-20
+- From: 20191120
 - Key signal for insider sentiment
 - API path: `GET /v2/market/holder-trade`

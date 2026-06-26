@@ -42,8 +42,8 @@ print(df[["trade_date", "symbol", "name", "vol", "ratio"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | HK stock code |
-| `start_date` | str | None | Start date YYYY-MM-DD |
-| `end_date` | str | None | End date YYYY-MM-DD |
+| `start_date` | str | None | Start date YYYYMMDD |
+| `end_date` | str | None | End date YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -53,6 +53,6 @@ trade_date, symbol (HK), name, vol (shares held by mainland), ratio (% of total 
 
 ## Data Coverage
 
-- From: 2020-01-02
+- From: 20200102
 - Mirror of northbound-holdings: tracks mainland investor positions in HK stocks
 - API path: `GET /v2/flows/southbound-holdings`

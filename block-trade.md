@@ -22,8 +22,8 @@ print(df[["trade_date", "price", "vol", "buyer", "seller"]])
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `symbol` | str | None | Stock code, e.g. `000001.SZ` |
-| `start_date` | str | None | Start date, YYYY-MM-DD |
-| `end_date` | str | None | End date, YYYY-MM-DD |
+| `start_date` | str | None | Start date, YYYYMMDD |
+| `end_date` | str | None | End date, YYYYMMDD |
 | `limit` | int | 100 | Max rows, up to 5000 |
 | `offset` | int | 0 | Pagination offset |
 
@@ -41,6 +41,6 @@ print(df[["trade_date", "price", "vol", "buyer", "seller"]])
 
 ## Data Coverage
 
-- From: 2010-01-04
+- From: 20100104
 - Large institutional transactions above regular trading limits
 - API path: `GET /v2/market/block-trade`

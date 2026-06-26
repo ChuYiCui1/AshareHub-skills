@@ -23,8 +23,8 @@ print(df[["publish_time", "content_cn"]])
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | source | str | **Yes** | Feed: `cls` (财联社, A-share focused), `jin10` (金十, global macro), `sina` (新浪, mixed). One source per call. |
-| start_date | str | No | YYYY-MM-DD, filters publish_time |
-| end_date | str | No | YYYY-MM-DD |
+| start_date | str | No | YYYYMMDD, filters publish_time |
+| end_date | str | No | YYYYMMDD |
 | importance | int | No | Only items with importance >= this value (e.g. `1` = important only) |
 | limit | int | No | Max rows (default 100, max 5000) |
 | offset | int | No | Pagination offset |

@@ -43,8 +43,8 @@ print(df[["trade_date", "symbol", "name", "vol", "ratio"]])
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `symbol` | str | None | 港股代码 |
-| `start_date` | str | None | 起始日期 YYYY-MM-DD |
-| `end_date` | str | None | 结束日期 YYYY-MM-DD |
+| `start_date` | str | None | 起始日期 YYYYMMDD |
+| `end_date` | str | None | 结束日期 YYYYMMDD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
 | `offset` | int | 0 | 分页偏移量 |
 
@@ -54,6 +54,6 @@ trade_date、symbol(港股代码)、name、vol(内地持有股数)、ratio(占�
 
 ## 数据范围
 
-- 起始日期：2020-01-02
+- 起始日期：20200102
 - 北向持股的镜像数据：内地投资者持有港股的明细
 - API 路径：`GET /v2/flows/southbound-holdings`

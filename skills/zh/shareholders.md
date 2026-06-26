@@ -22,8 +22,8 @@ print(df[["end_date", "holder_num"]])
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `symbol` | str | None | 股票代码，如 `000001.SZ`（平安银行）、`600519.SH`（贵州茅台） |
-| `start_date` | str | None | 起始日期，YYYY-MM-DD |
-| `end_date` | str | None | 结束日期，YYYY-MM-DD |
+| `start_date` | str | None | 起始日期，YYYYMMDD |
+| `end_date` | str | None | 结束日期，YYYYMMDD |
 | `limit` | int | 100 | 返回行数，最大 5000 |
 | `offset` | int | 0 | 分页偏移量 |
 
@@ -38,7 +38,7 @@ print(df[["end_date", "holder_num"]])
 
 ## 数据范围
 
-- 起始日期：2024-01-01
+- 起始日期：20240101
 - API 路径：`GET /v2/market/shareholders`
 
 ## 备注

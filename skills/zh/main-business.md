@@ -22,8 +22,8 @@ print(df[["end_date", "bz_item", "bz_sales", "bz_profit"]])
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
 | `symbol` | str | None | 股票代码 |
-| `start_date` | str | None | 起始日期 YYYY-MM-DD |
-| `end_date` | str | None | 结束日期 YYYY-MM-DD |
+| `start_date` | str | None | 起始日期 YYYYMMDD |
+| `end_date` | str | None | 结束日期 YYYYMMDD |
 | `limit` | int | 100 | 返回行数，最大 2000 |
 | `offset` | int | 0 | 分页偏移量 |
 
@@ -33,6 +33,6 @@ symbol、end_date、bz_item(业务名称)、bz_sales(业务收入)、bz_profit(�
 
 ## 数据范围
 
-- 起始日期：2014-12-31
+- 起始日期：20141231
 - 用于了解公司业务构成（按产品/地区）
 - API 路径：`GET /v2/financials/main-business`
