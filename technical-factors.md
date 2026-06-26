@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.technical_factors(symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
+client.technical_factors(symbol=None, start_date=None, end_date=None, trade_date=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.technical_factors(symbol=None, start_date=None, end_date=None, trade_date
 ## Example
 
 ```python
-df = client.technical_factors(symbol="000001.SZ", limit=3)
+df = client.technical_factors(symbol="000001.SZ")
 print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 ```
 
@@ -25,8 +25,6 @@ print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

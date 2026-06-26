@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.index_daily(symbol="000001.SH", start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
+client.index_daily(symbol="000001.SH", start_date=None, end_date=None, trade_date=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.index_daily(symbol="000001.SH", start_date=None, end_date=None, trade_dat
 ## Example
 
 ```python
-df = client.index_daily(symbol="000001.SH", limit=3)
+df = client.index_daily(symbol="000001.SH")
 print(df[["trade_date", "close", "pct_chg"]])
 ```
 
@@ -25,8 +25,6 @@ print(df[["trade_date", "close", "pct_chg"]])
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
-| `limit` | int | 100 | Max rows, up to 2000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Common Index Codes
 

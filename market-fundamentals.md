@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.fundamentals(symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
+client.fundamentals(symbol=None, start_date=None, end_date=None, trade_date=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.fundamentals(symbol=None, start_date=None, end_date=None, trade_date=None
 ## Example
 
 ```python
-df = client.fundamentals(symbol="600519.SH", limit=3)
+df = client.fundamentals(symbol="600519.SH")
 print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 ```
 
@@ -25,8 +25,6 @@ print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

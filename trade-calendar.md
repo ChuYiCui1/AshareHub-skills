@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.trade_calendar(exchange=None, start_date=None, end_date=None, is_open=None, limit=100, offset=0)
+client.trade_calendar(exchange=None, start_date=None, end_date=None, is_open=None)
 ```
 
 ## Returns
@@ -25,8 +25,6 @@ print(df[["cal_date", "is_open"]])
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
 | `is_open` | int | None | `1`=trading days only, `0`=closed days only |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

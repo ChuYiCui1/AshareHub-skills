@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.block_trade(symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
+client.block_trade(symbol=None, start_date=None, end_date=None, trade_date=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.block_trade(symbol=None, start_date=None, end_date=None, trade_date=None,
 ## Example
 
 ```python
-df = client.block_trade(symbol="000001.SZ", limit=3)
+df = client.block_trade(symbol="000001.SZ")
 print(df[["trade_date", "price", "vol", "buyer", "seller"]])
 ```
 
@@ -25,8 +25,6 @@ print(df[["trade_date", "price", "vol", "buyer", "seller"]])
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

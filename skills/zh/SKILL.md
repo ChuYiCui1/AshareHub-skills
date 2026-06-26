@@ -85,8 +85,8 @@ API 只包含交易日数据。查询非交易日（周末/节假日）会返回
 推荐获取最新数据的方式：
 
 ```python
-# 不指定日期 + limit=1，返回最近一个交易日的记录
-df = client.market_daily(symbol="000001.SZ", limit=1)
+# 不指定日期，结果按日期倒序，第一行即最近一个交易日
+df = client.market_daily(symbol="000001.SZ")
 ```
 
 ## 工作流程

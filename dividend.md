@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.dividend(symbol=None, start_date=None, end_date=None, record_date=None, ex_date=None, imp_ann_date=None, limit=50, offset=0)
+client.dividend(symbol=None, start_date=None, end_date=None, record_date=None, ex_date=None, imp_ann_date=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.dividend(symbol=None, start_date=None, end_date=None, record_date=None, e
 ## Example
 
 ```python
-df = client.dividend(symbol="000001.SZ", limit=3)
+df = client.dividend(symbol="000001.SZ")
 print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 ```
 
@@ -27,8 +27,6 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 | `record_date` | str | None | Record date YYYYMMDD |
 | `ex_date` | str | None | Ex-dividend date YYYYMMDD |
 | `imp_ann_date` | str | None | Implementation announcement date YYYYMMDD |
-| `limit` | int | 50 | Max rows, up to 1000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

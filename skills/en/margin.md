@@ -39,7 +39,7 @@
 ## SDK Method
 
 ```python
-client.margin(symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
+client.margin(symbol=None, start_date=None, end_date=None, trade_date=None)
 ```
 
 ## Returns
@@ -49,7 +49,7 @@ client.margin(symbol=None, start_date=None, end_date=None, trade_date=None, limi
 ## Example
 
 ```python
-df = client.margin(symbol="000001.SZ", limit=3)
+df = client.margin(symbol="000001.SZ")
 print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
 ```
 
@@ -61,8 +61,6 @@ print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

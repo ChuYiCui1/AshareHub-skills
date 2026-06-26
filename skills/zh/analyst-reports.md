@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.analyst_reports(symbol=None, start_date=None, end_date=None, limit=100, offset=0)
+client.analyst_reports(symbol=None, start_date=None, end_date=None)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.analyst_reports(symbol=None, start_date=None, end_date=None, limit=100, o
 ## 示例
 
 ```python
-df = client.analyst_reports(symbol="600519.SH", limit=5)
+df = client.analyst_reports(symbol="600519.SH")
 print(df[["report_date", "org_name", "rating", "max_price", "eps"]])
 ```
 
@@ -24,8 +24,6 @@ print(df[["report_date", "org_name", "rating", "max_price", "eps"]])
 | `symbol` | str | None | 股票代码 |
 | `start_date` | str | None | 起始日期 YYYYMMDD |
 | `end_date` | str | None | 结束日期 YYYYMMDD |
-| `limit` | int | 100 | 返回行数，最大 3000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

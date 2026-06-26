@@ -30,7 +30,7 @@ This endpoint returns the **per-seat breakdown** of institutional buying/selling
 ## SDK Method
 
 ```python
-client.top_inst(symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
+client.top_inst(symbol=None, start_date=None, end_date=None, trade_date=None)
 ```
 
 ## Returns
@@ -40,7 +40,7 @@ client.top_inst(symbol=None, start_date=None, end_date=None, trade_date=None, li
 ## Example
 
 ```python
-df = client.top_inst(limit=5)
+df = client.top_inst()
 print(df[["trade_date", "symbol", "exalter", "net_buy", "reason"]])
 ```
 
@@ -52,8 +52,6 @@ print(df[["trade_date", "symbol", "exalter", "net_buy", "reason"]])
 | `start_date` | str | None | Start date YYYYMMDD |
 | `end_date` | str | None | End date YYYYMMDD |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

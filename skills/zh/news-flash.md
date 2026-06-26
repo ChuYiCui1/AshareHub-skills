@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.news_flash(source, start_date=None, end_date=None, importance=None, limit=100, offset=0)
+client.news_flash(source, start_date=None, end_date=None, importance=None)
 ```
 
 ## 返回
@@ -14,7 +14,7 @@ client.news_flash(source, start_date=None, end_date=None, importance=None, limit
 
 ```python
 # 只看财联社的重要快讯
-df = client.news_flash(source="cls", importance=1, limit=10)
+df = client.news_flash(source="cls", importance=1)
 print(df[["publish_time", "content_cn"]])
 ```
 
@@ -26,8 +26,6 @@ print(df[["publish_time", "content_cn"]])
 | start_date | str | 否 | YYYYMMDD，按 publish_time 过滤 |
 | end_date | str | 否 | YYYYMMDD |
 | importance | int | 否 | 只看重要度 ≥ 该值(如 `1` = 只看重要) |
-| limit | int | 否 | 最大行数(默认 100，最大 5000) |
-| offset | int | 否 | 分页偏移 |
 
 ## 返回字段
 

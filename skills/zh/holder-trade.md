@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.holder_trade(symbol=None, start_date=None, end_date=None, trade_type=None, holder_type=None, limit=100, offset=0)
+client.holder_trade(symbol=None, start_date=None, end_date=None, trade_type=None, holder_type=None)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.holder_trade(symbol=None, start_date=None, end_date=None, trade_type=None
 ## 示例
 
 ```python
-df = client.holder_trade(symbol="000001.SZ", limit=3)
+df = client.holder_trade(symbol="000001.SZ")
 print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
 ```
 
@@ -26,8 +26,6 @@ print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
 | `end_date` | str | None | 结束日期，YYYYMMDD |
 | `trade_type` | str | None | 增减持类型：IN增持/DE减持 |
 | `holder_type` | str | None | 股东类型：C公司/P个人/G高管 |
-| `limit` | int | 100 | 返回行数，最大 5000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

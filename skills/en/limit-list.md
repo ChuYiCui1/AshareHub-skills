@@ -31,7 +31,7 @@ Unlike US/EU markets, **Chinese A-shares enforce daily price limits**: a stock c
 ## SDK Method
 
 ```python
-client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, trade_date=None, limit=100, offset=0)
+client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, trade_date=None)
 ```
 
 ## Returns
@@ -41,7 +41,7 @@ client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, 
 ## Example
 
 ```python
-df = client.limit_list(limit=3, limit_type="U")
+df = client.limit_list(limit_type="U")
 print(df[["trade_date", "symbol", "name", "pct_chg"]])
 ```
 
@@ -54,8 +54,6 @@ print(df[["trade_date", "symbol", "name", "pct_chg"]])
 | `end_date` | str | None | End date, YYYYMMDD |
 | `limit_type` | str | None | `U`=limit-up, `D`=limit-down, `Z`=broken limit |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 
@@ -73,7 +71,6 @@ print(df[["trade_date", "symbol", "name", "pct_chg"]])
 | `first_time` / `last_time` | First/last limit hit time |
 | `open_times` | Times limit was broken |
 | `limit_times` | Consecutive limit days |
-| `limit` | Type: U=up, D=down, Z=broken |
 
 ## Data Coverage
 

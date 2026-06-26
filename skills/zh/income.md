@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.income(symbol=None, start_date=None, end_date=None, period=None, ann_date=None, f_ann_date=None, report_type=None, comp_type=None, limit=20, offset=0)
+client.income(symbol=None, start_date=None, end_date=None, period=None, ann_date=None, f_ann_date=None, report_type=None, comp_type=None)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.income(symbol=None, start_date=None, end_date=None, period=None, ann_date
 ## 示例
 
 ```python
-df = client.income(symbol="000001.SZ", limit=3)
+df = client.income(symbol="000001.SZ")
 print(df[["end_date", "revenue", "n_income"]])
 ```
 
@@ -29,8 +29,6 @@ print(df[["end_date", "revenue", "n_income"]])
 | `f_ann_date` | str | None | 实际公告日期，YYYYMMDD |
 | `report_type` | str | None | 报告类型 |
 | `comp_type` | str | None | 公司类型：1工商业/2银行/3保险/4证券 |
-| `limit` | int | 20 | 返回行数，最大 200 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

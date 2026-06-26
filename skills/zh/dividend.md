@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.dividend(symbol=None, start_date=None, end_date=None, record_date=None, ex_date=None, imp_ann_date=None, limit=50, offset=0)
+client.dividend(symbol=None, start_date=None, end_date=None, record_date=None, ex_date=None, imp_ann_date=None)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.dividend(symbol=None, start_date=None, end_date=None, record_date=None, e
 ## 示例
 
 ```python
-df = client.dividend(symbol="000001.SZ", limit=3)
+df = client.dividend(symbol="000001.SZ")
 print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 ```
 
@@ -27,8 +27,6 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 | `record_date` | str | None | 股权登记日，YYYYMMDD |
 | `ex_date` | str | None | 除权除息日，YYYYMMDD |
 | `imp_ann_date` | str | None | 实施公告日，YYYYMMDD |
-| `limit` | int | 50 | 返回行数，最大 1000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

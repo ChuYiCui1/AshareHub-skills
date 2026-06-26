@@ -31,7 +31,7 @@ A 股市场实行**每日价格涨跌停板制度**：股票当日价格涨跌�
 ## SDK 方法
 
 ```python
-client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, trade_date=None, limit=100, offset=0)
+client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, trade_date=None)
 ```
 
 ## 返回类型
@@ -41,7 +41,7 @@ client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, 
 ## 示例
 
 ```python
-df = client.limit_list(limit=3, limit_type="U")
+df = client.limit_list(limit_type="U")
 print(df[["trade_date", "symbol", "name", "pct_chg"]])
 ```
 
@@ -54,8 +54,6 @@ print(df[["trade_date", "symbol", "name", "pct_chg"]])
 | `end_date` | str | None | 结束日期，YYYYMMDD |
 | `limit_type` | str | None | `U`=涨停，`D`=跌停，`Z`=炸板 |
 | `trade_date` | str | None | 交易日期，YYYYMMDD（查单日） |
-| `limit` | int | 100 | 返回行数，最大 5000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 
@@ -67,7 +65,6 @@ print(df[["trade_date", "symbol", "name", "pct_chg"]])
 | `first_time` / `last_time` | 首次/最后封板时间 |
 | `open_times` | 开板次数 |
 | `limit_times` | 连板天数 |
-| `limit` | 类型：U=涨停，D=跌停，Z=炸板 |
 
 ## 数据范围
 

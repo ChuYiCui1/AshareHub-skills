@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.fx_daily(symbol="USDCNH.FXCM", start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
+client.fx_daily(symbol="USDCNH.FXCM", start_date=None, end_date=None, trade_date=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.fx_daily(symbol="USDCNH.FXCM", start_date=None, end_date=None, trade_date
 ## Example
 
 ```python
-df = client.fx_daily(symbol="USDCNH.FXCM", limit=3)
+df = client.fx_daily(symbol="USDCNH.FXCM")
 print(df[["trade_date", "bid_close", "ask_close"]])
 ```
 
@@ -25,8 +25,6 @@ print(df[["trade_date", "bid_close", "ask_close"]])
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
-| `limit` | int | 100 | Max rows, up to 2000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

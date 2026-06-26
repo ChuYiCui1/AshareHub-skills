@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.main_business(symbol=None, start_date=None, end_date=None, period=None, limit=100, offset=0)
+client.main_business(symbol=None, start_date=None, end_date=None, period=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.main_business(symbol=None, start_date=None, end_date=None, period=None, l
 ## Example
 
 ```python
-df = client.main_business(symbol="600519.SH", limit=10)
+df = client.main_business(symbol="600519.SH")
 print(df[["end_date", "bz_item", "bz_sales", "bz_profit"]])
 ```
 
@@ -25,8 +25,6 @@ print(df[["end_date", "bz_item", "bz_sales", "bz_profit"]])
 | `start_date` | str | None | Period start YYYYMMDD |
 | `end_date` | str | None | Period end YYYYMMDD |
 | `period` | str | None | Report period YYYYMMDD, e.g. 20231231 |
-| `limit` | int | 100 | Max rows, up to 2000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

@@ -23,7 +23,7 @@ This endpoint returns **which specific stocks belong to a given concept**. See t
 ## SDK Method
 
 ```python
-client.concept_members(symbol=None, con_symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
+client.concept_members(symbol=None, con_symbol=None, start_date=None, end_date=None, trade_date=None)
 ```
 
 ## Returns
@@ -33,7 +33,7 @@ client.concept_members(symbol=None, con_symbol=None, start_date=None, end_date=N
 ## Example
 
 ```python
-df = client.concept_members(symbol="TS2", limit=5)
+df = client.concept_members(symbol="TS2")
 print(df[["con_symbol", "name"]])
 ```
 
@@ -46,8 +46,6 @@ print(df[["con_symbol", "name"]])
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

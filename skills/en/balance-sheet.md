@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.balance_sheet(symbol=None, start_date=None, end_date=None, period=None, ann_date=None, report_type=None, comp_type=None, limit=20, offset=0)
+client.balance_sheet(symbol=None, start_date=None, end_date=None, period=None, ann_date=None, report_type=None, comp_type=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.balance_sheet(symbol=None, start_date=None, end_date=None, period=None, a
 ## Example
 
 ```python
-df = client.balance_sheet(symbol="000001.SZ", limit=3)
+df = client.balance_sheet(symbol="000001.SZ")
 print(df[["end_date", "total_assets", "total_liab"]])
 ```
 
@@ -28,8 +28,6 @@ print(df[["end_date", "total_assets", "total_liab"]])
 | `ann_date` | str | None | Announcement date YYYYMMDD |
 | `report_type` | str | None | Report type |
 | `comp_type` | str | None | Company type: 1 general / 2 bank / 3 insurance / 4 securities |
-| `limit` | int | 20 | Max rows, up to 200 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

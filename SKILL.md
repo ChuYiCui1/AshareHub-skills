@@ -66,11 +66,36 @@ print(df[["trade_date", "open", "high", "low", "close", "vol"]])
 client.close()
 ```
 
+## Updating the skill & SDK
+
+When the user asks to "update the skill / update the SDK / get the latest version", run the following directly — no extra confirmation needed:
+
+- **Update both at once (recommended, one line):**
+
+  ```bash
+  curl -fsSL "https://asharehub.com/skill/install?lang=en" | bash && pip install -U asharehub
+  ```
+
+- Update this skill only (overwrites the endpoint docs in `.claude/skills/asharehub/` with the latest):
+
+  ```bash
+  curl -fsSL "https://asharehub.com/skill/install?lang=en" | bash
+  ```
+
+- Update the Python SDK only:
+
+  ```bash
+  pip install -U asharehub
+  ```
+
+After updating, tell the user to re-run `/asharehub` to load the latest docs.
+
 ## Available Data Endpoints
 
 ### Market Data
 | Data Type | SDK Method | Reference File | Description |
 |-----------|-----------|---------------|-------------|
+| Real-time Quote | `client.realtime()` | realtime.md | Latest intraday price snapshot per security (basket query) |
 | Daily Prices | `client.market_daily()` | market-daily.md | OHLCV prices, returns, volume (2020–) |
 | Fundamentals | `client.fundamentals()` | market-fundamentals.md | PE, PB, turnover rate, market cap (2010–) |
 | Margin Trading | `client.margin()` | margin.md | Margin buy/short sell balances (2020–) |
@@ -97,6 +122,7 @@ client.close()
 ### Other
 | Data Type | SDK Method | Reference File | Description |
 |-----------|-----------|---------------|-------------|
+| News Flash | `client.news_flash()` | news-flash.md | Real-time financial news (cls/jin10/sina, Chinese) |
 | Chip Distribution | `client.chip_distribution()` | chip-distribution.md | Cost percentiles, winner rate (2020–) |
 | FX Rates | `client.fx_daily()` | fx-daily.md | USD/CNH and currency pairs (2012–) |
 | Income Statement | `client.income()` | income.md | Revenue, costs, net income (quarterly) |
@@ -136,8 +162,8 @@ The API only contains data for actual trading days. If a query date has no data,
 Recommended pattern to get the most recent trading day's data:
 
 ```python
-# Just use limit=1 without specifying dates — returns the latest available record
-df = client.market_daily(symbol="000001.SZ", limit=1)
+# Omit dates — results are newest-first, so the first row is the latest trading day
+df = client.market_daily(symbol="000001.SZ")
 ```
 
 ## Workflow

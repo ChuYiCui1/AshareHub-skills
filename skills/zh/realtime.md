@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.realtime(symbol=None, limit=100, offset=0)
+client.realtime(symbol=None)
 ```
 
 ## 返回
@@ -23,8 +23,6 @@ print(df[["symbol", "name", "price", "pct_chg"]])
 | 名称 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | symbol | str | 否 | 单只代码，或逗号分隔的一篮子(最多 200)，如 `600519.SH,000001.SZ`。不填则翻页查全市场。 |
-| limit | int | 否 | 最大行数(默认 100，最大 5000) |
-| offset | int | 否 | 分页偏移(默认 0) |
 
 ## 返回字段
 

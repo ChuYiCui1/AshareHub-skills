@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.shareholders(symbol=None, start_date=None, end_date=None, enddate=None, ann_date=None, limit=100, offset=0)
+client.shareholders(symbol=None, start_date=None, end_date=None, enddate=None, ann_date=None)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.shareholders(symbol=None, start_date=None, end_date=None, enddate=None, a
 ## 示例
 
 ```python
-df = client.shareholders(symbol="000001.SZ", limit=3)
+df = client.shareholders(symbol="000001.SZ")
 print(df[["end_date", "holder_num"]])
 ```
 
@@ -26,8 +26,6 @@ print(df[["end_date", "holder_num"]])
 | `end_date` | str | None | 结束日期，YYYYMMDD |
 | `enddate` | str | None | 统计截止日，YYYYMMDD |
 | `ann_date` | str | None | 公告日期，YYYYMMDD |
-| `limit` | int | 100 | 返回行数，最大 5000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

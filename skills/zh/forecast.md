@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.forecast(symbol=None, start_date=None, end_date=None, period=None, type=None, limit=50, offset=0)
+client.forecast(symbol=None, start_date=None, end_date=None, period=None, type=None)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.forecast(symbol=None, start_date=None, end_date=None, period=None, type=N
 ## 示例
 
 ```python
-df = client.forecast(symbol="000001.SZ", limit=3)
+df = client.forecast(symbol="000001.SZ")
 print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 ```
 
@@ -26,8 +26,6 @@ print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 | `end_date` | str | None | 公告截止日期，YYYYMMDD |
 | `period` | str | None | 报告期，YYYYMMDD，如20231231 |
 | `type` | str | None | 预告类型：预增/预减/扭亏/首亏/续亏/续盈/略增/略减 |
-| `limit` | int | 50 | 返回行数，最大 1000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.financial_indicators(symbol=None, start_date=None, end_date=None, period=None, ann_date=None, limit=20, offset=0)
+client.financial_indicators(symbol=None, start_date=None, end_date=None, period=None, ann_date=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.financial_indicators(symbol=None, start_date=None, end_date=None, period=
 ## Example
 
 ```python
-df = client.financial_indicators(symbol="000001.SZ", limit=3)
+df = client.financial_indicators(symbol="000001.SZ")
 print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 ```
 
@@ -26,8 +26,6 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 | `end_date` | str | None | Report period end, YYYYMMDD |
 | `period` | str | None | Report period YYYYMMDD, e.g. 20231231 |
 | `ann_date` | str | None | Announcement date YYYYMMDD |
-| `limit` | int | 20 | Max rows, up to 200 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

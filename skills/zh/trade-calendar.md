@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.trade_calendar(exchange=None, start_date=None, end_date=None, is_open=None, limit=100, offset=0)
+client.trade_calendar(exchange=None, start_date=None, end_date=None, is_open=None)
 ```
 
 ## 返回类型
@@ -25,8 +25,6 @@ print(df[["cal_date", "is_open"]])
 | `start_date` | str | None | 起始日期，YYYYMMDD |
 | `end_date` | str | None | 结束日期，YYYYMMDD |
 | `is_open` | int | None | `1`=仅交易日，`0`=仅休市日 |
-| `limit` | int | 100 | 返回行数，最大 5000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

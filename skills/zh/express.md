@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.express(symbol=None, start_date=None, end_date=None, period=None, limit=50, offset=0)
+client.express(symbol=None, start_date=None, end_date=None, period=None)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.express(symbol=None, start_date=None, end_date=None, period=None, limit=5
 ## 示例
 
 ```python
-df = client.express(symbol="000001.SZ", limit=3)
+df = client.express(symbol="000001.SZ")
 print(df[["ann_date", "end_date", "revenue", "n_income", "diluted_roe"]])
 ```
 
@@ -25,8 +25,6 @@ print(df[["ann_date", "end_date", "revenue", "n_income", "diluted_roe"]])
 | `start_date` | str | None | 公告起始日期，YYYYMMDD |
 | `end_date` | str | None | 公告截止日期，YYYYMMDD |
 | `period` | str | None | 报告期，YYYYMMDD，如20231231 |
-| `limit` | int | 50 | 返回行数，最大 1000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

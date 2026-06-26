@@ -40,7 +40,7 @@
 ## SDK Method
 
 ```python
-client.concepts(symbol=None, start_date=None, end_date=None, trade_date=None, name=None, idx_type=None, limit=100, offset=0)
+client.concepts(symbol=None, start_date=None, end_date=None, trade_date=None, name=None, idx_type=None)
 ```
 
 ## Returns
@@ -50,7 +50,7 @@ client.concepts(symbol=None, start_date=None, end_date=None, trade_date=None, na
 ## Example
 
 ```python
-df = client.concepts(limit=3)
+df = client.concepts()
 print(df[["trade_date", "name", "pct_change", "leading"]])
 ```
 
@@ -64,8 +64,6 @@ print(df[["trade_date", "name", "pct_change", "leading"]])
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
 | `name` | str | None | Board name, e.g. 人形机器人 |
 | `idx_type` | str | None | Board type: 行业/概念/地域 |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

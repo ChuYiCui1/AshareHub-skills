@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.audit(symbol=None, start_date=None, end_date=None, period=None, ann_date=None, limit=50, offset=0)
+client.audit(symbol=None, start_date=None, end_date=None, period=None, ann_date=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.audit(symbol=None, start_date=None, end_date=None, period=None, ann_date=
 ## Example
 
 ```python
-df = client.audit(symbol="000001.SZ", limit=3)
+df = client.audit(symbol="000001.SZ")
 print(df[["end_date", "audit_result", "audit_agency", "audit_fees"]])
 ```
 
@@ -26,8 +26,6 @@ print(df[["end_date", "audit_result", "audit_agency", "audit_fees"]])
 | `end_date` | str | None | Period end YYYYMMDD |
 | `period` | str | None | Report period YYYYMMDD, e.g. 20231231 |
 | `ann_date` | str | None | Announcement date YYYYMMDD |
-| `limit` | int | 50 | Max rows, up to 1000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

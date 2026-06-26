@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.fx_daily(symbol="USDCNH.FXCM", start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
+client.fx_daily(symbol="USDCNH.FXCM", start_date=None, end_date=None, trade_date=None)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.fx_daily(symbol="USDCNH.FXCM", start_date=None, end_date=None, trade_date
 ## 示例
 
 ```python
-df = client.fx_daily(symbol="USDCNH.FXCM", limit=3)
+df = client.fx_daily(symbol="USDCNH.FXCM")
 print(df[["trade_date", "bid_close", "ask_close"]])
 ```
 
@@ -25,8 +25,6 @@ print(df[["trade_date", "bid_close", "ask_close"]])
 | `start_date` | str | None | 起始日期，YYYYMMDD |
 | `end_date` | str | None | 结束日期，YYYYMMDD |
 | `trade_date` | str | None | 交易日期，YYYYMMDD（查单日） |
-| `limit` | int | 100 | 返回行数，最大 2000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

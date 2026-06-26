@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.index_weight(symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
+client.index_weight(symbol=None, start_date=None, end_date=None, trade_date=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.index_weight(symbol=None, start_date=None, end_date=None, trade_date=None
 ## Example
 
 ```python
-df = client.index_weight(symbol="399300.SZ", limit=5)
+df = client.index_weight(symbol="399300.SZ")
 print(df[["con_symbol", "con_name", "weight"]])
 ```
 
@@ -25,8 +25,6 @@ print(df[["con_symbol", "con_name", "weight"]])
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.shareholders(symbol=None, start_date=None, end_date=None, enddate=None, ann_date=None, limit=100, offset=0)
+client.shareholders(symbol=None, start_date=None, end_date=None, enddate=None, ann_date=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.shareholders(symbol=None, start_date=None, end_date=None, enddate=None, a
 ## Example
 
 ```python
-df = client.shareholders(symbol="000001.SZ", limit=3)
+df = client.shareholders(symbol="000001.SZ")
 print(df[["end_date", "holder_num"]])
 ```
 
@@ -26,8 +26,6 @@ print(df[["end_date", "holder_num"]])
 | `end_date` | str | None | Report period end, YYYYMMDD |
 | `enddate` | str | None | Stat cutoff date YYYYMMDD |
 | `ann_date` | str | None | Announcement date YYYYMMDD |
-| `limit` | int | 100 | Max rows, up to 5000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

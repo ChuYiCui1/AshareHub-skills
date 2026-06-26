@@ -3,7 +3,7 @@
 ## SDK 方法
 
 ```python
-client.technical_factors(symbol=None, start_date=None, end_date=None, trade_date=None, limit=100, offset=0)
+client.technical_factors(symbol=None, start_date=None, end_date=None, trade_date=None)
 ```
 
 ## 返回类型
@@ -13,7 +13,7 @@ client.technical_factors(symbol=None, start_date=None, end_date=None, trade_date
 ## 示例
 
 ```python
-df = client.technical_factors(symbol="000001.SZ", limit=3)
+df = client.technical_factors(symbol="000001.SZ")
 print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 ```
 
@@ -25,8 +25,6 @@ print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 | `start_date` | str | None | 起始日期，YYYYMMDD |
 | `end_date` | str | None | 结束日期，YYYYMMDD |
 | `trade_date` | str | None | 交易日期，YYYYMMDD（查单日） |
-| `limit` | int | 100 | 返回行数，最大 5000 |
-| `offset` | int | 0 | 分页偏移量 |
 
 ## 返回字段
 

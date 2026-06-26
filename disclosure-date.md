@@ -3,7 +3,7 @@
 ## SDK Method
 
 ```python
-client.disclosure_date(symbol=None, start_date=None, end_date=None, pre_date=None, actual_date=None, limit=100, offset=0)
+client.disclosure_date(symbol=None, start_date=None, end_date=None, pre_date=None, actual_date=None)
 ```
 
 ## Returns
@@ -13,7 +13,7 @@ client.disclosure_date(symbol=None, start_date=None, end_date=None, pre_date=Non
 ## Example
 
 ```python
-df = client.disclosure_date(symbol="000001.SZ", limit=5)
+df = client.disclosure_date(symbol="000001.SZ")
 print(df[["end_date", "pre_date", "actual_date"]])
 ```
 
@@ -26,8 +26,6 @@ print(df[["end_date", "pre_date", "actual_date"]])
 | `end_date` | str | None | Period end YYYYMMDD |
 | `pre_date` | str | None | Planned disclosure date YYYYMMDD |
 | `actual_date` | str | None | Actual disclosure date YYYYMMDD |
-| `limit` | int | 100 | Max rows, up to 2000 |
-| `offset` | int | 0 | Pagination offset |
 
 ## Response Fields
 

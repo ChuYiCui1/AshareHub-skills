@@ -162,8 +162,8 @@ The API only contains data for actual trading days. If a query date has no data,
 Recommended pattern to get the most recent trading day's data:
 
 ```python
-# Just use limit=1 without specifying dates — returns the latest available record
-df = client.market_daily(symbol="000001.SZ", limit=1)
+# Omit dates — results are newest-first, so the first row is the latest trading day
+df = client.market_daily(symbol="000001.SZ")
 ```
 
 ## Workflow
