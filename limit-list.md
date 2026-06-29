@@ -65,9 +65,9 @@ print(df[["trade_date", "symbol", "name", "pct_chg"]])
 | `close` | Closing price (CNY) |
 | `pct_chg` | Price change % |
 | `amount` | Turnover (thousand CNY) |
-| `limit_amount` | Turnover at limit price |
+| `limit_amount` | Turnover at the limit price (source-sparse, usually empty) |
 | `float_mv` / `total_mv` | Free-float / total market cap |
-| `fd_amount` | Seal order amount |
+| `fd_amount` | Seal order amount (queued, unfilled bids at the limit price) |
 | `first_time` / `last_time` | First/last limit hit time |
 | `open_times` | Times limit was broken |
 | `limit_times` | Consecutive limit days |

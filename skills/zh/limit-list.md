@@ -62,6 +62,8 @@ print(df[["trade_date", "symbol", "name", "pct_chg"]])
 | `trade_date` | 交易日期 |
 | `symbol` / `name` | 股票代码 / 名称 |
 | `close` / `pct_chg` | 收盘价 / 涨跌幅 |
+| `fd_amount` | 封单金额（封在涨跌停价、尚未成交的委托额；看封板强度） |
+| `limit_amount` | 板上成交金额（数据源稀疏、多为空；看封板请用 `fd_amount`） |
 | `first_time` / `last_time` | 首次/最后封板时间 |
 | `open_times` | 开板次数 |
 | `limit_times` | 连板天数 |
