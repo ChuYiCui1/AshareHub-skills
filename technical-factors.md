@@ -41,4 +41,5 @@ print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 ## Notes
 
 - qfq = forward adjusted (前复权), hfq = backward adjusted (后复权)
+- `*_qfq` values are source-precomputed snapshots anchored to the latest trading day available at the record's last refresh. To use a specific `end_date` as the anchor, calculate from unadjusted daily prices and adjustment factors as described in [adj-factor.md](adj-factor.md).
 - API path: `GET /v2/market/technical-factors`

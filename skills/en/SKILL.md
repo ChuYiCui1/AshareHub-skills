@@ -1,7 +1,7 @@
 ---
 name: AShareHub
 slug: asharehub
-description: Fetch Chinese A-share market data — daily prices, PE/PB valuations, northbound flows, money flow, margin trading, block trades, shareholder data, concept sectors, industry classification, financial statements, dividends, technical indicators, and 50+ quarterly financial indicators. 30+ endpoints covering all A-shares with 10+ years of history. Requires ASHAREHUB_API_KEY environment variable.
+description: Fetch Chinese A-share and ETF market data, including ETF reference data, tracked indices, daily prices, adjustment factors, shares/assets, NAV and quarterly holdings, plus stock prices, valuations, capital flows, financial statements, dividends and technical indicators. Provides 30+ endpoints and requires the ASHAREHUB_API_KEY environment variable.
 user-invocable: true
 metadata:
  {
@@ -141,6 +141,11 @@ After updating, tell the user to re-run `/asharehub` to load the latest docs.
 |-----------|-----------|---------------|-------------|
 | Index Daily | `client.index_daily()` | index-daily.md | SSE Composite, CSI 300, ChiNext, etc. |
 | Index Weight | `client.index_weight()` | index-weight.md | Constituent stock weights (CSI 300, etc.) |
+
+### ETFs
+| Data Type | SDK Method | Reference File | Description |
+|-----------|-----------|---------------|-------------|
+| ETF Data Chain | `client.etf_*()` | etf.md | Directory, benchmarks, prices, NAV, assets, holdings and PCF baskets |
 
 ### Reference Data
 | Data Type | SDK Method | Reference File | Description |

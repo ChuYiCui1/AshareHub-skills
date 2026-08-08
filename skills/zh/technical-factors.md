@@ -41,4 +41,5 @@ print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 ## 备注
 
 - qfq = 前复权，hfq = 后复权
+- `*_qfq` 是数据源在该记录最近刷新时按其最新交易日锚定的预计算快照；若需以指定 `end_date` 为锚点，按 [adj-factor.md](adj-factor.md) 使用未复权日线与复权因子自行计算
 - API 路径：`GET /v2/market/technical-factors`
