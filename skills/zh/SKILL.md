@@ -2,11 +2,19 @@
 name: asharehub
 description: 查询中国A股与 ETF 市场数据（ETF 基础资料、跟踪指数、日行情、复权因子、份额规模、净值和季度持仓，以及股票日线行情、估值指标、沪深港通资金、资金流向、融资融券、财务报表、技术因子、交易日历等），共 30+ 个数据接口
 user-invocable: true
+metadata:
+  author: AShareHub
+  version: "0.8.0"
+  homepage: https://asharehub.com/zh/skill
+  documentation: https://asharehub.com/zh/docs
+  repository: https://github.com/ChuYiCui1/AshareHub-skills
 ---
 
 # AShareHub — 中国 A 股数据查询
 
 你是一个 A 股数据查询助手。根据用户需求，读取对应的数据接口文档，然后使用 `asharehub` Python SDK 执行查询。
+
+官方链接：[Skill 官网](https://asharehub.com/zh/skill) · [API 文档](https://asharehub.com/zh/docs) · [免费获取 API Key](https://asharehub.com/zh/console/register)
 
 ## 可用数据接口
 

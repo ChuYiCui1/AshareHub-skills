@@ -7,7 +7,7 @@
 [![PyPI](https://img.shields.io/pypi/v/asharehub.svg)](https://pypi.org/project/asharehub/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[官网](https://asharehub.com) · [API 文档](https://asharehub.com/docs) · [获取 API Key](https://asharehub.com/console/register)
+[Skill 官网](https://asharehub.com/zh/skill) · [API 文档](https://asharehub.com/zh/docs) · [获取 API Key](https://asharehub.com/zh/console/register)
 
 [English](README.md) | **中文**
 
@@ -26,7 +26,7 @@ pip install asharehub
 export ASHAREHUB_API_KEY="ash_你的密钥"
 ```
 
-在 [asharehub.com/console/register](https://asharehub.com/console/register) 免费注册获取 API Key。
+在 [asharehub.com/zh/console/register](https://asharehub.com/zh/console/register) 免费注册获取 API Key。
 
 ## 可用数据
 
@@ -77,10 +77,10 @@ skills/
 
 | 方式 | 说明 |
 |------|------|
-| **Python SDK** | `pip install asharehub` — [文档](https://asharehub.com/docs) |
-| **MCP Server** | `https://asharehub.com/mcp/sse` — 支持 Claude Desktop、Cursor 等 |
-| **REST API** | 7 个端点，`https://asharehub.com/v2/` |
-| **Skills** | 本仓库 |
+| **Python SDK** | `pip install asharehub` — [文档](https://asharehub.com/zh/docs) |
+| **MCP Server** | [云端接入说明](https://asharehub.com/zh/docs#mcp-setup) — 支持 Claude Desktop、Cursor 等 |
+| **REST API** | 40+ 个端点 — [API 文档](https://asharehub.com/zh/docs) |
+| **Skills** | 本仓库 — [Skill 官网](https://asharehub.com/zh/skill) |
 
 ## 开源协议
 

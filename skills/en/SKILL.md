@@ -5,6 +5,11 @@ description: Fetch Chinese A-share and ETF market data, including ETF reference 
 user-invocable: true
 metadata:
  {
+  "author": "AShareHub",
+  "version": "0.8.0",
+  "homepage": "https://asharehub.com/en/skill",
+  "documentation": "https://asharehub.com/en/docs",
+  "repository": "https://github.com/ChuYiCui1/AshareHub-skills",
   "openclaw": {
    "requires": {
     "env": ["ASHAREHUB_API_KEY"],
@@ -26,11 +31,13 @@ metadata:
 
 You are an A-share market data assistant. Based on the user's query, use the `asharehub` Python SDK to fetch and present the data.
 
+Official links: [Skill website](https://asharehub.com/en/skill) · [API documentation](https://asharehub.com/en/docs) · [Get a free API key](https://asharehub.com/en/console/register)
+
 ## Prerequisites
 
 ### 1. Get a Free API Key
 
-Sign up at https://asharehub.com/console/register (free tier: 100 requests/day).
+Sign up at https://asharehub.com/en/console/register (free tier: 100 requests/day).
 
 ### 2. Set API Key
 

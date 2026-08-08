@@ -7,7 +7,7 @@
 [![PyPI](https://img.shields.io/pypi/v/asharehub.svg)](https://pypi.org/project/asharehub/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[Website](https://asharehub.com) · [API Docs](https://asharehub.com/docs) · [Get API Key](https://asharehub.com/console/register)
+[Skill Website](https://asharehub.com/en/skill) · [API Docs](https://asharehub.com/en/docs) · [Get API Key](https://asharehub.com/en/console/register)
 
 **English** | [中文](README_ZH.md)
 
@@ -26,7 +26,7 @@ pip install asharehub
 export ASHAREHUB_API_KEY="ash_your_key_here"
 ```
 
-Get your free API key at [asharehub.com/console/register](https://asharehub.com/console/register).
+Get your free API key at [asharehub.com/en/console/register](https://asharehub.com/en/console/register).
 
 ## Available Data
 
@@ -77,10 +77,10 @@ skills/
 
 | Method | Description |
 |--------|-------------|
-| **Python SDK** | `pip install asharehub` — [Documentation](https://asharehub.com/docs) |
-| **MCP Server** | `https://asharehub.com/mcp/sse` — Claude Desktop, Cursor, etc. |
-| **REST API** | 7 endpoints at `https://asharehub.com/v2/` |
-| **Skills** | This repository |
+| **Python SDK** | `pip install asharehub` — [Documentation](https://asharehub.com/en/docs) |
+| **MCP Server** | [Cloud setup](https://asharehub.com/en/docs#mcp-setup) — Claude Desktop, Cursor, etc. |
+| **REST API** | 40+ endpoints — [API documentation](https://asharehub.com/en/docs) |
+| **Skills** | This repository — [official skill page](https://asharehub.com/en/skill) |
 
 ## License
 
