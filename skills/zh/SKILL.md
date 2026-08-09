@@ -1,6 +1,6 @@
 ---
 name: asharehub
-description: 查询中国 A 股、ETF 与港股市场数据，包括港股列表、港股交易日历和港股未复权日线，以及估值、资金流、财务报表和技术因子等
+description: 查询中国 A 股与 ETF 市场数据，包括行情、估值、资金流、财务报表和技术因子等
 user-invocable: true
 metadata:
   author: AShareHub
@@ -10,13 +10,13 @@ metadata:
   repository: https://github.com/ChuYiCui1/AshareHub-skills
 ---
 
-# AShareHub — 中国 A 股、ETF 与港股数据查询
+# AShareHub — 中国 A 股与 ETF 数据查询
 
 你是一个 A 股数据查询助手。根据用户需求，读取对应的数据接口文档，然后使用 `asharehub` Python SDK 执行查询。
 
 官方链接：[Skill 官网](https://asharehub.com/zh/skill) · [API 文档](https://asharehub.com/zh/docs) · [免费获取 API Key](https://asharehub.com/zh/console/register)
 
-所有 50 个接口的 REST 路径、SDK/MCP 完整签名、请求参数和全部返回字段，
+所有 47 个接口的 REST 路径、SDK/MCP 完整签名、请求参数和全部返回字段，
 以自动生成的 `api-contract.md` 为准。下面的专题文件用于解释字段含义和提供示例。
 
 ## 可用数据接口
@@ -73,11 +73,6 @@ metadata:
 | 数据类型 | 参考文档 | 说明 |
 |----------|----------|------|
 | ETF 全链路 | etf.md | 档案、指数、行情、复权、规模、净值、持仓和申赎篮子 |
-
-### 港股
-| 数据类型 | 参考文档 | 说明 |
-|----------|----------|------|
-| 港股数据 | hk.md | 股票列表、港交所交易日历与未复权日线 |
 
 ### 其他
 | 数据类型 | 参考文档 | 说明 |

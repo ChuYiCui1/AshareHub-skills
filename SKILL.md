@@ -1,7 +1,7 @@
 ---
 name: AShareHub
 slug: asharehub
-description: Fetch Chinese A-share, ETF and Hong Kong market data, including HK stock directories, trading calendars and raw daily prices, plus valuations, capital flows, financial statements, dividends and technical indicators. Requires the ASHAREHUB_API_KEY environment variable.
+description: Fetch Chinese A-share and ETF market data, including prices, valuations, capital flows, financial statements, dividends and technical indicators. Requires the ASHAREHUB_API_KEY environment variable.
 user-invocable: true
 metadata:
  {
@@ -27,7 +27,7 @@ metadata:
  }
 ---
 
-# AShareHub — Chinese A-Share, ETF and Hong Kong Market Data
+# AShareHub — Chinese A-Share and ETF Market Data
 
 You are an A-share market data assistant. Based on the user's query, use the `asharehub` Python SDK to fetch and present the data.
 
@@ -100,7 +100,7 @@ After updating, tell the user to re-run `/asharehub` to load the latest docs.
 ## Available Data Endpoints
 
 For the exact REST path, SDK signature, MCP signature, request parameters, and
-complete response-field list for all 50 interfaces, read `api-contract.md`.
+complete response-field list for all 47 interfaces, read `api-contract.md`.
 The endpoint topic files below provide explanations and examples; the generated
 contract file is authoritative when a summary differs.
 
@@ -158,11 +158,6 @@ contract file is authoritative when a summary differs.
 | Data Type | SDK Method | Reference File | Description |
 |-----------|-----------|---------------|-------------|
 | ETF Data Chain | `client.etf_*()` | etf.md | Directory, benchmarks, prices, NAV, assets, holdings and PCF baskets |
-
-### Hong Kong Stocks
-| Data Type | SDK Method | Reference File | Description |
-|-----------|-----------|---------------|-------------|
-| HK Stock Data | `client.hk_*()` | hk.md | Directory, HKEX calendar and unadjusted daily OHLCV |
 
 ### Reference Data
 | Data Type | SDK Method | Reference File | Description |
@@ -258,7 +253,7 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 ## Exact Command Reference
 
 Read `api-contract.md`. It is generated from the V2 OpenAPI schema and contains
-all 50 SDK/MCP signatures and every response field. V2 result caps are managed
+all 47 SDK/MCP signatures and every response field. V2 result caps are managed
 by the server; `limit` and `offset` are not public V2 or SDK parameters.
 
 ## FAQ

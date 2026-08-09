@@ -2,7 +2,7 @@
 
 # AShareHub Skills
 
-**AI-powered access to Chinese A-share, ETF and Hong Kong market data**
+**AI-powered access to Chinese A-share and ETF market data**
 
 [![PyPI](https://img.shields.io/pypi/v/asharehub.svg)](https://pypi.org/project/asharehub/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -39,7 +39,6 @@ Get your free API key at [asharehub.com/en/console/register](https://asharehub.c
 | [FX Daily](skills/en/fx-daily.md) | Foreign exchange rates (USD/CNH) | 2012+ |
 | [Index Daily](skills/en/index-daily.md) | SSE Composite, CSI 300, ChiNext | 2010+ |
 | [Financial Indicators](skills/en/financial-indicators.md) | ROE, EPS, margins, 50+ metrics | Quarterly |
-| [Hong Kong Stocks](skills/en/hk.md) | Directory, HKEX calendar and raw daily OHLCV | Daily |
 
 ## Installation
 
@@ -55,7 +54,7 @@ Then invoke with `/asharehub` in Claude Code.
 ### Other AI Assistants
 
 Each `.md` file is a self-contained reference with SDK method signature, parameters, and response fields. Paste into your assistant's context or reference directly.
-Use [`api-contract.md`](skills/en/api-contract.md) for the generated, exact contract covering all 50 interfaces and every response field.
+Use [`api-contract.md`](skills/en/api-contract.md) for the generated, exact contract covering all 47 interfaces and every response field.
 
 ## Project Structure
 
@@ -63,7 +62,7 @@ Use [`api-contract.md`](skills/en/api-contract.md) for the generated, exact cont
 skills/
 ├── en/                         # English
 │   ├── SKILL.md                # Main entry point
-│   ├── api-contract.md         # Generated exact 50-interface contract
+│   ├── api-contract.md         # Generated exact 47-interface contract
 │   ├── market-daily.md
 │   ├── market-fundamentals.md
 │   ├── moneyflow-hsgt.md
@@ -82,7 +81,7 @@ skills/
 |--------|-------------|
 | **Python SDK** | `pip install asharehub` — [Documentation](https://asharehub.com/en/docs) |
 | **MCP Server** | [Cloud setup](https://asharehub.com/en/docs#mcp-setup) — Claude Desktop, Cursor, etc. |
-| **REST API** | 50 endpoints — [API documentation](https://asharehub.com/en/docs) |
+| **REST API** | 47 endpoints — [API documentation](https://asharehub.com/en/docs) |
 | **Skills** | This repository — [official skill page](https://asharehub.com/en/skill) |
 
 ## License

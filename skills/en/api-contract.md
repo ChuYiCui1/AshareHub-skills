@@ -182,42 +182,6 @@ Generated from the V2 OpenAPI contract. It lists every REST endpoint, SDK method
 - Response fields: `trade_date`, `symbol`, `con_symbol`, `con_name`, `qty`, `sub_flag`, `cpr`, `rdr`, `sub_cc`, `red_cc`, `exchange`
 <!-- END GENERATED ASHAREHUB CONTRACT -->
 
-## `hk_stock_list`
-
-<!-- BEGIN GENERATED ASHAREHUB CONTRACT -->
-### Exact public contract
-
-- REST: `GET /v2/hk/basic`
-- SDK: `client.hk_stock_list(symbol=None, list_status=None)`
-- MCP: `get_hk_stock_list(symbol=None, list_status=None)`
-- Request parameters: `symbol`, `list_status`
-- Response fields: `symbol`, `name`, `fullname`, `enname`, `cn_spell`, `market`, `list_status`, `list_date`, `delist_date`, `trade_unit`, `isin`, `curr_type`
-<!-- END GENERATED ASHAREHUB CONTRACT -->
-
-## `hk_daily`
-
-<!-- BEGIN GENERATED ASHAREHUB CONTRACT -->
-### Exact public contract
-
-- REST: `GET /v2/hk/daily`
-- SDK: `client.hk_daily(symbol=None, start_date=None, end_date=None, trade_date=None)`
-- MCP: `get_hk_daily(symbol=None, start_date=None, end_date=None, trade_date=None)`
-- Request parameters: `symbol`, `start_date`, `end_date`, `trade_date`
-- Response fields: `symbol`, `trade_date`, `open`, `high`, `low`, `close`, `pre_close`, `change`, `pct_chg`, `vol`, `amount`
-<!-- END GENERATED ASHAREHUB CONTRACT -->
-
-## `hk_trade_calendar`
-
-<!-- BEGIN GENERATED ASHAREHUB CONTRACT -->
-### Exact public contract
-
-- REST: `GET /v2/hk/trade-calendar`
-- SDK: `client.hk_trade_calendar(start_date=None, end_date=None, is_open=None)`
-- MCP: `get_hk_trade_calendar(start_date=None, end_date=None, is_open=None)`
-- Request parameters: `start_date`, `end_date`, `is_open`
-- Response fields: `exchange`, `cal_date`, `is_open`, `pretrade_date`
-<!-- END GENERATED ASHAREHUB CONTRACT -->
-
 ## `financial_indicators`
 
 <!-- BEGIN GENERATED ASHAREHUB CONTRACT -->
@@ -587,7 +551,7 @@ Generated from the V2 OpenAPI contract. It lists every REST endpoint, SDK method
 - SDK: `client.realtime(symbol=None)`
 - MCP: `get_realtime(symbol=None)`
 - Request parameters: `symbol`
-- Response fields: `symbol`, `name`, `price`, `open`, `high`, `low`, `pre_close`, `pct_chg`, `volume`, `amount`, `trade_time`
+- Response fields: `symbol`, `name`, `price`, `open`, `high`, `low`, `pre_close`, `volume`, `amount`, `trade_time`, `pct_chg`
 <!-- END GENERATED ASHAREHUB CONTRACT -->
 
 ## `news_flash`

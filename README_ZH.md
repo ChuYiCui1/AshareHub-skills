@@ -2,7 +2,7 @@
 
 # AShareHub Skills
 
-**AI 驱动的中国 A 股、ETF 与港股市场数据查询**
+**AI 驱动的中国 A 股与 ETF 市场数据查询**
 
 [![PyPI](https://img.shields.io/pypi/v/asharehub.svg)](https://pypi.org/project/asharehub/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -39,7 +39,6 @@ export ASHAREHUB_API_KEY="ash_你的密钥"
 | [外汇行情](skills/zh/fx-daily.md) | 汇率（默认 USD/CNH） | 2012+ |
 | [指数日线](skills/zh/index-daily.md) | 上证综指、沪深300、创业板 | 2010+ |
 | [财务指标](skills/zh/financial-indicators.md) | ROE、EPS、利润率等 50+ 指标 | 按季度 |
-| [港股](skills/zh/hk.md) | 股票列表、港交所日历和未复权日线 | 日频 |
 
 ## 安装使用
 
@@ -55,7 +54,7 @@ cp -r asharehub-skills/skills/zh/ 你的项目路径/.claude/skills/asharehub/
 ### 其他 AI 助手
 
 每个 `.md` 文件都是独立的参考文档，包含 SDK 方法签名、参数说明和返回字段。直接粘贴到你的 AI 助手上下文中即可使用。
-完整而精确的 50 个接口及全部返回字段，请查看自动生成的 [`api-contract.md`](skills/zh/api-contract.md)。
+完整而精确的 47 个接口及全部返回字段，请查看自动生成的 [`api-contract.md`](skills/zh/api-contract.md)。
 
 ## 项目结构
 
@@ -63,7 +62,7 @@ cp -r asharehub-skills/skills/zh/ 你的项目路径/.claude/skills/asharehub/
 skills/
 ├── en/                         # English
 │   ├── SKILL.md                # 主入口
-│   ├── api-contract.md         # 自动生成的 50 接口精确契约
+│   ├── api-contract.md         # 自动生成的 47 接口精确契约
 │   ├── market-daily.md
 │   ├── market-fundamentals.md
 │   ├── moneyflow-hsgt.md
@@ -82,7 +81,7 @@ skills/
 |------|------|
 | **Python SDK** | `pip install asharehub` — [文档](https://asharehub.com/zh/docs) |
 | **MCP Server** | [云端接入说明](https://asharehub.com/zh/docs#mcp-setup) — 支持 Claude Desktop、Cursor 等 |
-| **REST API** | 50 个端点 — [API 文档](https://asharehub.com/zh/docs) |
+| **REST API** | 47 个端点 — [API 文档](https://asharehub.com/zh/docs) |
 | **Skills** | 本仓库 — [Skill 官网](https://asharehub.com/zh/skill) |
 
 ## 开源协议
