@@ -30,7 +30,7 @@ metadata:
 | 股东户数 | shareholders.md | 季度股东户数变化 |
 | 股东增减持 | holder-trade.md | 重要股东及高管交易 |
 | 概念板块 | concepts.md | AI、新能源等主题板块指数 |
-| 概念板块成分股 | concept-members.md | `bk_code` 表示板块，`con_code` 表示成分股 |
+| 概念成分 | concept-members.md | 公开字段使用 `symbol` / `con_symbol` |
 | 复权因子 | adj-factor.md | 前/后复权价格计算因子 |
 | 技术因子 | technical-factors.md | MACD、KDJ、RSI、布林带、CCI + 复权价 |
 | 技术因子专业版 | technical-factors-pro.md | 200+ 指标，含 bfq/qfq/hfq 三种复权 |

@@ -264,8 +264,8 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 | `top_list()` | Dragon & Tiger list | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
 | `shareholders()` | Shareholder count | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
 | `holder_trade()` | Insider trades | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
-| `concepts()` | Concept sector indices | `bk_code`, `start_date`, `end_date`, `limit` (max 5000) |
-| `concept_members()` | Concept constituents | `bk_code`, `con_code`, `start_date`, `end_date` |
+| `concepts()` | Concept sector indices | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
+| `concept_members()` | Concept constituents | `symbol`, `con_symbol`, `start_date`, `end_date` |
 | `chip_distribution()` | Holder cost analysis | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
 | `fx_daily()` | Currency rates | `symbol` (default USDCNH.FXCM), `limit` (max 2000) |
 | `index_daily()` | Benchmark indices | `symbol` (default 000001.SH), `limit` (max 2000) |
