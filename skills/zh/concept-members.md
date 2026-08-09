@@ -10,8 +10,8 @@
 - **成分变更追踪**：随着相关性变化，概念会增删成分。追踪变更可识别新晋"概念成分"。
 
 ### 关键字段解读
-- **`symbol`**：概念指数代码（父级）。
-- **`con_symbol`**：成分股代码（成员）。
+- **`bk_code`**：东方财富概念板块代码（父级）。
+- **`con_code`**：成分股股票代码，保留数据源字段名。
 - **`name`**：成分股名称（中文）。
 - **`trade_date`**：归属记录日期——成分会变化，时间很重要。
 
@@ -22,7 +22,7 @@
 ## SDK 方法
 
 ```python
-client.concept_members(symbol=None, con_symbol=None, start_date=None, end_date=None, trade_date=None)
+client.concept_members(bk_code=None, con_code=None, start_date=None, end_date=None, trade_date=None)
 ```
 
 ## 返回类型
@@ -32,16 +32,16 @@ client.concept_members(symbol=None, con_symbol=None, start_date=None, end_date=N
 ## 示例
 
 ```python
-df = client.concept_members(symbol="TS2")
-print(df[["con_symbol", "name"]])
+df = client.concept_members(bk_code="BK0425.DC", con_code="000001.SZ")
+print(df[["con_code", "name"]])
 ```
 
 ## 参数
 
 | 参数 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `symbol` | str | None | 板块代码，如 `BK0425.DC` |
-| `con_symbol` | str | None | 成分股代码，如 `000001.SZ` |
+| `bk_code` | str | None | 东方财富概念板块代码，如 `BK0425.DC` |
+| `con_code` | str | None | 成分股股票代码，如 `000001.SZ` |
 | `start_date` | str | None | 起始日期，YYYYMMDD |
 | `end_date` | str | None | 结束日期，YYYYMMDD |
 | `trade_date` | str | None | 交易日期，YYYYMMDD（查单日） |
@@ -51,8 +51,8 @@ print(df[["con_symbol", "name"]])
 | 字段 | 说明 |
 |------|------|
 | `trade_date` | 交易日期 |
-| `symbol` | 板块代码 |
-| `con_symbol` | 成分股代码 |
+| `bk_code` | 东方财富概念板块代码 |
+| `con_code` | 成分股股票代码 |
 | `name` | 股票名称 |
 
 ## 数据范围

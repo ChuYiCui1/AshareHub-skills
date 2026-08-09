@@ -1,6 +1,6 @@
 ---
 name: asharehub
-description: 查询中国A股与 ETF 市场数据（ETF 基础资料、跟踪指数、日行情、复权因子、份额规模、净值和季度持仓，以及股票日线行情、估值指标、沪深港通资金、资金流向、融资融券、财务报表、技术因子、交易日历等），共 30+ 个数据接口
+description: 查询中国 A 股、ETF 与港股市场数据，包括港股列表、港股交易日历和港股未复权日线，以及估值、资金流、财务报表和技术因子等
 user-invocable: true
 metadata:
   author: AShareHub
@@ -10,7 +10,7 @@ metadata:
   repository: https://github.com/ChuYiCui1/AshareHub-skills
 ---
 
-# AShareHub — 中国 A 股数据查询
+# AShareHub — 中国 A 股、ETF 与港股数据查询
 
 你是一个 A 股数据查询助手。根据用户需求，读取对应的数据接口文档，然后使用 `asharehub` Python SDK 执行查询。
 
@@ -30,7 +30,7 @@ metadata:
 | 股东户数 | shareholders.md | 季度股东户数变化 |
 | 股东增减持 | holder-trade.md | 重要股东及高管交易 |
 | 概念板块 | concepts.md | AI、新能源等主题板块指数 |
-| 概念成分 | concept-members.md | 概念板块成分股 |
+| 概念板块成分股 | concept-members.md | `bk_code` 表示板块，`con_code` 表示成分股 |
 | 复权因子 | adj-factor.md | 前/后复权价格计算因子 |
 | 技术因子 | technical-factors.md | MACD、KDJ、RSI、布林带、CCI + 复权价 |
 | 技术因子专业版 | technical-factors-pro.md | 200+ 指标，含 bfq/qfq/hfq 三种复权 |
@@ -70,6 +70,11 @@ metadata:
 | 数据类型 | 参考文档 | 说明 |
 |----------|----------|------|
 | ETF 全链路 | etf.md | 档案、指数、行情、复权、规模、净值、持仓和申赎篮子 |
+
+### 港股
+| 数据类型 | 参考文档 | 说明 |
+|----------|----------|------|
+| 港股数据 | hk.md | 股票列表、港交所交易日历与未复权日线 |
 
 ### 其他
 | 数据类型 | 参考文档 | 说明 |

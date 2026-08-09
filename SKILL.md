@@ -1,7 +1,7 @@
 ---
 name: AShareHub
 slug: asharehub
-description: Fetch Chinese A-share and ETF market data, including ETF reference data, tracked indices, daily prices, adjustment factors, shares/assets, NAV and quarterly holdings, plus stock prices, valuations, capital flows, financial statements, dividends and technical indicators. Provides 30+ endpoints and requires the ASHAREHUB_API_KEY environment variable.
+description: Fetch Chinese A-share, ETF and Hong Kong market data, including HK stock directories, trading calendars and raw daily prices, plus valuations, capital flows, financial statements, dividends and technical indicators. Requires the ASHAREHUB_API_KEY environment variable.
 user-invocable: true
 metadata:
  {
@@ -27,7 +27,7 @@ metadata:
  }
 ---
 
-# AShareHub — Chinese A-Share Market Data
+# AShareHub — Chinese A-Share, ETF and Hong Kong Market Data
 
 You are an A-share market data assistant. Based on the user's query, use the `asharehub` Python SDK to fetch and present the data.
 
@@ -111,7 +111,7 @@ After updating, tell the user to re-run `/asharehub` to load the latest docs.
 | Shareholders | `client.shareholders()` | shareholders.md | Quarterly shareholder count (2024–) |
 | Holder Trade | `client.holder_trade()` | holder-trade.md | Major shareholder/exec trades (2019–) |
 | Concepts | `client.concepts()` | concepts.md | Concept/theme sector indices (2025–) |
-| Concept Members | `client.concept_members()` | concept-members.md | Concept index constituents (2025–) |
+| Concept Constituents | `client.concept_members()` | concept-members.md | Concept sector constituents (2025–) |
 | Adj Factor | `client.adj_factor()` | adj-factor.md | Forward/backward price adjustment factor |
 | Technical Factors | `client.technical_factors()` | technical-factors.md | MACD, KDJ, RSI, BOLL, CCI + adjusted prices |
 | Technical Factors Pro | `client.technical_factors_pro()` | technical-factors-pro.md | 200+ indicators with bfq/qfq/hfq variants |
@@ -153,6 +153,11 @@ After updating, tell the user to re-run `/asharehub` to load the latest docs.
 | Data Type | SDK Method | Reference File | Description |
 |-----------|-----------|---------------|-------------|
 | ETF Data Chain | `client.etf_*()` | etf.md | Directory, benchmarks, prices, NAV, assets, holdings and PCF baskets |
+
+### Hong Kong Stocks
+| Data Type | SDK Method | Reference File | Description |
+|-----------|-----------|---------------|-------------|
+| HK Stock Data | `client.hk_*()` | hk.md | Directory, HKEX calendar and unadjusted daily OHLCV |
 
 ### Reference Data
 | Data Type | SDK Method | Reference File | Description |
@@ -233,6 +238,7 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 
 - Shenzhen: `000001.SZ` (Main), `300001.SZ` (ChiNext), `002001.SZ` (SME)
 - Shanghai: `600000.SH` (Main), `688001.SH` (STAR Market)
+- Hong Kong: `00700.HK` (five digits; preserve leading zeroes)
 
 ## Common Index Codes
 
@@ -258,8 +264,8 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 | `top_list()` | Dragon & Tiger list | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
 | `shareholders()` | Shareholder count | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
 | `holder_trade()` | Insider trades | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
-| `concepts()` | Concept sector indices | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
-| `concept_members()` | Concept constituents | `symbol`, `con_symbol`, `start_date`, `end_date` |
+| `concepts()` | Concept sector indices | `bk_code`, `start_date`, `end_date`, `limit` (max 5000) |
+| `concept_members()` | Concept constituents | `bk_code`, `con_code`, `start_date`, `end_date` |
 | `chip_distribution()` | Holder cost analysis | `symbol`, `start_date`, `end_date`, `limit` (max 5000) |
 | `fx_daily()` | Currency rates | `symbol` (default USDCNH.FXCM), `limit` (max 2000) |
 | `index_daily()` | Benchmark indices | `symbol` (default 000001.SH), `limit` (max 2000) |

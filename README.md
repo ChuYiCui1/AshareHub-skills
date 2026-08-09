@@ -2,7 +2,7 @@
 
 # AShareHub Skills
 
-**AI-powered access to Chinese A-share market data**
+**AI-powered access to Chinese A-share, ETF and Hong Kong market data**
 
 [![PyPI](https://img.shields.io/pypi/v/asharehub.svg)](https://pypi.org/project/asharehub/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -39,6 +39,7 @@ Get your free API key at [asharehub.com/en/console/register](https://asharehub.c
 | [FX Daily](skills/en/fx-daily.md) | Foreign exchange rates (USD/CNH) | 2012+ |
 | [Index Daily](skills/en/index-daily.md) | SSE Composite, CSI 300, ChiNext | 2010+ |
 | [Financial Indicators](skills/en/financial-indicators.md) | ROE, EPS, margins, 50+ metrics | Quarterly |
+| [Hong Kong Stocks](skills/en/hk.md) | Directory, HKEX calendar and raw daily OHLCV | Daily |
 
 ## Installation
 

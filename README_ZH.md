@@ -2,7 +2,7 @@
 
 # AShareHub Skills
 
-**AI 驱动的中国 A 股市场数据查询**
+**AI 驱动的中国 A 股、ETF 与港股市场数据查询**
 
 [![PyPI](https://img.shields.io/pypi/v/asharehub.svg)](https://pypi.org/project/asharehub/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -39,6 +39,7 @@ export ASHAREHUB_API_KEY="ash_你的密钥"
 | [外汇行情](skills/zh/fx-daily.md) | 汇率（默认 USD/CNH） | 2012+ |
 | [指数日线](skills/zh/index-daily.md) | 上证综指、沪深300、创业板 | 2010+ |
 | [财务指标](skills/zh/financial-indicators.md) | ROE、EPS、利润率等 50+ 指标 | 按季度 |
+| [港股](skills/zh/hk.md) | 股票列表、港交所日历和未复权日线 | 日频 |
 
 ## 安装使用
 

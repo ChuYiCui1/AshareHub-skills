@@ -1,4 +1,4 @@
-# Concept Members — Concept Index Constituents
+# Concept Constituents — Concept Sector Constituents
 
 ## Background
 
@@ -10,8 +10,8 @@ This endpoint returns **which specific stocks belong to a given concept**. See t
 - **Membership changes**: Concepts add/remove stocks over time as relevance shifts. Track changes to identify stocks newly designated as "concept members".
 
 ### Key fields explained
-- **`symbol`**: The concept index code (parent).
-- **`con_symbol`**: The constituent stock code (member).
+- **`bk_code`**: The Eastmoney concept sector code (parent).
+- **`con_code`**: The constituent stock code; this source field name is preserved.
 - **`name`**: Constituent stock name (Chinese).
 - **`trade_date`**: The date this membership was recorded — important since memberships can change over time.
 
@@ -23,26 +23,26 @@ This endpoint returns **which specific stocks belong to a given concept**. See t
 ## SDK Method
 
 ```python
-client.concept_members(symbol=None, con_symbol=None, start_date=None, end_date=None, trade_date=None)
+client.concept_members(bk_code=None, con_code=None, start_date=None, end_date=None, trade_date=None)
 ```
 
 ## Returns
 
-`pd.DataFrame` — columns: trade_date, symbol, con_symbol, name. Returns empty DataFrame if no data.
+`pd.DataFrame` — columns: trade_date, bk_code, con_code, name. Returns empty DataFrame if no data.
 
 ## Example
 
 ```python
-df = client.concept_members(symbol="TS2")
-print(df[["con_symbol", "name"]])
+df = client.concept_members(bk_code="BK0425.DC", con_code="000001.SZ")
+print(df[["con_code", "name"]])
 ```
 
 ## Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `symbol` | str | None | Concept index code, e.g. `BK0425.DC` |
-| `con_symbol` | str | None | Stock code filter, e.g. `000001.SZ` |
+| `bk_code` | str | None | Eastmoney concept sector code, e.g. `BK0425.DC` |
+| `con_code` | str | None | Constituent stock code, e.g. `000001.SZ` |
 | `start_date` | str | None | Start date, YYYYMMDD |
 | `end_date` | str | None | End date, YYYYMMDD |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
@@ -52,8 +52,8 @@ print(df[["con_symbol", "name"]])
 | Field | Description |
 |-------|-------------|
 | `trade_date` | Trading date |
-| `symbol` | Concept index code |
-| `con_symbol` | Constituent stock code |
+| `bk_code` | Eastmoney concept sector code |
+| `con_code` | Constituent stock code |
 | `name` | Stock name |
 
 ## Data Coverage
