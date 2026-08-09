@@ -55,6 +55,7 @@ cp -r asharehub-skills/skills/zh/ 你的项目路径/.claude/skills/asharehub/
 ### 其他 AI 助手
 
 每个 `.md` 文件都是独立的参考文档，包含 SDK 方法签名、参数说明和返回字段。直接粘贴到你的 AI 助手上下文中即可使用。
+完整而精确的 50 个接口及全部返回字段，请查看自动生成的 [`api-contract.md`](skills/zh/api-contract.md)。
 
 ## 项目结构
 
@@ -62,6 +63,7 @@ cp -r asharehub-skills/skills/zh/ 你的项目路径/.claude/skills/asharehub/
 skills/
 ├── en/                         # English
 │   ├── SKILL.md                # 主入口
+│   ├── api-contract.md         # 自动生成的 50 接口精确契约
 │   ├── market-daily.md
 │   ├── market-fundamentals.md
 │   ├── moneyflow-hsgt.md
@@ -80,7 +82,7 @@ skills/
 |------|------|
 | **Python SDK** | `pip install asharehub` — [文档](https://asharehub.com/zh/docs) |
 | **MCP Server** | [云端接入说明](https://asharehub.com/zh/docs#mcp-setup) — 支持 Claude Desktop、Cursor 等 |
-| **REST API** | 40+ 个端点 — [API 文档](https://asharehub.com/zh/docs) |
+| **REST API** | 50 个端点 — [API 文档](https://asharehub.com/zh/docs) |
 | **Skills** | 本仓库 — [Skill 官网](https://asharehub.com/zh/skill) |
 
 ## 开源协议

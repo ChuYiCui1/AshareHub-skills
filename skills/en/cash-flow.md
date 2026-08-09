@@ -30,7 +30,9 @@ print(df[["end_date", "n_cashflow_act", "free_cashflow"]])
 | `report_type` | str | None | Report type |
 | `comp_type` | str | None | Company type: 1 general / 2 bank / 3 insurance / 4 securities |
 
-## Response Fields
+## Key Response Fields
+
+For the exact complete field list, use `api-contract.md`.
 
 | Category | Fields |
 |----------|--------|

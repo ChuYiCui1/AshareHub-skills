@@ -25,7 +25,9 @@ print(df[["report_date", "org_name", "rating", "max_price", "eps"]])
 | `start_date` | str | None | 起始日期 YYYYMMDD |
 | `end_date` | str | None | 结束日期 YYYYMMDD |
 
-## 返回字段
+## 主要返回字段
+
+完整、精确的字段清单以 `api-contract.md` 为准。
 
 symbol、name、report_date、report_title、org_name(券商)、author_name(分析师)、quarter(预测季度)、op_rt/op_pr/tp/np(营收/利润预测)、eps、pe、roe、ev_ebitda、rating(评级)、max_price/min_price(目标价区间)、imp_dg(关注度)。
 

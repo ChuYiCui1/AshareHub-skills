@@ -37,6 +37,8 @@ print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 | `type` | 预告类型（预增/预减/扭亏/首亏/续亏/续盈/略增/略减） |
 | `p_change_min` / `p_change_max` | 净利润变动幅度范围 % |
 | `net_profit_min` / `net_profit_max` | 预计净利润范围（万元） |
+| `last_parent_net` | 上年同期归母净利润（万元） |
+| `first_ann_date` | 首次公告日期 |
 | `summary` | 业绩摘要 |
 | `change_reason` | 变动原因 |
 

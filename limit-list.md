@@ -55,7 +55,9 @@ print(df[["trade_date", "symbol", "name", "pct_chg"]])
 | `limit_type` | str | None | `U`=limit-up, `D`=limit-down, `Z`=broken limit |
 | `trade_date` | str | None | Trading date YYYYMMDD (single day) |
 
-## Response Fields
+## Key Response Fields
+
+For the exact complete field list, use `api-contract.md`.
 
 | Field | Description |
 |-------|-------------|

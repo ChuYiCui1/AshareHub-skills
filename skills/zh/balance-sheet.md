@@ -29,7 +29,9 @@ print(df[["end_date", "total_assets", "total_liab"]])
 | `report_type` | str | None | 报告类型 |
 | `comp_type` | str | None | 公司类型：1工商业/2银行/3保险/4证券 |
 
-## 返回字段
+## 主要返回字段
+
+完整、精确的字段清单以 `api-contract.md` 为准。
 
 | 分类 | 字段 |
 |------|------|

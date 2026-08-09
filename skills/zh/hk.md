@@ -39,6 +39,10 @@ calendar = client.hk_trade_calendar(
 
 `symbol`、`name`、`fullname`、`enname`、`cn_spell`、`market`、`list_status`、`list_date`、`delist_date`、`trade_unit`、`isin`、`curr_type`。
 
+## 交易日历字段
+
+`exchange`、`cal_date`、`is_open`、`pretrade_date`。
+
 ## API 路径
 
 - `GET /v2/hk/basic`

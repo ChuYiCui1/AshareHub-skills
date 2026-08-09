@@ -32,7 +32,7 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 | 类别 | 字段 |
 |------|------|
 | **每股指标** | `eps`, `dt_eps`, `total_revenue_ps`, `revenue_ps`, `bps`, `ocfps` |
-| **盈利能力** | `roe`, `roe_waa`, `roe_dt`, `roa`, `gross_margin`, `netprofit_margin` |
+| **盈利能力** | `roe`, `roe_waa`, `roe_dt`, `roa`, `gross_margin`, `netprofit_margin`, `grossprofit_margin` |
 | **偿债能力** | `debt_to_assets`, `current_ratio`, `quick_ratio`, `cash_ratio` |
 | **运营效率** | `assets_turn`, `inv_turn`, `ar_turn` |
 | **投资回报** | `roic` |

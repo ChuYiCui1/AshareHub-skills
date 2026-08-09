@@ -16,6 +16,9 @@ metadata:
 
 官方链接：[Skill 官网](https://asharehub.com/zh/skill) · [API 文档](https://asharehub.com/zh/docs) · [免费获取 API Key](https://asharehub.com/zh/console/register)
 
+所有 50 个接口的 REST 路径、SDK/MCP 完整签名、请求参数和全部返回字段，
+以自动生成的 `api-contract.md` 为准。下面的专题文件用于解释字段含义和提供示例。
+
 ## 可用数据接口
 
 ### 行情数据
@@ -110,7 +113,7 @@ df = client.market_daily(symbol="000001.SZ")
 ## 工作流程
 
 1. 根据用户的查询需求，确定需要哪个数据接口
-2. 读取当前目录下对应的 `.md` 文件，了解参数和字段详情
+2. 读取当前目录下对应的 `.md` 文件，并用 `api-contract.md` 核对完整参数和返回字段
 3. 使用 `asharehub` SDK 编写并执行 Python 代码查询数据
 4. 将结果以清晰的格式呈现给用户
 

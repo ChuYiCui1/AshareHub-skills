@@ -28,7 +28,9 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 | `ex_date` | str | None | Ex-dividend date YYYYMMDD |
 | `imp_ann_date` | str | None | Implementation announcement date YYYYMMDD |
 
-## Response Fields
+## Key Response Fields
+
+For the exact complete field list, use `api-contract.md`.
 
 | Field | Description |
 |-------|-------------|
@@ -44,6 +46,8 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 | `record_date` | Record date (股权登记日) |
 | `ex_date` | Ex-dividend date (除权除息日) |
 | `pay_date` | Payment date |
+| `div_listdate` | Stock-dividend listing date |
+| `imp_ann_date` | Implementation announcement date |
 
 ## Notes
 

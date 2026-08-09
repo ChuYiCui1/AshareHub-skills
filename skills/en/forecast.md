@@ -38,6 +38,7 @@ print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 | `p_change_min` / `p_change_max` | Net profit change range % |
 | `net_profit_min` / `net_profit_max` | Forecast net profit range (10k CNY) |
 | `last_parent_net` | Prior year net income (10k CNY) |
+| `first_ann_date` | First announcement date |
 | `summary` | Performance summary |
 | `change_reason` | Reason for change |
 

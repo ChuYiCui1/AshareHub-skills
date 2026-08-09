@@ -25,7 +25,9 @@ print(df[["report_date", "org_name", "rating", "max_price", "eps"]])
 | `start_date` | str | None | Report start date, YYYYMMDD |
 | `end_date` | str | None | Report end date, YYYYMMDD |
 
-## Response Fields
+## Key Response Fields
+
+For the exact complete field list, use `api-contract.md`.
 
 symbol, name, report_date, report_title, org_name (brokerage), author_name, quarter (forecast period), op_rt/op_pr/tp/np (revenue/profit forecasts), eps, pe, roe, ev_ebitda, rating (buy/hold/sell), max_price, min_price, imp_dg.
 

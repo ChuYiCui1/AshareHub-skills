@@ -26,7 +26,9 @@ print(df[["ann_date", "end_date", "revenue", "n_income", "diluted_roe"]])
 | `end_date` | str | None | Announcement end date, YYYYMMDD |
 | `period` | str | None | Report period YYYYMMDD, e.g. 20231231 |
 
-## Response Fields
+## Key Response Fields
+
+For the exact complete field list, use `api-contract.md`.
 
 | Field | Description |
 |-------|-------------|

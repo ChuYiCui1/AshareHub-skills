@@ -55,7 +55,9 @@ print(df[["trade_date", "symbol", "name", "pct_chg"]])
 | `limit_type` | str | None | `U`=涨停，`D`=跌停，`Z`=炸板 |
 | `trade_date` | str | None | 交易日期，YYYYMMDD（查单日） |
 
-## 返回字段
+## 主要返回字段
+
+完整、精确的字段清单以 `api-contract.md` 为准。
 
 | 字段 | 说明 |
 |------|------|

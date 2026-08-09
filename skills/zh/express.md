@@ -26,7 +26,9 @@ print(df[["ann_date", "end_date", "revenue", "n_income", "diluted_roe"]])
 | `end_date` | str | None | 公告截止日期，YYYYMMDD |
 | `period` | str | None | 报告期，YYYYMMDD，如20231231 |
 
-## 返回字段
+## 主要返回字段
+
+完整、精确的字段清单以 `api-contract.md` 为准。
 
 | 字段 | 说明 |
 |------|------|

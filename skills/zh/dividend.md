@@ -28,7 +28,9 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 | `ex_date` | str | None | 除权除息日，YYYYMMDD |
 | `imp_ann_date` | str | None | 实施公告日，YYYYMMDD |
 
-## 返回字段
+## 主要返回字段
+
+完整、精确的字段清单以 `api-contract.md` 为准。
 
 | 字段 | 说明 |
 |------|------|
@@ -42,6 +44,8 @@ print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 | `record_date` | 股权登记日 |
 | `ex_date` | 除权除息日 |
 | `pay_date` | 派息日 |
+| `div_listdate` | 送转股上市日 |
+| `imp_ann_date` | 实施公告日 |
 
 ## 备注
 

@@ -55,6 +55,7 @@ Then invoke with `/asharehub` in Claude Code.
 ### Other AI Assistants
 
 Each `.md` file is a self-contained reference with SDK method signature, parameters, and response fields. Paste into your assistant's context or reference directly.
+Use [`api-contract.md`](skills/en/api-contract.md) for the generated, exact contract covering all 50 interfaces and every response field.
 
 ## Project Structure
 
@@ -62,6 +63,7 @@ Each `.md` file is a self-contained reference with SDK method signature, paramet
 skills/
 ├── en/                         # English
 │   ├── SKILL.md                # Main entry point
+│   ├── api-contract.md         # Generated exact 50-interface contract
 │   ├── market-daily.md
 │   ├── market-fundamentals.md
 │   ├── moneyflow-hsgt.md
@@ -80,7 +82,7 @@ skills/
 |--------|-------------|
 | **Python SDK** | `pip install asharehub` — [Documentation](https://asharehub.com/en/docs) |
 | **MCP Server** | [Cloud setup](https://asharehub.com/en/docs#mcp-setup) — Claude Desktop, Cursor, etc. |
-| **REST API** | 40+ endpoints — [API documentation](https://asharehub.com/en/docs) |
+| **REST API** | 50 endpoints — [API documentation](https://asharehub.com/en/docs) |
 | **Skills** | This repository — [official skill page](https://asharehub.com/en/skill) |
 
 ## License

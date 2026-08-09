@@ -32,7 +32,7 @@ print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 | Category | Fields |
 |----------|--------|
 | **Per-share** | `eps`, `dt_eps`, `total_revenue_ps`, `revenue_ps`, `bps`, `ocfps` |
-| **Profitability** | `roe`, `roe_waa`, `roe_dt`, `roa`, `gross_margin`, `netprofit_margin` |
+| **Profitability** | `roe`, `roe_waa`, `roe_dt`, `roa`, `gross_margin`, `netprofit_margin`, `grossprofit_margin` |
 | **Leverage** | `debt_to_assets` |
 | **Liquidity** | `current_ratio`, `quick_ratio`, `cash_ratio` |
 | **Efficiency** | `assets_turn`, `inv_turn`, `ar_turn` |
