@@ -73,6 +73,9 @@ print(df[["trade_date", "open", "high", "low", "close", "vol"]])
 client.close()
 ```
 
+All v2 date parameters use the compact `YYYYMMDD` form, for example `20260815`.
+Never send `YYYY-MM-DD` values such as `2026-08-15` to a v2 endpoint.
+
 ## Updating the skill & SDK
 
 When the user asks to "update the skill / update the SDK / get the latest version", run the following directly — no extra confirmation needed:
