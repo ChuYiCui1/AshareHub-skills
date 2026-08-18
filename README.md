@@ -19,6 +19,14 @@
 
 Official skills and reference docs for querying Chinese A-share market data via [AShareHub](https://asharehub.com). Compatible with Claude Code, Cursor, Windsurf, Cline, and any AI coding assistant.
 
+### Related AShareHub resources
+
+- [China stock MCP server](https://asharehub.com/en/docs/mcp-setup) for hosted, tool-based access from AI agents
+- [China stock API for AI agents](https://asharehub.com/en/skill) with reusable Agent Skill instructions
+- [China stock data Python SDK](https://asharehub.com/en/docs/sdk-install) for notebooks, research and backend services
+- [A-share market data API](https://asharehub.com/en/docs/market-daily), [China ETF data API](https://asharehub.com/en/docs/etf-basic) and [China financial data API](https://asharehub.com/en/docs/financials)
+- [China stock API pricing](https://asharehub.com/en/console/pricing), [authentication](https://asharehub.com/en/docs#authentication) and [rate limits](https://asharehub.com/en/docs#rate-limits)
+
 ## Prerequisites
 
 ```bash
