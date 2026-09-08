@@ -80,9 +80,21 @@ skills/
 | 方式 | 说明 |
 |------|------|
 | **Python SDK** | `pip install asharehub` — [文档](https://asharehub.com/zh/docs) |
-| **MCP Server** | [云端接入说明](https://asharehub.com/zh/docs#mcp-setup) — 支持 Claude Desktop、Cursor 等 |
+| **MCP Server** | `https://asharehub.com/mcp` — Streamable HTTP；[接入说明](https://asharehub.com/zh/docs/mcp-setup) |
 | **REST API** | 47 个端点 — [API 文档](https://asharehub.com/zh/docs) |
 | **Skills** | 本仓库 — [Skill 官网](https://asharehub.com/zh/skill) |
+
+### MCP 连接
+
+选择 Streamable HTTP 传输，服务器地址为 `https://asharehub.com/mcp`（支持 POST/GET）。在客户端的请求头配置中填写以下任意一种鉴权方式，将占位符替换为自己的 API Key：
+
+```text
+X-API-Key: ash_your_key
+```
+
+或 `Authorization: Bearer ash_your_key`。不要将 API Key 放在 URL 查询参数中，以免被访问日志记录。
+
+旧 SSE 客户端仍可使用兼容入口 `https://asharehub.com/mcp/sse` 和服务端返回的 `/mcp/messages/` 消息地址；兼容连接也应使用请求头鉴权。新连接请优先使用上面的 Streamable HTTP 地址。
 
 ## 开源协议
 

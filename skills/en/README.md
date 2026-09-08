@@ -80,9 +80,21 @@ skills/
 | Method | Description |
 |--------|-------------|
 | **Python SDK** | `pip install asharehub` — [Documentation](https://asharehub.com/docs) |
-| **MCP Server** | `https://asharehub.com/mcp/sse` — Claude Desktop, Cursor, etc. |
+| **MCP Server** | `https://asharehub.com/mcp` — Streamable HTTP; [setup guide](https://asharehub.com/en/docs/mcp-setup) |
 | **REST API** | 47 endpoints — [API documentation](https://asharehub.com/en/docs) |
 | **Skills** | This repository |
+
+### MCP connection
+
+Select Streamable HTTP and use `https://asharehub.com/mcp` (POST/GET). Configure either of the following authentication headers in your client, replacing the placeholder with your own API key:
+
+```text
+X-API-Key: ash_your_key
+```
+
+Alternatively, use `Authorization: Bearer ash_your_key`. Do not put API keys in URL query parameters, which may be recorded in access logs.
+
+Legacy SSE clients can still use `https://asharehub.com/mcp/sse` and the server-provided `/mcp/messages/` message endpoint with header authentication. Prefer the Streamable HTTP endpoint above for new connections.
 
 ## License
 
