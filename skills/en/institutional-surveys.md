@@ -6,6 +6,10 @@ Use `symbol`, `start_date` and `end_date` (YYYYMMDD), or `event_id` to narrow re
 
 `content` is null by default and is not loaded from storage. Request `include_content=True, limit=20` or less for full transcripts. A larger limit with content returns 422. Empty results return `[]` (an empty SDK DataFrame). These are V2-only endpoints; SDK `version="v1"` rejects these new methods.
 
+## Point-in-time limitations
+
+Neither dataset exposes a reliable public release timestamp. `month` labels a recommendation month; `surv_date` records the meeting date, not when its transcript became public. Do not use either date alone for strict point-in-time backtests: doing so can introduce look-ahead bias. Such backtests require independently verified publication/availability timestamps and historical source versions.
+
 ## Example
 
 ```python
