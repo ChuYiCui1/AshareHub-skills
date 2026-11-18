@@ -42,7 +42,10 @@ client.limit_list(symbol=None, start_date=None, end_date=None, limit_type=None, 
 
 ```python
 df = client.limit_list(limit_type="U")
-print(df[["trade_date", "symbol", "name", "pct_chg"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "symbol", "name", "pct_chg"]])
 ```
 
 ## Parameters

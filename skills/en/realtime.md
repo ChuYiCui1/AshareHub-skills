@@ -15,7 +15,10 @@ client.realtime(symbol=None)
 ```python
 # A basket of securities in one call (comma-separated symbol, up to 200)
 df = client.realtime(symbol="600519.SH,000001.SZ,000001.SH")
-print(df[["symbol", "name", "price", "pct_chg"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["symbol", "name", "price", "pct_chg"]])
 ```
 
 ## Parameters

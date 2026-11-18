@@ -96,7 +96,7 @@ metadata:
 - 所有方法返回 `pd.DataFrame`，与 Tushare 风格一致
 - 数值列为 `float64`，字符串列为 `object`，可直接运算
 - 访问方式：`df["close"]`、`df.close`、`df.iloc[0]`
-- 无数据时返回空 DataFrame，用 `df.empty` 判断
+- 无数据时可能返回没有任何列的空 DataFrame；先用 `df.empty` 判断，再选列、排序、合并或读取 `.iloc`
 
 ### 非交易日处理
 
@@ -130,7 +130,10 @@ client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"], version="v2")
 
 # 返回 pd.DataFrame
 df = client.market_daily(symbol="000001.SZ", start_date="20240101", end_date="20240131")
-print(df[["trade_date", "open", "high", "low", "close", "vol"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "open", "high", "low", "close", "vol"]])
 
 client.close()
 ```
@@ -165,21 +168,30 @@ client.close()
 
 ```python
 df = client.fundamentals(symbol="600519.SH", start_date="20240101")
-print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 ```
 
 ### 沪深港通资金
 
 ```python
 df = client.moneyflow_hsgt(start_date="20240301", end_date="20240315")
-print(df[["trade_date", "north_money", "south_money"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "north_money", "south_money"]])
 ```
 
 ### 财务指标
 
 ```python
 df = client.financial_indicators(symbol="000001.SZ")
-print(df[["end_date", "roe", "eps", "netprofit_margin"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 ```
 
 ## Institutional research and monthly stock picks

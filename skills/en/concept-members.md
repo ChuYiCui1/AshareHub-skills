@@ -34,7 +34,10 @@ client.concept_members(symbol=None, con_symbol=None, start_date=None, end_date=N
 
 ```python
 df = client.concept_members(symbol="BK0425.DC", con_symbol="000001.SZ")
-print(df[["con_symbol", "name"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["con_symbol", "name"]])
 ```
 
 ## Parameters

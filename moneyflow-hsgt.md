@@ -43,7 +43,10 @@ client.moneyflow_hsgt(start_date=None, end_date=None, trade_date=None)
 
 ```python
 df = client.moneyflow_hsgt()
-print(df[["trade_date", "north_money", "south_money"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "north_money", "south_money"]])
 ```
 
 ## Parameters

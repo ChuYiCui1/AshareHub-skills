@@ -14,7 +14,10 @@ client.industry_list(symbol=None)
 
 ```python
 df = client.industry_list(symbol="000001.SZ")
-print(df[["symbol", "l1_name", "l2_name", "l3_name"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["symbol", "l1_name", "l2_name", "l3_name"]])
 ```
 
 ## Parameters

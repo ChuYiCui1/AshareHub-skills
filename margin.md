@@ -50,7 +50,10 @@ client.margin(symbol=None, start_date=None, end_date=None, trade_date=None)
 
 ```python
 df = client.margin(symbol="000001.SZ")
-print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
 ```
 
 ## Parameters

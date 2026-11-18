@@ -15,7 +15,10 @@ client.realtime(symbol=None)
 ```python
 # 一次查一篮子(symbol 逗号分隔，最多 200 只)
 df = client.realtime(symbol="600519.SH,000001.SZ,000001.SH")
-print(df[["symbol", "name", "price", "pct_chg"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["symbol", "name", "price", "pct_chg"]])
 ```
 
 ## 参数

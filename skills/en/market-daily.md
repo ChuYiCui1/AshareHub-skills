@@ -14,7 +14,10 @@ client.market_daily(symbol=None, start_date=None, end_date=None, trade_date=None
 
 ```python
 df = client.market_daily(symbol="000001.SZ")
-print(df[["trade_date", "close", "pct_chg"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "close", "pct_chg"]])
 ```
 
 ## Parameters

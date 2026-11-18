@@ -41,7 +41,10 @@ client.chip_distribution(symbol=None, start_date=None, end_date=None, trade_date
 
 ```python
 df = client.chip_distribution(symbol="000001.SZ")
-print(df[["trade_date", "weight_avg", "winner_rate"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "weight_avg", "winner_rate"]])
 ```
 
 ## Parameters

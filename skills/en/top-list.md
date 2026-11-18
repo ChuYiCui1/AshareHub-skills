@@ -39,7 +39,10 @@ client.top_list(symbol=None, start_date=None, end_date=None, trade_date=None)
 
 ```python
 df = client.top_list()
-print(df[["trade_date", "symbol", "name", "pct_change"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "symbol", "name", "pct_change"]])
 ```
 
 ## Parameters

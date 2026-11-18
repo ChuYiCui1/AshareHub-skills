@@ -14,7 +14,10 @@ client.adj_factor(symbol=None, start_date=None, end_date=None, trade_date=None)
 
 ```python
 df = client.adj_factor(symbol="000001.SZ")
-print(df[["trade_date", "adj_factor"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "adj_factor"]])
 ```
 
 ## Parameters
@@ -54,10 +57,16 @@ factor = client.adj_factor(
     symbol="000001.SZ", start_date="20240101", end_date="20241231"
 )
 
-df = daily.merge(factor, on=["symbol", "trade_date"], how="inner")
-anchor_factor = df.sort_values("trade_date").iloc[-1]["adj_factor"]
-df["close_qfq"] = df["close"] * df["adj_factor"] / anchor_factor
-df["close_hfq"] = df["close"] * df["adj_factor"]
+if daily.empty or factor.empty:
+    print('No daily prices or adjustment factors; adjusted prices cannot be calculated.')
+else:
+    df = daily.merge(factor, on=["symbol", "trade_date"], how="inner")
+    if df.empty:
+        print('No matching trading dates between prices and adjustment factors.')
+    else:
+        anchor_factor = df.sort_values("trade_date").iloc[-1]["adj_factor"]
+        df["close_qfq"] = df["close"] * df["adj_factor"] / anchor_factor
+        df["close_hfq"] = df["close"] * df["adj_factor"]
 ```
 
 ## Usage rules

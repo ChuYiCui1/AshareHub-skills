@@ -14,7 +14,10 @@ client.trade_calendar(exchange=None, start_date=None, end_date=None, is_open=Non
 
 ```python
 df = client.trade_calendar(exchange="SSE", start_date="20240325", end_date="20240331")
-print(df[["cal_date", "is_open"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["cal_date", "is_open"]])
 ```
 
 ## Parameters

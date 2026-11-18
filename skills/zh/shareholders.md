@@ -14,7 +14,10 @@ client.shareholders(symbol=None, start_date=None, end_date=None, enddate=None, a
 
 ```python
 df = client.shareholders(symbol="000001.SZ")
-print(df[["end_date", "holder_num"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["end_date", "holder_num"]])
 ```
 
 ## 参数

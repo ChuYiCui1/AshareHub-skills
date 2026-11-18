@@ -14,7 +14,10 @@ client.main_business(symbol=None, start_date=None, end_date=None, period=None)
 
 ```python
 df = client.main_business(symbol="600519.SH")
-print(df[["end_date", "bz_item", "bz_sales", "bz_profit"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["end_date", "bz_item", "bz_sales", "bz_profit"]])
 ```
 
 ## Parameters

@@ -14,7 +14,10 @@ client.industry_list(symbol=None)
 
 ```python
 df = client.industry_list(symbol="000001.SZ")
-print(df[["symbol", "l1_name", "l2_name", "l3_name"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["symbol", "l1_name", "l2_name", "l3_name"]])
 ```
 
 ## 参数

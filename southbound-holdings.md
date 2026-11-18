@@ -34,7 +34,10 @@ client.southbound_holdings(symbol=None, start_date=None, end_date=None, trade_da
 
 ```python
 df = client.southbound_holdings()
-print(df[["trade_date", "symbol", "name", "vol", "ratio"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "symbol", "name", "vol", "ratio"]])
 ```
 
 ## Parameters

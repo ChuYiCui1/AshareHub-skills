@@ -14,7 +14,10 @@ client.balance_sheet(symbol=None, start_date=None, end_date=None, period=None, a
 
 ```python
 df = client.balance_sheet(symbol="000001.SZ")
-print(df[["end_date", "total_assets", "total_liab"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["end_date", "total_assets", "total_liab"]])
 ```
 
 ## Parameters

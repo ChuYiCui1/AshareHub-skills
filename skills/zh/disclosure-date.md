@@ -14,7 +14,10 @@ client.disclosure_date(symbol=None, start_date=None, end_date=None, pre_date=Non
 
 ```python
 df = client.disclosure_date(symbol="000001.SZ")
-print(df[["end_date", "pre_date", "actual_date"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["end_date", "pre_date", "actual_date"]])
 ```
 
 ## 参数

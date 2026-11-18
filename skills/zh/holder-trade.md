@@ -14,7 +14,10 @@ client.holder_trade(symbol=None, start_date=None, end_date=None, trade_type=None
 
 ```python
 df = client.holder_trade(symbol="000001.SZ")
-print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["ann_date", "holder_name", "in_de", "change_vol"]])
 ```
 
 ## 参数

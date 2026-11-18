@@ -14,7 +14,10 @@ client.forecast(symbol=None, start_date=None, end_date=None, period=None, type=N
 
 ```python
 df = client.forecast(symbol="000001.SZ")
-print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["ann_date", "end_date", "type", "net_profit_min", "net_profit_max"]])
 ```
 
 ## 参数

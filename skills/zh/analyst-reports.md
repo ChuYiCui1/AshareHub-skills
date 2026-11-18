@@ -14,7 +14,10 @@ client.analyst_reports(symbol=None, start_date=None, end_date=None)
 
 ```python
 df = client.analyst_reports(symbol="600519.SH")
-print(df[["report_date", "org_name", "rating", "max_price", "eps"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["report_date", "org_name", "rating", "max_price", "eps"]])
 ```
 
 ## 参数

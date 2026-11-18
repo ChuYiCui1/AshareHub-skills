@@ -15,7 +15,10 @@ client.news_flash(source, start_date=None, end_date=None, importance=None)
 ```python
 # Important 财联社 flashes only
 df = client.news_flash(source="cls", importance=1)
-print(df[["publish_time", "content_cn"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["publish_time", "content_cn"]])
 ```
 
 ## Parameters

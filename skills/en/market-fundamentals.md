@@ -14,7 +14,10 @@ client.fundamentals(symbol=None, start_date=None, end_date=None, trade_date=None
 
 ```python
 df = client.fundamentals(symbol="600519.SH")
-print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 ```
 
 ## Parameters

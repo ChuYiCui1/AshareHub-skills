@@ -41,7 +41,10 @@ client.top_inst(symbol=None, start_date=None, end_date=None, trade_date=None)
 
 ```python
 df = client.top_inst()
-print(df[["trade_date", "symbol", "exalter", "net_buy", "reason"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "symbol", "exalter", "net_buy", "reason"]])
 ```
 
 ## Parameters

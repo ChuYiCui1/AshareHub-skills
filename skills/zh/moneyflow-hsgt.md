@@ -42,7 +42,10 @@ client.moneyflow_hsgt(start_date=None, end_date=None, trade_date=None)
 
 ```python
 df = client.moneyflow_hsgt()
-print(df[["trade_date", "north_money", "south_money"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "north_money", "south_money"]])
 ```
 
 ## 参数

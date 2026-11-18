@@ -14,7 +14,10 @@ client.stock_list(symbol=None, name=None, market=None, list_status=None, exchang
 
 ```python
 df = client.stock_list(symbol="000001.SZ")
-print(df[["symbol", "name", "industry", "list_date"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["symbol", "name", "industry", "list_date"]])
 ```
 
 ## 参数

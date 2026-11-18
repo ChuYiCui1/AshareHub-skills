@@ -14,7 +14,10 @@ client.index_weight(symbol=None, start_date=None, end_date=None, trade_date=None
 
 ```python
 df = client.index_weight(symbol="399300.SZ")
-print(df[["con_symbol", "con_name", "weight"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["con_symbol", "con_name", "weight"]])
 ```
 
 ## 参数

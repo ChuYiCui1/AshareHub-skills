@@ -14,7 +14,10 @@ client.shareholders(symbol=None, start_date=None, end_date=None, enddate=None, a
 
 ```python
 df = client.shareholders(symbol="000001.SZ")
-print(df[["end_date", "holder_num"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["end_date", "holder_num"]])
 ```
 
 ## Parameters

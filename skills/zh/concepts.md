@@ -50,7 +50,10 @@ client.concepts(symbol=None, start_date=None, end_date=None, trade_date=None, na
 
 ```python
 df = client.concepts(symbol="BK0425.DC")
-print(df[["trade_date", "name", "pct_change", "leading"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "name", "pct_change", "leading"]])
 ```
 
 ## 参数

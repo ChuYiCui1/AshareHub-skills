@@ -14,7 +14,10 @@ client.technical_factors_pro(symbol=None, start_date=None, end_date=None, trade_
 
 ```python
 df = client.technical_factors_pro(symbol="000001.SZ")
-print(df[["trade_date", "close_qfq", "macd_qfq", "rsi_qfq_6", "ma_qfq_20"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "close_qfq", "macd_qfq", "rsi_qfq_6", "ma_qfq_20"]])
 ```
 
 ## Parameters

@@ -14,7 +14,10 @@ client.dividend(symbol=None, start_date=None, end_date=None, record_date=None, e
 
 ```python
 df = client.dividend(symbol="000001.SZ")
-print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["end_date", "cash_div", "stk_div", "ex_date"]])
 ```
 
 ## 参数
