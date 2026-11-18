@@ -16,7 +16,7 @@ metadata:
 
 官方链接：[Skill 官网](https://asharehub.com/zh/skill) · [API 文档](https://asharehub.com/zh/docs) · [免费获取 API Key](https://asharehub.com/zh/console/register)
 
-所有 47 个接口的 REST 路径、SDK/MCP 完整签名、请求参数和全部返回字段，
+所有 50 个接口的 REST 路径、SDK/MCP 完整签名、请求参数和全部返回字段，
 以自动生成的 `api-contract.md` 为准。下面的专题文件用于解释字段含义和提供示例。
 
 所有 v2 日期参数统一使用不带分隔符的 `YYYYMMDD`，例如 `20260815`。
@@ -181,3 +181,7 @@ print(df[["trade_date", "north_money", "south_money"]])
 df = client.financial_indicators(symbol="000001.SZ")
 print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 ```
+
+## Institutional research and monthly stock picks
+
+Use [institutional-surveys.md](institutional-surveys.md) for event counts and transcripts, [survey-participants.md](survey-participants.md) for participating institutions, and [broker-recommendations.md](broker-recommendations.md) for broker monthly stock picks. Do not conflate participant records, events, and analyst earnings forecasts. Use explicit limit/offset pages; fetch transcripts only when needed. Requires SDK 0.10.0 or later.

@@ -103,7 +103,7 @@ After updating, tell the user to re-run `/asharehub` to load the latest docs.
 ## Available Data Endpoints
 
 For the exact REST path, SDK signature, MCP signature, request parameters, and
-complete response-field list for all 47 interfaces, read `api-contract.md`.
+complete response-field list for all 50 interfaces, read `api-contract.md`.
 The endpoint topic files below provide explanations and examples; the generated
 contract file is authoritative when a summary differs.
 
@@ -281,3 +281,7 @@ by the server; `limit` and `offset` are not public V2 or SDK parameters.
 - API Documentation: https://asharehub.com/docs
 - SDK on PyPI: https://pypi.org/project/asharehub/
 - Website: https://asharehub.com
+
+## Institutional research and monthly stock picks
+
+Use [institutional-surveys.md](institutional-surveys.md) for event counts and transcripts, [survey-participants.md](survey-participants.md) for participating institutions, and [broker-recommendations.md](broker-recommendations.md) for broker monthly stock picks. Do not conflate participant records, events, and analyst earnings forecasts. Use explicit limit/offset pages; fetch transcripts only when needed. Requires SDK 0.10.0 or later.

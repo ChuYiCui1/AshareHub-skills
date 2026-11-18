@@ -565,3 +565,39 @@ Generated from the V2 OpenAPI contract. It lists every REST endpoint, SDK method
 - Request parameters: `source`, `start_date`, `end_date`, `importance`
 - Response fields: `source`, `publish_time`, `content_cn`, `tags`, `importance`, `url`
 <!-- END GENERATED ASHAREHUB CONTRACT -->
+
+## `institutional_surveys`
+
+<!-- BEGIN GENERATED ASHAREHUB CONTRACT -->
+### Exact public contract
+
+- REST: `GET /v2/research/institutional-surveys`
+- SDK: `client.institutional_surveys(symbol=None, start_date=None, end_date=None, event_id=None, rece_org=None, include_content=False, limit=100, offset=0)`
+- MCP: `get_institutional_surveys(symbol=None, start_date=None, end_date=None, event_id=None, rece_org=None, include_content=False, limit=100, offset=0)`
+- Request parameters: `symbol`, `start_date`, `end_date`, `event_id`, `rece_org`, `include_content`, `limit`, `offset`
+- Response fields: `event_id`, `symbol`, `name`, `surv_date`, `rece_place`, `rece_mode`, `comp_rece`, `participant_count`, `content`
+<!-- END GENERATED ASHAREHUB CONTRACT -->
+
+## `survey_participants`
+
+<!-- BEGIN GENERATED ASHAREHUB CONTRACT -->
+### Exact public contract
+
+- REST: `GET /v2/research/survey-participants`
+- SDK: `client.survey_participants(symbol=None, start_date=None, end_date=None, event_id=None, rece_org=None, org_type=None, limit=100, offset=0)`
+- MCP: `get_survey_participants(symbol=None, start_date=None, end_date=None, event_id=None, rece_org=None, org_type=None, limit=100, offset=0)`
+- Request parameters: `symbol`, `start_date`, `end_date`, `event_id`, `rece_org`, `org_type`, `limit`, `offset`
+- Response fields: `participant_id`, `event_id`, `symbol`, `surv_date`, `fund_visitors`, `rece_org`, `org_type`
+<!-- END GENERATED ASHAREHUB CONTRACT -->
+
+## `broker_recommendations`
+
+<!-- BEGIN GENERATED ASHAREHUB CONTRACT -->
+### Exact public contract
+
+- REST: `GET /v2/research/broker-recommendations`
+- SDK: `client.broker_recommendations(symbol=None, month=None, broker=None, limit=100, offset=0)`
+- MCP: `get_broker_recommendations(symbol=None, month=None, broker=None, limit=100, offset=0)`
+- Request parameters: `symbol`, `month`, `broker`, `limit`, `offset`
+- Response fields: `month`, `broker`, `symbol`, `name`
+<!-- END GENERATED ASHAREHUB CONTRACT -->
