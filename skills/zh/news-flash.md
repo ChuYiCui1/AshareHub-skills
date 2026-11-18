@@ -15,7 +15,10 @@ client.news_flash(source, start_date=None, end_date=None, importance=None)
 ```python
 # 只看财联社的重要快讯
 df = client.news_flash(source="cls", importance=1)
-print(df[["publish_time", "content_cn"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["publish_time", "content_cn"]])
 ```
 
 ## 参数

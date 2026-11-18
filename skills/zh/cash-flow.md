@@ -14,7 +14,10 @@ client.cash_flow(symbol=None, start_date=None, end_date=None, period=None, ann_d
 
 ```python
 df = client.cash_flow(symbol="000001.SZ")
-print(df[["end_date", "n_cashflow_act", "free_cashflow"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["end_date", "n_cashflow_act", "free_cashflow"]])
 ```
 
 ## 参数

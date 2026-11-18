@@ -14,7 +14,10 @@ client.income(symbol=None, start_date=None, end_date=None, period=None, ann_date
 
 ```python
 df = client.income(symbol="000001.SZ")
-print(df[["end_date", "revenue", "n_income"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["end_date", "revenue", "n_income"]])
 ```
 
 ## 参数

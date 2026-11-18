@@ -14,7 +14,10 @@ client.market_daily(symbol=None, start_date=None, end_date=None, trade_date=None
 
 ```python
 df = client.market_daily(symbol="000001.SZ")
-print(df[["trade_date", "close", "pct_chg"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "close", "pct_chg"]])
 ```
 
 ## 参数

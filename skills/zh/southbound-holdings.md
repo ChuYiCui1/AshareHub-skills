@@ -35,7 +35,10 @@ client.southbound_holdings(symbol=None, start_date=None, end_date=None, trade_da
 
 ```python
 df = client.southbound_holdings()
-print(df[["trade_date", "symbol", "name", "vol", "ratio"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "symbol", "name", "vol", "ratio"]])
 ```
 
 ## 参数

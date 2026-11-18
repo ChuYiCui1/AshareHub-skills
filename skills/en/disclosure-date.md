@@ -14,7 +14,10 @@ client.disclosure_date(symbol=None, start_date=None, end_date=None, pre_date=Non
 
 ```python
 df = client.disclosure_date(symbol="000001.SZ")
-print(df[["end_date", "pre_date", "actual_date"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["end_date", "pre_date", "actual_date"]])
 ```
 
 ## Parameters

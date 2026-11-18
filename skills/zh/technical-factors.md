@@ -14,7 +14,10 @@ client.technical_factors(symbol=None, start_date=None, end_date=None, trade_date
 
 ```python
 df = client.technical_factors(symbol="000001.SZ")
-print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "close_qfq", "macd", "kdj_k", "rsi_6"]])
 ```
 
 ## 参数

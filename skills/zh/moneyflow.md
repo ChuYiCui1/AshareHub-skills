@@ -14,7 +14,10 @@ client.moneyflow(symbol=None, start_date=None, end_date=None, trade_date=None)
 
 ```python
 df = client.moneyflow(symbol="000001.SZ")
-print(df[["trade_date", "net_mf_amount", "buy_elg_amount"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "net_mf_amount", "buy_elg_amount"]])
 ```
 
 ## 参数

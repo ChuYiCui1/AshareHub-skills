@@ -14,7 +14,10 @@ client.financial_indicators(symbol=None, start_date=None, end_date=None, period=
 
 ```python
 df = client.financial_indicators(symbol="000001.SZ")
-print(df[["end_date", "roe", "eps", "netprofit_margin"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 ```
 
 ## Parameters

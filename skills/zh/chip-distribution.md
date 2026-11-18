@@ -40,7 +40,10 @@ client.chip_distribution(symbol=None, start_date=None, end_date=None, trade_date
 
 ```python
 df = client.chip_distribution(symbol="000001.SZ")
-print(df[["trade_date", "weight_avg", "winner_rate"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "weight_avg", "winner_rate"]])
 ```
 
 ## 参数

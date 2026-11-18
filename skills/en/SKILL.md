@@ -68,7 +68,10 @@ client = AShareHub(api_key=os.environ["ASHAREHUB_API_KEY"], version="v2")
 
 # Daily prices for Ping An Bank
 df = client.market_daily(symbol="000001.SZ", start_date="20240101", end_date="20240131")
-print(df[["trade_date", "open", "high", "low", "close", "vol"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "open", "high", "low", "close", "vol"]])
 
 client.close()
 ```
@@ -174,7 +177,7 @@ contract file is authoritative when a summary differs.
 - All SDK methods return `pd.DataFrame`, same as Tushare.
 - Numeric fields are `float64`, string fields are `object`, safe for direct arithmetic.
 - Access columns as: `df["close"]`, `df.close`, `df.iloc[0]`.
-- Empty results: returns empty DataFrame when no data matches — e.g. non-trading days, weekends, future dates. Check with `df.empty`.
+- Empty results: returns empty DataFrame when no data matches — e.g. non-trading days, weekends, future dates. The empty frame may have no columns. Check `df.empty` before selecting columns, sorting, merging or using `.iloc`.
 
 ### Handling non-trading days
 
@@ -199,42 +202,60 @@ df = client.market_daily(symbol="000001.SZ")
 
 ```python
 df = client.fundamentals(symbol="600519.SH", start_date="20240101")
-print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "pe_ttm", "pb", "total_mv"]])
 ```
 
 ### Check northbound flows
 
 ```python
 df = client.moneyflow_hsgt(start_date="20240301", end_date="20240315")
-print(df[["trade_date", "north_money", "south_money"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "north_money", "south_money"]])
 ```
 
 ### Chip distribution analysis
 
 ```python
 df = client.chip_distribution(symbol="000001.SZ", start_date="20240301")
-print(df[["trade_date", "winner_rate", "weight_avg"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "winner_rate", "weight_avg"]])
 ```
 
 ### Index performance
 
 ```python
 df = client.index_daily(symbol="000300.SH", start_date="20240101")  # CSI 300
-print(df[["trade_date", "close", "pct_chg"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "close", "pct_chg"]])
 ```
 
 ### FX rates
 
 ```python
 df = client.fx_daily(symbol="USDCNH.FXCM", start_date="20240101")
-print(df[["trade_date", "bid_close", "ask_close"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "bid_close", "ask_close"]])
 ```
 
 ### Quarterly financials
 
 ```python
 df = client.financial_indicators(symbol="000001.SZ")
-print(df[["end_date", "roe", "eps", "netprofit_margin"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["end_date", "roe", "eps", "netprofit_margin"]])
 ```
 
 ## Stock Code Format

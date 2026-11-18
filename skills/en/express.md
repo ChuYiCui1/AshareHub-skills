@@ -14,7 +14,10 @@ client.express(symbol=None, start_date=None, end_date=None, period=None)
 
 ```python
 df = client.express(symbol="000001.SZ")
-print(df[["ann_date", "end_date", "revenue", "n_income", "diluted_roe"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["ann_date", "end_date", "revenue", "n_income", "diluted_roe"]])
 ```
 
 ## Parameters

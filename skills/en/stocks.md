@@ -14,7 +14,10 @@ client.stock_list(symbol=None, name=None, market=None, list_status=None, exchang
 
 ```python
 df = client.stock_list(symbol="000001.SZ")
-print(df[["symbol", "name", "industry", "list_date"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["symbol", "name", "industry", "list_date"]])
 ```
 
 ## Parameters

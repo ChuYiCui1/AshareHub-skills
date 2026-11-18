@@ -14,7 +14,10 @@ client.cash_flow(symbol=None, start_date=None, end_date=None, period=None, ann_d
 
 ```python
 df = client.cash_flow(symbol="000001.SZ")
-print(df[["end_date", "n_cashflow_act", "free_cashflow"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["end_date", "n_cashflow_act", "free_cashflow"]])
 ```
 
 ## Parameters

@@ -14,7 +14,10 @@ client.balance_sheet(symbol=None, start_date=None, end_date=None, period=None, a
 
 ```python
 df = client.balance_sheet(symbol="000001.SZ")
-print(df[["end_date", "total_assets", "total_liab"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["end_date", "total_assets", "total_liab"]])
 ```
 
 ## 参数

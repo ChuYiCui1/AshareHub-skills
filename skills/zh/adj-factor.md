@@ -14,7 +14,10 @@ client.adj_factor(symbol=None, start_date=None, end_date=None, trade_date=None)
 
 ```python
 df = client.adj_factor(symbol="000001.SZ")
-print(df[["trade_date", "adj_factor"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "adj_factor"]])
 ```
 
 ## 参数
@@ -54,10 +57,16 @@ factor = client.adj_factor(
     symbol="000001.SZ", start_date="20240101", end_date="20241231"
 )
 
-df = daily.merge(factor, on=["symbol", "trade_date"], how="inner")
-anchor_factor = df.sort_values("trade_date").iloc[-1]["adj_factor"]
-df["close_qfq"] = df["close"] * df["adj_factor"] / anchor_factor
-df["close_hfq"] = df["close"] * df["adj_factor"]
+if daily.empty or factor.empty:
+    print('行情或复权因子为空，无法计算复权价格。')
+else:
+    df = daily.merge(factor, on=["symbol", "trade_date"], how="inner")
+    if df.empty:
+        print('行情与复权因子没有匹配的交易日。')
+    else:
+        anchor_factor = df.sort_values("trade_date").iloc[-1]["adj_factor"]
+        df["close_qfq"] = df["close"] * df["adj_factor"] / anchor_factor
+        df["close_hfq"] = df["close"] * df["adj_factor"]
 ```
 
 ## 使用规则

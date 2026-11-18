@@ -39,7 +39,10 @@ client.top_list(symbol=None, start_date=None, end_date=None, trade_date=None)
 
 ```python
 df = client.top_list()
-print(df[["trade_date", "symbol", "name", "pct_change"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "symbol", "name", "pct_change"]])
 ```
 
 ## 参数

@@ -14,7 +14,10 @@ client.index_daily(symbol="000001.SH", start_date=None, end_date=None, trade_dat
 
 ```python
 df = client.index_daily(symbol="000001.SH")
-print(df[["trade_date", "close", "pct_chg"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "close", "pct_chg"]])
 ```
 
 ## 参数

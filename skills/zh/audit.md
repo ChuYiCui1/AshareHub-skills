@@ -14,7 +14,10 @@ client.audit(symbol=None, start_date=None, end_date=None, period=None, ann_date=
 
 ```python
 df = client.audit(symbol="000001.SZ")
-print(df[["end_date", "audit_result", "audit_agency", "audit_fees"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["end_date", "audit_result", "audit_agency", "audit_fees"]])
 ```
 
 ## 参数

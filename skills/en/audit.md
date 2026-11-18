@@ -14,7 +14,10 @@ client.audit(symbol=None, start_date=None, end_date=None, period=None, ann_date=
 
 ```python
 df = client.audit(symbol="000001.SZ")
-print(df[["end_date", "audit_result", "audit_agency", "audit_fees"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["end_date", "audit_result", "audit_agency", "audit_fees"]])
 ```
 
 ## Parameters

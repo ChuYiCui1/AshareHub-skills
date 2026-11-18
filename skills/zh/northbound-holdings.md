@@ -38,7 +38,10 @@ client.northbound_holdings(symbol=None, start_date=None, end_date=None, trade_da
 
 ```python
 df = client.northbound_holdings(symbol="000001.SZ")
-print(df[["trade_date", "name", "vol", "ratio"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "name", "vol", "ratio"]])
 ```
 
 ## 参数

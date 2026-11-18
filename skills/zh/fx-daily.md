@@ -14,7 +14,10 @@ client.fx_daily(symbol="USDCNH.FXCM", start_date=None, end_date=None, trade_date
 
 ```python
 df = client.fx_daily(symbol="USDCNH.FXCM")
-print(df[["trade_date", "bid_close", "ask_close"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "bid_close", "ask_close"]])
 ```
 
 ## 参数

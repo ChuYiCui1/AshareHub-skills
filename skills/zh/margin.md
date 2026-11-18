@@ -49,7 +49,10 @@ client.margin(symbol=None, start_date=None, end_date=None, trade_date=None)
 
 ```python
 df = client.margin(symbol="000001.SZ")
-print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["trade_date", "rzye", "rqye", "rzrqye"]])
 ```
 
 ## 参数

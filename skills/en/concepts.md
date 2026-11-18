@@ -51,7 +51,10 @@ client.concepts(symbol=None, start_date=None, end_date=None, trade_date=None, na
 
 ```python
 df = client.concepts(symbol="BK0425.DC")
-print(df[["trade_date", "name", "pct_change", "leading"]])
+if df.empty:
+    print('No matching data. Check the symbol and query dates.')
+else:
+    print(df[["trade_date", "name", "pct_change", "leading"]])
 ```
 
 ## Parameters

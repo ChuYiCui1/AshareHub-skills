@@ -33,7 +33,10 @@ client.concept_members(symbol=None, con_symbol=None, start_date=None, end_date=N
 
 ```python
 df = client.concept_members(symbol="BK0425.DC", con_symbol="000001.SZ")
-print(df[["con_symbol", "name"]])
+if df.empty:
+    print('没有符合条件的数据，请检查代码和查询日期。')
+else:
+    print(df[["con_symbol", "name"]])
 ```
 
 ## 参数
